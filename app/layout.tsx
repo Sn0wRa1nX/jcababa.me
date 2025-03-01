@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Poppins, Oswald } from "next/font/google"
+import { Poppins, Oswald, Inter } from "next/font/google"
 import "./globals.css"
 import Link from "next/link"
 import { ThemeToggle } from "./components/theme-toggle"
@@ -13,7 +13,7 @@ import { PreventRightClick } from "./components/prevent-right-click"
 const oswald = Oswald({
   subsets: ["latin"],
   weight: ["700"],
-  style: ["normal", "italic"],
+  style: ["normal"],
   display: "swap",
   variable: "--font-oswald",
 })
