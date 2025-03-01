@@ -7,8 +7,8 @@ import Link from "next/link"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "SnowRainX Portfolio",
-  description: "Personal portfolio of Johncarlo Ababa",
+  title: "JCA - Personal Web",
+  description: "Personal Web of Johncarlo Ababa",
 }
 
 export default function RootLayout({

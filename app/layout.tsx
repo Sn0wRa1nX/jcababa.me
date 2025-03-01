@@ -27,8 +27,8 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: "SnowRainX Portfolio",
-  description: "Personal portfolio of Johncarlo Ababa",
+  title: "JCA - Personal Web",
+  description: "Personal web of Johncarlo Ababa",
   generator: "v0.dev",
 }
 
@@ -46,7 +46,7 @@ export default function RootLayout({
             <div className="max-w-6xl mx-auto flex justify-between items-center">
               <Link
                 href="/"
-                className="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 font-oswald italic"
+                className="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 font-oswald normal"
               >
                 SnowRainX
               </Link>
@@ -67,7 +67,7 @@ export default function RootLayout({
           <footer className="py-6 px-4 md:px-6 bg-background">
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
               <p className="text-black dark:text-white mb-4 md:mb-0">
-                © 2025 by <span className="font-oswald italic">SnowRainX</span>
+                © 2025 by <span className="font-oswald italic">SnowRainX  </span>
               </p>
               <div className="flex space-x-6">
                 {/* Social Icons */}
