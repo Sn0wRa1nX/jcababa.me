@@ -25,7 +25,7 @@ export default function Home() {
 
             {/* Contact Information */}
             <div className="space-y-5 flex-grow">
-              <Link href="mailto:jcababa.drccbu@gmail.com" className="flex items-center gap-4 group">
+              <Link href="mailto:itsmejesse@jcababa.me" className="flex items-center gap-4 group">
                 <div className="bg-zinc-900 dark:bg-white p-3 rounded-lg group-hover:bg-pink-500/10 transition-colors">
                   <Mail className="w-5 h-5 text-purple-400 dark:text-purple-500 group-hover:text-pink-500 transition-colors" />
                 </div>

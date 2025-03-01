@@ -73,7 +73,7 @@ export default function Contact() {
           <h2 className="text-2xl font-semibold mb-4">Contact Information</h2>
           <p className="mb-2">Johncarlo Ababa</p>
           <p className="mb-2">+639-995-526-4668</p>
-          <p className="mb-2">jcababa.drccbu@gmail.com</p>
+          <p className="mb-2">itsmejesse@jcababa.me</p>
           <p>Kalaoman Street, Poblacion Talibon, Bohol 6325</p>
         </div>
         <form onSubmit={handleSubmit} className="space-y-4">
