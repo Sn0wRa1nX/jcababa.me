@@ -32,7 +32,7 @@ export default function Home() {
                 <div className="flex flex-col">
                   <span className="text-purple-500 dark:text-purple-400 text-sm">EMAIL</span>
                   <span className="text-gray-700 dark:text-gray-300 group-hover:text-pink-500 transition-colors">
-                    jcababa.drccbu@gmail.com
+                    itsmejesse@jcababa.me
                   </span>
                 </div>
               </Link>
