@@ -6,6 +6,7 @@ import Link from "next/link"
 import { ThemeToggle } from "./components/theme-toggle"
 import { ThemeProvider } from "./components/theme-provider"
 import { PageTransition } from "./components/page-transition"
+import { NavLink } from "./components/nav-link"
 
 // Font for the logo
 const oswald = Oswald({
@@ -39,7 +40,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${oswald.variable} ${poppins.variable} font-sans min-h-screen flex flex-col`}>
         <ThemeProvider>
-          <header className="py-6 px-4 md:px-6 bg-background border-b border-border">
+          <header className="sticky top-0 z-50 py-6 px-4 md:px-6 bg-background/80 backdrop-blur-sm border-b border-border">
             <div className="max-w-6xl mx-auto flex justify-between items-center">
               <Link
                 href="/"
@@ -48,18 +49,10 @@ export default function RootLayout({
                 SnowRainX
               </Link>
               <nav className="hidden md:flex space-x-8 items-center">
-                <Link href="/" className="text-foreground hover:text-pink-500 transition-colors duration-300">
-                  Home
-                </Link>
-                <Link href="/resume" className="text-foreground hover:text-pink-500 transition-colors duration-300">
-                  Resume
-                </Link>
-                <Link href="/portfolio" className="text-foreground hover:text-pink-500 transition-colors duration-300">
-                  Portfolio
-                </Link>
-                <Link href="/contact" className="text-foreground hover:text-pink-500 transition-colors duration-300">
-                  Contact
-                </Link>
+                <NavLink href="/">Home</NavLink>
+                <NavLink href="/resume">Resume</NavLink>
+                <NavLink href="/portfolio">Portfolio</NavLink>
+                <NavLink href="/contact">Contact</NavLink>
                 <ThemeToggle />
               </nav>
             </div>
@@ -115,6 +108,3 @@ export default function RootLayout({
   )
 }
 
-
-
-import './globals.css'
