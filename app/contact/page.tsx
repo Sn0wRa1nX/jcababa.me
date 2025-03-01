@@ -3,6 +3,9 @@
 import type React from "react"
 
 import { useState } from "react"
+import ReCAPTCHA from "react-google-recaptcha"
+
+const RECAPTCHA_SITE_KEY = "6LcqgpApAAAAAGC_BqoQtYx6H2W8tHqgRyiM_a4I" // Replace with your actual site key
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -12,6 +15,7 @@ export default function Contact() {
     subject: "",
     message: "",
   })
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -21,18 +25,42 @@ export default function Contact() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log(formData)
-    // Reset form after submission
-    setFormData({
-      fullName: "",
-      email: "",
-      company: "",
-      subject: "",
-      message: "",
-    })
+    if (!captchaToken) {
+      alert("Please complete the reCAPTCHA")
+      return
+    }
+
+    try {
+      // Here you would typically send the form data to your backend
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          captchaToken,
+        }),
+      })
+
+      if (response.ok) {
+        setFormData({
+          fullName: "",
+          email: "",
+          company: "",
+          subject: "",
+          message: "",
+        })
+        setCaptchaToken(null)
+        alert("Message sent successfully!")
+      } else {
+        throw new Error("Failed to send message")
+      }
+    } catch (error) {
+      alert("Failed to send message. Please try again.")
+    }
   }
 
   return (
@@ -41,7 +69,7 @@ export default function Contact() {
         Do I Wanna Know?
       </h1>
       <div className="grid md:grid-cols-2 gap-8">
-        <div>
+        <div className="text-foreground">
           <h2 className="text-2xl font-semibold mb-4">Contact Information</h2>
           <p className="mb-2">Johncarlo Ababa</p>
           <p className="mb-2">+639-995-526-4668</p>
@@ -55,7 +83,7 @@ export default function Contact() {
             value={formData.fullName}
             onChange={handleChange}
             placeholder="FULL NAME"
-            className="w-full p-2 border border-zinc-700 rounded bg-zinc-800 text-white"
+            className="w-full p-2 border border-input rounded bg-background text-foreground"
             required
           />
           <input
@@ -64,7 +92,7 @@ export default function Contact() {
             value={formData.email}
             onChange={handleChange}
             placeholder="EMAIL"
-            className="w-full p-2 border border-zinc-700 rounded bg-zinc-800 text-white"
+            className="w-full p-2 border border-input rounded bg-background text-foreground"
             required
           />
           <input
@@ -73,7 +101,7 @@ export default function Contact() {
             value={formData.company}
             onChange={handleChange}
             placeholder="COMPANY"
-            className="w-full p-2 border border-zinc-700 rounded bg-zinc-800 text-white"
+            className="w-full p-2 border border-input rounded bg-background text-foreground"
           />
           <input
             type="text"
@@ -81,7 +109,7 @@ export default function Contact() {
             value={formData.subject}
             onChange={handleChange}
             placeholder="SUBJECT"
-            className="w-full p-2 border border-zinc-700 rounded bg-zinc-800 text-white"
+            className="w-full p-2 border border-input rounded bg-background text-foreground"
             required
           />
           <textarea
@@ -89,18 +117,16 @@ export default function Contact() {
             value={formData.message}
             onChange={handleChange}
             placeholder="MESSAGE"
-            className="w-full p-2 border border-zinc-700 rounded bg-zinc-800 text-white h-32"
+            className="w-full p-2 border border-input rounded bg-background text-foreground h-32"
             required
-          ></textarea>
-          <div className="flex items-center">
-            <input type="checkbox" id="recaptcha" className="mr-2" required />
-            <label htmlFor="recaptcha" className="text-gray-300">
-              I'm not a robot
-            </label>
+          />
+          <div className="flex justify-center">
+            <ReCAPTCHA sitekey={RECAPTCHA_SITE_KEY} onChange={(token) => setCaptchaToken(token)} theme="dark" />
           </div>
           <button
             type="submit"
             className="w-full bg-purple-600 text-white py-2 rounded hover:bg-purple-700 transition-colors duration-300"
+            disabled={!captchaToken}
           >
             Commit
           </button>

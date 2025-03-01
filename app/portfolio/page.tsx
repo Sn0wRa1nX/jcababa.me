@@ -4,10 +4,12 @@ import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Camera, Code, Database, Cpu, ExternalLink, Github } from "lucide-react"
+import { ProjectModal } from "@/components/project-modal"
 
 export default function Portfolio() {
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null)
   const [hoveredProject, setHoveredProject] = useState<number | null>(null)
+  const [selectedProject, setSelectedProject] = useState<number | null>(null)
 
   const categories = [
     { id: "photography", name: "Photography", icon: Camera },
@@ -123,7 +125,7 @@ export default function Portfolio() {
         {filteredProjects.map((project) => (
           <div
             key={project.id}
-            className="bg-zinc-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+            className="bg-white dark:bg-zinc-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-zinc-800"
             onMouseEnter={() => setHoveredProject(project.id)}
             onMouseLeave={() => setHoveredProject(null)}
           >
@@ -170,16 +172,16 @@ export default function Portfolio() {
               </div>
             </div>
             <div className="p-6">
-              <h3 className="text-xl font-bold mb-2 text-gray-100">{project.title}</h3>
-              <p className="text-gray-300 mb-4">{project.description}</p>
+              <h3 className="text-xl font-bold mb-2 text-foreground">{project.title}</h3>
+              <p className="text-muted-foreground mb-4">{project.description}</p>
               <div className="flex justify-between items-center">
                 {categories.find((cat) => cat.id === project.category) && (
-                  <span className="px-3 py-1 bg-zinc-800 text-gray-200 rounded-full text-sm">
+                  <span className="px-3 py-1 bg-muted text-foreground rounded-full text-sm">
                     {categories.find((cat) => cat.id === project.category)?.name}
                   </span>
                 )}
-                <Link
-                  href={`/portfolio/${project.id}`}
+                <button
+                  onClick={() => setSelectedProject(project.id)}
                   className="text-pink-500 hover:text-purple-500 font-medium flex items-center gap-1 transition-colors duration-300"
                 >
                   View Details
@@ -188,7 +190,7 @@ export default function Portfolio() {
                       hoveredProject === project.id ? "translate-x-1" : ""
                     }`}
                   />
-                </Link>
+                </button>
               </div>
             </div>
           </div>
@@ -204,6 +206,14 @@ export default function Portfolio() {
           Contact Me
         </Link>
       </div>
+
+      {selectedProject && (
+        <ProjectModal
+          isOpen={!!selectedProject}
+          onClose={() => setSelectedProject(null)}
+          project={projects.find((p) => p.id === selectedProject)!}
+        />
+      )}
 
       {/* Footer removed to avoid duplication with the global footer */}
     </div>
