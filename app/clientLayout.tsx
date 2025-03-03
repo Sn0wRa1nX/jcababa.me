@@ -88,7 +88,7 @@ export default function ClientLayout({
                 </SheetTrigger>
                 <SheetContent
                   side="right"
-                  className="w-[300px] sm:w-[400px] bg-background/80 backdrop-blur-sm border-l border-border"
+                  className="w-[300px] sm:w-[400px] bg-background/65 backdrop-blur-sm"
                 >
                   <nav className="flex flex-col space-y-4 mt-6">
                     <NavLink href="/">Home</NavLink>
@@ -183,4 +183,3 @@ export default function ClientLayout({
     </html>
   )
 }
-
