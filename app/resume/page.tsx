@@ -33,7 +33,7 @@ export default function Resume() {
                 Download Full Resume
               </a>
               <Link
-                href="#"
+                href="/certificate"
                 className="inline-block px-4 py-2 bg-purple-500 text-black hover:text-black dark:text-white rounded-full hover:bg-purple-600 transition-colors duration-300 text-center font-medium"
               >
                 VA Training PH Certificate
