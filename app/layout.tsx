@@ -61,7 +61,6 @@ export default function RootLayout({
                   alt="Logo"
                   width={25} // Adjust size as needed
                   height={25}
-                  className="h-auto w-auto"
                   priority
                 />
               </Link>
