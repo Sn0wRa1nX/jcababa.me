@@ -59,8 +59,8 @@ export default function RootLayout({
                 <Image
                   src="/ZLogo50.png"
                   alt="Logo"
-                  width={25} // Adjust size as needed
-                  height={25}
+                  width={100} // Adjust size as needed
+                  height={100}
                   priority
                 />
               </Link>
