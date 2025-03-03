@@ -25,51 +25,57 @@ export default function Home() {
 
             {/* Contact Information */}
             <div className="space-y-5 flex-grow">
-              <Link href="mailto:itsmejesse@jcababa.me" className="flex items-center gap-4 group">
-                <div className="bg-zinc-900 dark:bg-white p-3 rounded-lg group-hover:bg-pink-500/10 transition-colors">
-                  <Mail className="w-5 h-5 text-purple-400 dark:text-purple-500 group-hover:text-pink-500 transition-colors" />
+              <Link href="mailto:jcababa.drccbu@gmail.com" className="flex items-center gap-4 group">
+                <div className="bg-zinc-900 dark:bg-white p-3 rounded-lg group-hover:bg-transparent transition-colors duration-200">
+                  <Mail className="w-5 h-5 text-purple-400 dark:text-purple-500 group-hover:text-pink-600 dark:group-hover:text-pink-600 transition-colors duration-200" />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-purple-500 dark:text-purple-400 text-sm">EMAIL</span>
-                  <span className="text-gray-700 dark:text-gray-300 group-hover:text-pink-500 transition-colors">
-                    itsmejesse@jcababa.me
+                  <span className="text-gray-700 dark:text-gray-300 group-hover:text-pink-500 transition-colors duration-200">
+                    jcababa.drccbu@gmail.com
                   </span>
                 </div>
               </Link>
 
               <Link href="tel:+63995526466" className="flex items-center gap-4 group">
-                <div className="bg-zinc-900 dark:bg-white p-3 rounded-lg group-hover:bg-pink-500/10 transition-colors">
-                  <Phone className="w-5 h-5 text-purple-400 dark:text-purple-500 group-hover:text-pink-500 transition-colors" />
+                <div className="bg-zinc-900 dark:bg-white p-3 rounded-lg group-hover:bg-transparent transition-colors duration-200">
+                  <Phone className="w-5 h-5 text-purple-400 dark:text-purple-500 group-hover:text-pink-600 dark:group-hover:text-pink-600 transition-colors duration-200" />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-purple-500 dark:text-purple-400 text-sm">PHONE</span>
-                  <span className="text-gray-700 dark:text-gray-300 group-hover:text-pink-500 transition-colors">
+                  <span className="text-gray-700 dark:text-gray-300 group-hover:text-pink-500 transition-colors duration-200">
                     +63 995 526 4668
                   </span>
                 </div>
               </Link>
 
-              <div className="flex items-center gap-4">
-                <div className="bg-zinc-900 dark:bg-white p-3 rounded-lg">
-                  <Calendar className="w-5 h-5 text-purple-400 dark:text-purple-500" />
+              <Link
+                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Johncarlo's+Birthday&dates=20241118/20241119&recur=RRULE:FREQ=YEARLY"
+                target="_blank"
+                className="flex items-center gap-4 group"
+              >
+                <div className="bg-zinc-900 dark:bg-white p-3 rounded-lg group-hover:bg-transparent transition-colors duration-200">
+                  <Calendar className="w-5 h-5 text-purple-400 dark:text-purple-500 group-hover:text-pink-600 dark:group-hover:text-pink-600 transition-colors duration-200" />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-purple-500 dark:text-purple-400 text-sm">BIRTHDATE</span>
-                  <span className="text-gray-700 dark:text-gray-300">November 18, 2002</span>
+                  <span className="text-gray-700 dark:text-gray-300 group-hover:text-pink-500 transition-colors duration-200">
+                    November 18, 2002
+                  </span>
                 </div>
-              </div>
+              </Link>
 
               <Link
                 href="https://maps.google.com/?q=Bohol,Philippines"
                 target="_blank"
                 className="flex items-center gap-4 group"
               >
-                <div className="bg-zinc-900 dark:bg-white p-3 rounded-lg group-hover:bg-pink-500/10 transition-colors">
-                  <MapPin className="w-5 h-5 text-purple-400 dark:text-purple-500 group-hover:text-pink-500 transition-colors" />
+                <div className="bg-zinc-900 dark:bg-white p-3 rounded-lg group-hover:bg-transparent transition-colors duration-200">
+                  <MapPin className="w-5 h-5 text-purple-400 dark:text-purple-500 group-hover:text-pink-600 dark:group-hover:text-pink-600 transition-colors duration-200" />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-purple-500 dark:text-purple-400 text-sm">LOCATION</span>
-                  <span className="text-gray-700 dark:text-gray-300 group-hover:text-pink-500 transition-colors">
+                  <span className="text-gray-700 dark:text-gray-300 group-hover:text-pink-500 transition-colors duration-200">
                     Bohol, Philippines, Earth
                   </span>
                 </div>
@@ -78,14 +84,14 @@ export default function Home() {
 
             {/* Social Links - Fixed at bottom */}
             <div className="flex gap-5 justify-center pt-6 border-t border-zinc-800 mt-8">
-              <Link href="#" className="text-purple-400 hover:text-pink-500 transition-colors p-2">
-                <Facebook className="w-5 h-5" />
+              <Link href="#" className="transition-colors duration-150">
+                <Facebook className="w-5 h-5 text-purple-400 hover:text-black dark:hover:text-white" />
               </Link>
-              <Link href="#" className="text-purple-400 hover:text-pink-500 transition-colors p-2">
-                <Instagram className="w-5 h-5" />
+              <Link href="#" className="transition-colors duration-150">
+                <Instagram className="w-5 h-5 text-purple-400 hover:text-black dark:hover:text-white" />
               </Link>
-              <Link href="#" className="text-purple-400 hover:text-pink-500 transition-colors p-2">
-                <BrandTwitter className="w-5 h-5" />
+              <Link href="#" className="transition-colors duration-150">
+                <BrandTwitter className="w-5 h-5 text-purple-400 hover:text-black dark:hover:text-white" />
               </Link>
             </div>
           </div>
