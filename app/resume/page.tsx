@@ -4,7 +4,7 @@ import Link from "next/link"
 export default function Resume() {
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-8 heading-special bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-400">
+      <h1 className="text-4xl font-bold mb-8 heading-special bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500">
         Resume
       </h1>
       <div className="grid md:grid-cols-3 gap-8">
