@@ -57,10 +57,10 @@ export default function RootLayout({
             <div className="max-w-6xl mx-auto flex justify-between items-center">
               <Link href="/">
                 <Image
-                  src="/ZLogo70.png"
+                  src="/ZLogo60.png"
                   alt="Logo"
-                  width={70} // Adjust size as needed
-                  height={70}
+                  width={60} // Adjust size as needed
+                  height={60}
                   priority
                 />
               </Link>
