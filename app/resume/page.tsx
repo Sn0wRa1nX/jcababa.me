@@ -22,7 +22,7 @@ export default function Resume() {
               Passionate about technology and driven by a vision to reset humanity for a better future.
             </p>
             <div className="flex flex-col space-y-2">
-              <Link
+              <a
                 href="/resume.pdf"
                 download="JcAbaba_IT-Technician_Full_Resume.pdf"
                 target="_blank"
@@ -30,7 +30,7 @@ export default function Resume() {
                 className="inline-block px-4 py-2 bg-pink-500 text-black hover:text-black dark:text-white rounded-full hover:bg-pink-600 transition-colors duration-300 text-center font-medium"
               >
                 Download Full Resume
-              </Link>
+              </a>
               <Link
                 href="#"
                 className="inline-block px-4 py-2 bg-purple-500 text-black hover:text-black dark:text-white rounded-full hover:bg-purple-600 transition-colors duration-300 text-center font-medium"
