@@ -41,6 +41,7 @@ export const metadata: Metadata = {
   title: "Johncarlo CA",
   description: "Personal info of Johncarlo Ababa",
   generator: "v0.dev | Sn0wRainX",
+  icons: "/favicon.ico",
 }
 
 export default function RootLayout({
