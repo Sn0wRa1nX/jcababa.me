@@ -62,17 +62,24 @@ export default function ClientLayout({
       >
         <ThemeProvider>
           <PreventRightClick />
-          <header className="sticky top-0 z-50 py-6 px-4 md:px-6 bg-background/80 backdrop-blur-sm">
+          <header className="sticky top-0 z-50 py-3 md:py-6 px-4 md:px-6 bg-background/80 backdrop-blur-sm">
             <div className="max-w-6xl mx-auto flex justify-between items-center">
               <Link href="/" className="transition-transform duration-200 hover:scale-110 hover:drop-shadow-lg">
-                <Image src="/ZLogo60.png" alt="Logo" width={60} height={60} priority />
+                <Image
+                  src="/ZLogo60.png"
+                  alt="Logo"
+                  width={40}
+                  height={40}
+                  className="w-[40px] h-[40px] md:w-[60px] md:h-[60px]"
+                  priority
+                />
               </Link>
 
               {/* Mobile Navigation */}
               <Sheet open={isOpen} onOpenChange={setIsOpen}>
                 <SheetTrigger asChild className="md:hidden">
                   <button className="p-2 hover:bg-accent rounded-lg">
-                    <Menu className="w-6 h-6" />
+                    <Menu className="w-5 h-5" />
                     <span className="sr-only">Toggle navigation menu</span>
                   </button>
                 </SheetTrigger>
@@ -173,3 +180,4 @@ export default function ClientLayout({
     </html>
   )
 }
+
