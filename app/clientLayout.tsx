@@ -100,7 +100,7 @@ export default function ClientLayout({
               </Sheet>
 
               {/* Desktop Navigation */}
-              <nav className="hidden md:flex space-x-8 items-center">
+              <nav className="hidden md:flex space-x-4 items-center">
                 <NavLink href="/">Home</NavLink>
                 <NavLink href="/resume">Resume</NavLink>
                 <NavLink href="/portfolio">Portfolio</NavLink>
@@ -180,4 +180,3 @@ export default function ClientLayout({
     </html>
   )
 }
-
