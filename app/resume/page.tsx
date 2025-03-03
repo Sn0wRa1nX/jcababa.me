@@ -30,13 +30,17 @@ export default function Resume() {
                 rel="noopener noreferrer"
                 className="inline-block px-4 py-2 bg-pink-500 text-black hover:text-black dark:text-white rounded-full hover:bg-pink-600 transition-colors duration-300 text-center font-medium"
               >
-                Download Full Resume
+                <span className="inline-block transition-transform duration-100 hover:scale-110">
+                  Download Full Resume
+                </span>
               </a>
               <Link
                 href="/certificate"
                 className="inline-block px-4 py-2 bg-purple-500 text-black hover:text-black dark:text-white rounded-full hover:bg-purple-600 transition-colors duration-300 text-center font-medium"
               >
-                VA Training PH Certificate
+                <span className="inline-block transition-transform duration-100 hover:scale-110">
+                  VA Training PH Certificate
+                </span>
               </Link>
             </div>
           </div>
