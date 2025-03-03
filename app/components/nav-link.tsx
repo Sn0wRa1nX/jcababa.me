@@ -18,7 +18,7 @@ export function NavLink({ href, children }: NavLinkProps) {
     <Link
       href={href}
       className={cn(
-        "transition-all duration-200",
+        "transition-all duration-200 px-4",
         isActive
           ? "text-pink-500 font-bold hover:text-purple-600 drop-shadow-[0_2px_2px_rgba(236,72,153,0.5)]"
           : "text-foreground hover:text-pink-500 font-normal hover:drop-shadow-[0_2px_2px_rgba(236,72,153,0.3)]",
