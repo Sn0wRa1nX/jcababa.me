@@ -28,17 +28,17 @@ export default function Resume() {
                 download="JcAbaba_IT-Technician_Full_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-4 py-2 bg-pink-600 text-black hover:text-black dark:text-white rounded-full hover:bg-purple-600 transition-colors duration-300 text-center font-medium group"
+                className="inline-block px-4 py-2 bg-pink-600 text-white rounded-full font-medium text-center transition-all duration-300 group hover:bg-white"
               >
-                <span className="inline-block transition-transform duration-100 group-hover:scale-110">
+                <span className="inline-block transition-transform duration-300 group-hover:scale-110 group-hover:text-black">
                   Download Full Resume
                 </span>
               </a>
               <Link
                 href="/certificate"
-                className="inline-block px-4 py-2 bg-purple-600 text-black hover:text-black dark:text-white rounded-full hover:bg-pink-600 transition-colors duration-300 text-center font-medium group"
+                className="inline-block px-4 py-2 bg-purple-600 text-white rounded-full font-medium text-center transition-all duration-300 group hover:bg-white"
               >
-                <span className="inline-block transition-transform duration-100 group-hover:scale-110">
+                <span className="inline-block transition-transform duration-300 group-hover:scale-110 group-hover:text-black">
                   VA Training PH Certificate
                 </span>
               </Link>
