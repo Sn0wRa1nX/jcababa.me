@@ -103,13 +103,19 @@ export default function Home() {
             <h2 className="text-3xl font-bold mb-4 text-purple-400 heading-special">About Me</h2>
             <div className="bg-white dark:bg-zinc-900/50 rounded-lg shadow-md p-6 border border-gray-200 dark:border-zinc-800">
               <p className="mb-4 text-gray-600 dark:text-gray-300">
-                I'm a Graphic Designer, Photographer, and Virtual Assistant from Bohol, Philippines, with a strong
-                background in IT. I specialize in turning complex tasks into streamlined, automated solutions.
+                I'm a Versatile IT Technician, Professional Photographer, and Certified Virtual Assistant with 3 years
+                of expertise in custom kernel and ROM development for Samsung devices. I also specialize in turning
+                complex tasks into streamlined, automated solutions.
+                
               </p>
               <p className="mb-4 text-gray-600 dark:text-gray-300">
                 Beyond tech, I'm passionate about photography—capturing compelling portraits that tell your story. I
                 shoot professionally, creating high-quality images that showcase personality and vision. Check out my
                 work on Instagram!
+              </p>
+              <p className="mb-4 text-gray-600 dark:text-gray-300">
+                Skilled in technology solutions, visual storytelling, and virtual operations, with a passion for
+                innovation and problem-solving.
               </p>
               <p className="text-gray-600 dark:text-gray-300">Let's connect and bring your ideas to life.</p>
             </div>
