@@ -25,14 +25,14 @@ export default function Home() {
 
             {/* Contact Information */}
             <div className="space-y-5 flex-grow">
-              <Link href="mailto:jcababa.drccbu@gmail.com" className="flex items-center gap-4 group">
+              <Link href="itsmejesse@jcababa.me" className="flex items-center gap-4 group">
                 <div className="bg-zinc-900 dark:bg-white p-3 rounded-lg group-hover:bg-transparent transition-colors duration-200">
                   <Mail className="w-5 h-5 text-purple-400 dark:text-purple-500 group-hover:text-pink-600 dark:group-hover:text-pink-600 transition-colors duration-200" />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-purple-500 dark:text-purple-400 text-sm">EMAIL</span>
                   <span className="text-gray-700 dark:text-gray-300 group-hover:text-pink-500 transition-colors duration-200">
-                    jcababa.drccbu@gmail.com
+                    itsmejesse@jcababa.me
                   </span>
                 </div>
               </Link>
