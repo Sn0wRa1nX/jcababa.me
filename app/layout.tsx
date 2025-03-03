@@ -37,9 +37,9 @@ const azeretMono = Azeret_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "SnowRainX Portfolio",
-  description: "Personal portfolio of Johncarlo Ababa",
-  generator: "v0.dev",
+  title: "Johncarlo CA",
+  description: "Personal info of Johncarlo Ababa",
+  generator: "v0.dev | Sn0wRainX",
 }
 
 export default function RootLayout({
