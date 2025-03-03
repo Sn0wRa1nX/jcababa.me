@@ -18,8 +18,8 @@ export default function Home() {
             {/* Name and Title with more spacing */}
             <div className="text-center mb-8">
               <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Johncarlo Ababa</h1>
-              <div className="bg-purple-600 text-white px-4 py-2 rounded-full text-sm inline-block">
-                IT | Photographer | General VA
+              <div className="bg-gradient-to-r from-pink-500 to-purple-500 px-4 py-2 rounded-full text-sm inline-block transition-transform duration-100 hover:scale-110">
+                <span className="text-black font-medium">IT | Photographer | General VA</span>
               </div>
             </div>
 
