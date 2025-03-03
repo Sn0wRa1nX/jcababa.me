@@ -18,7 +18,10 @@ export function NavLink({ href, children }: NavLinkProps) {
   return (
     <Link
       href={href}
-      className={cn("text-foreground hover:text-pink-500 transition-colors duration-300", isActive && "text-pink-500")}
+      className={cn(
+        "transition-colors duration-100",
+        isActive ? "text-pink-500 font-bold hover:text-purple-600" : "text-foreground hover:text-pink-500 font-normal",
+      )}
     >
       {children}
     </Link>
