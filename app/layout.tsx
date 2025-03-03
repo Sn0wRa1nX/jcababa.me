@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Poppins, Oswald } from "next/font/google"
+import { Poppins, Oswald, Azeret_Mono } from "next/font/google"
 import "./globals.css"
 import Link from "next/link"
 import { ThemeToggle } from "./components/theme-toggle"
@@ -27,6 +27,15 @@ const poppins = Poppins({
   variable: "--font-poppins",
 })
 
+// Logo
+const azeretMono = Azeret_Mono({
+  subsets: ["latin"],
+  weight: ["100", "200"], // Adjust weight as needed
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-azeret-mono",
+})
+
 export const metadata: Metadata = {
   title: "SnowRainX Portfolio",
   description: "Personal portfolio of Johncarlo Ababa",
@@ -47,9 +56,9 @@ export default function RootLayout({
             <div className="max-w-6xl mx-auto flex justify-between items-center">
               <Link
                 href="/"
-                className="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 font-oswald normal"
+                className="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 font-azeret-mono italic"
               >
-                SnowRainX
+                JCA
               </Link>
               <nav className="hidden md:flex space-x-8 items-center">
                 <NavLink href="/">Home</NavLink>
@@ -68,7 +77,7 @@ export default function RootLayout({
           <footer className="py-6 px-4 md:px-6 bg-background">
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
               <p className="text-black dark:text-white mb-4 md:mb-0">
-                © 2025 by <span className="font-oswald italic">SnowRainX</span>
+                © 2025 by <span className="font-azeret-mono italic">SnowRainX</span>
               </p>
               <div className="flex space-x-6">
                 {/* Social Icons */}
