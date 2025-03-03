@@ -18,7 +18,7 @@ export default function Home() {
             {/* Name and Title with more spacing */}
             <div className="text-center mb-8">
               <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Johncarlo Ababa</h1>
-              <div className="bg-gradient-to-r from-pink-500 to-purple-500 px-4 py-2 rounded-full text-sm inline-block transition-transform duration-100 hover:scale-110">
+              <div className="bg-gradient-to-r from-pink-500 to-purple-500 px-4 py-2 rounded-full text-sm inline-block transition-transform duration-100 hover:scale-110 drop-shadow-[0_2px_8px_rgba(236,72,153,0.5)] hover:drop-shadow-[0_4px_12px_rgba(168,85,247,0.5)]">
                 <span className="text-black font-medium">IT | Photographer | General VA</span>
               </div>
             </div>
@@ -85,13 +85,13 @@ export default function Home() {
             {/* Social Links - Fixed at bottom */}
             <div className="flex gap-5 justify-center pt-6 border-t border-zinc-800 mt-8">
               <Link href="https://www.facebook.com/firemax13" className="group">
-                <Facebook className="w-6 h-6 text-purple-400 transition-all duration-200 group-hover:text-black dark:group-hover:text-white group-hover:scale-110"/>
+                <Facebook className="w-6 h-6 text-purple-400 transition-all duration-200 group-hover:text-black dark:group-hover:text-white group-hover:scale-110" />
               </Link>
               <Link href="https://www.instagram.com/jacoboi13/" className="group">
-                <Instagram className="w-6 h-6 text-purple-400 transition-all duration-200 group-hover:text-black dark:group-hover:text-white group-hover:scale-110"/>
+                <Instagram className="w-6 h-6 text-purple-400 transition-all duration-200 group-hover:text-black dark:group-hover:text-white group-hover:scale-110" />
               </Link>
               <Link href="https://www.twitter.com" className="group">
-                <BrandTwitter className="w-6 h-6 text-purple-400 transition-all duration-200 group-hover:text-black dark:group-hover:text-white group-hover:scale-110"/>
+                <BrandTwitter className="w-6 h-6 text-purple-400 transition-all duration-200 group-hover:text-black dark:group-hover:text-white group-hover:scale-110" />
               </Link>
             </div>
           </div>
@@ -106,15 +106,14 @@ export default function Home() {
                 I'm a Versatile IT Technician, Professional Photographer, and Certified Virtual Assistant with 3 years
                 of expertise in custom kernel and ROM development for Samsung devices. I also specialize in turning
                 complex tasks into streamlined, automated solutions.
-                
               </p>
               <p className="mb-4 text-gray-600 dark:text-gray-300">
-                Beyond tech, I'm passionate about photography—capturing compelling portraits that tell your story. 
-                Check out my work on Instagram!
+                Beyond tech, I'm passionate about photography—capturing compelling portraits that tell your story. Check
+                out my work on Instagram!
               </p>
               <p className="mb-4 text-gray-600 dark:text-gray-300">
-                Just me who is skilled in technology solutions, visual storytelling, and virtual operations, with a passion for
-                innovation and problem-solving.
+                Just me who is skilled in technology solutions, visual storytelling, and virtual operations, with a
+                passion for innovation and problem-solving.
               </p>
               <p className="text-gray-600 dark:text-gray-300">So let's connect and bring your ideas to life.</p>
             </div>
@@ -199,4 +198,3 @@ export default function Home() {
     </div>
   )
 }
-
