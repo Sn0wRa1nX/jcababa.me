@@ -1,9 +1,15 @@
 import * as React from "react"
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu"
 import { cva } from "class-variance-authority"
-import { ChevronDown } from "lucide-react"
+import { ChevronDown, Menu, X } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+
+const [isOpen, setIsOpen] = React.useState(false);
+
+const toggleMenu = () => {
+  setIsOpen(!isOpen);
+};
 
 const NavigationMenu = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Root>,
@@ -17,7 +23,13 @@ const NavigationMenu = React.forwardRef<
     )}
     {...props}
   >
-    {children}
+    <button
+      className="md:hidden p-2 focus:outline-none"
+      onClick={toggleMenu}
+    >
+      {isOpen ? <X size={24} /> : <Menu size={24} />}
+    </button>
+    <div className={`${isOpen ? "block" : "hidden"} md:flex flex-col md:flex-row`}>{children}</div>
     <NavigationMenuViewport />
   </NavigationMenuPrimitive.Root>
 ))
