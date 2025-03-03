@@ -119,7 +119,7 @@ export default function Home() {
             <h2 className="text-3xl font-bold mb-4 text-pink-400 heading-special">What I'm Doing</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-white dark:bg-zinc-900 p-4 rounded-lg shadow-md border border-gray-200 dark:border-zinc-800">
-                <div className="flex items-center gap-2 mb-2">
+                <div className="flex items-center gap-2 mb-2 transition-all duration-200 hover:scale-110">
                   <span className="p-2 bg-gray-100 dark:bg-black rounded-full transition-all duration-200 hover:scale-110">
                     <svg className="w-4 h-4 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                       <path
@@ -130,12 +130,12 @@ export default function Home() {
                       />
                     </svg>
                   </span>
-                  <h3 className="font-bold text-lg text-gray-900 dark:text-white transition-all duration-200 hover:scale-110">Data Scraping</h3>
+                  <h3 className="font-bold text-lg text-gray-900 dark:text-white">Data Scraping</h3>
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-300">Professional social media data extraction.</p>
               </div>
               <div className="bg-white dark:bg-zinc-900 p-4 rounded-lg shadow-md border border-gray-200 dark:border-zinc-800">
-                <div className="flex items-center gap-2 mb-2">
+                <div className="flex items-center gap-2 mb-2 transition-all duration-200 hover:scale-110">
                   <span className="p-2 bg-gray-100 dark:bg-black rounded-full transition-all duration-200 hover:scale-110">
                     <svg className="w-4 h-4 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                       <path
@@ -147,14 +147,14 @@ export default function Home() {
                       <circle cx="12" cy="13" r="4" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} />
                     </svg>
                   </span>
-                  <h3 className="font-bold text-lg text-gray-900 dark:text-white transition-all duration-200 hover:scale-110">Photographer</h3>
+                  <h3 className="font-bold text-lg text-gray-900 dark:text-white">Photographer</h3>
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-300">
                   Capturing high-quality photos across various categories at a professional level.
                 </p>
               </div>
               <div className="bg-white dark:bg-zinc-900 p-4 rounded-lg shadow-md border border-gray-200 dark:border-zinc-800">
-                <div className="flex items-center gap-2 mb-2">
+                <div className="flex items-center gap-2 mb-2 transition-all duration-200 hover:scale-110">
                   <span className="p-2 bg-gray-100 dark:bg-black rounded-full transition-all duration-200 hover:scale-110">
                     <svg className="w-4 h-4 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                       <path
@@ -165,15 +165,15 @@ export default function Home() {
                       />
                     </svg>
                   </span>
-                  <h3 className="font-bold text-lg text-gray-900 dark:text-white transition-all duration-200 hover:scale-110">Automation</h3>
+                  <h3 className="font-bold text-lg text-gray-900 dark:text-white">Automation</h3>
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-300">
                   Converting time-consuming tasks into efficient, automated processes.
                 </p>
               </div>
               <div className="bg-white dark:bg-zinc-900 p-4 rounded-lg shadow-md border border-gray-200 dark:border-zinc-800">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="p-2 bg-gray-100 dark:bg-black rounded-full transition-all duration-200 hover:scale-110">
+                <div className="flex items-center gap-2 mb-2 transition-all duration-200 hover:scale-110">
+                  <span className="p-2 bg-gray-100 dark:bg-black rounded-full">
                     <svg className="w-4 h-4 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                       <path
                         d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 3a4 4 0 100 8 4 4 0 000-8z"
@@ -183,7 +183,7 @@ export default function Home() {
                       />
                     </svg>
                   </span>
-                  <h3 className="font-bold text-lg text-gray-900 dark:text-white transition-all duration-200 hover:scale-110">Virtual Assistant</h3>
+                  <h3 className="font-bold text-lg text-gray-900 dark:text-white">Virtual Assistant</h3>
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-300">Providing support for a wide range of tasks.</p>
               </div>
