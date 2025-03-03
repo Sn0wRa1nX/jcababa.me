@@ -16,14 +16,14 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
         animate={{
           opacity: 1,
           transition: {
-            duration: 0.5,
+            duration: 0.1,
             ease: "easeInOut",
           },
         }}
         exit={{
           opacity: 0,
           transition: {
-            duration: 0.5,
+            duration: 0.1,
             ease: "easeInOut",
           },
         }}
