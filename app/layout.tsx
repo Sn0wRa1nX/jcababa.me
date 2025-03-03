@@ -28,8 +28,8 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: "JCA - Personal Web",
-  description: "Personal Web of Johncarlo Ababa",
+  title: "SnowRainX Portfolio",
+  description: "Personal portfolio of Johncarlo Ababa",
   generator: "v0.dev",
 }
 
@@ -74,7 +74,7 @@ export default function RootLayout({
                 {/* Social Icons */}
                 <SocialIcon href="#" label="Facebook">
                   <svg
-                    className="w-6 h-6 text-black dark:text-white group-hover:text-pink-500 transition-colors duration-100"
+                    className="w-6 h-6 text-black dark:text-white group-hover:text-pink-500 transition-all duration-150 group-hover:scale-110"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -88,7 +88,7 @@ export default function RootLayout({
                 </SocialIcon>
                 <SocialIcon href="#" label="Instagram">
                   <svg
-                    className="w-6 h-6 text-black dark:text-white group-hover:text-pink-500 transition-colors duration-100"
+                    className="w-6 h-6 text-black dark:text-white group-hover:text-pink-500 transition-all duration-150 group-hover:scale-110"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -102,7 +102,7 @@ export default function RootLayout({
                 </SocialIcon>
                 <SocialIcon href="#" label="Telegram">
                   <svg
-                    className="w-6 h-6 text-black dark:text-white group-hover:text-pink-500 transition-colors duration-100"
+                    className="w-6 h-6 text-black dark:text-white group-hover:text-pink-500 transition-all duration-150 group-hover:scale-110"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -111,7 +111,7 @@ export default function RootLayout({
                 </SocialIcon>
                 <SocialIcon href="#" label="WhatsApp">
                   <svg
-                    className="w-6 h-6 text-black dark:text-white group-hover:text-pink-500 transition-colors duration-100"
+                    className="w-6 h-6 text-black dark:text-white group-hover:text-pink-500 transition-all duration-150 group-hover:scale-110"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -119,7 +119,7 @@ export default function RootLayout({
                   </svg>
                 </SocialIcon>
                 <SocialIcon href="#" label="Online Jobs PH">
-                  <span className="font-bold text-sm px-2 py-1 border border-black dark:border-white text-black dark:text-white group-hover:text-pink-500 group-hover:border-pink-500 transition-colors duration-100 rounded-md">
+                  <span className="font-bold text-sm px-2 py-1 border border-black dark:border-white text-black dark:text-white group-hover:text-pink-500 group-hover:border-pink-500 transition-all duration-150 rounded-md group-hover:scale-110">
                     OJ.ph
                   </span>
                 </SocialIcon>
