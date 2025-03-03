@@ -30,7 +30,7 @@ const poppins = Poppins({
 // Logo
 const azeretMono = Azeret_Mono({
   subsets: ["latin"],
-  weight: ["100"], // Adjust weight as needed
+  weight: ["300"], // Adjust weight as needed
   style: ["italic"],
   display: "swap",
   variable: "--font-azeret-mono",
