@@ -64,7 +64,10 @@ export default function ClientLayout({
           <PreventRightClick />
           <header className="sticky top-0 z-50 py-3 md:py-6 px-4 md:px-6 bg-background/80 backdrop-blur-sm">
             <div className="max-w-6xl mx-auto flex justify-between items-center">
-              <Link href="/" className="transition-transform duration-200 hover:scale-110 hover:drop-shadow-lg">
+              <Link
+                href="/"
+                className="transition-transform duration-200 hover:scale-110 hover:drop-shadow-[0_4px_8px_rgba(236,72,153,0.5)]"
+              >
                 <Image
                   src="/ZLogo60.png"
                   alt="Logo"
@@ -180,3 +183,4 @@ export default function ClientLayout({
     </html>
   )
 }
+
