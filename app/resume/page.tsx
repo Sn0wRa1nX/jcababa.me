@@ -23,7 +23,10 @@ export default function Resume() {
             </p>
             <div className="flex flex-col space-y-2">
               <Link
-                href="#"
+                href="/resume.pdf"
+                download="JcAbaba_IT-Technician_Full_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block px-4 py-2 bg-pink-500 text-black hover:text-black dark:text-white rounded-full hover:bg-pink-600 transition-colors duration-300 text-center font-medium"
               >
                 Download Full Resume
