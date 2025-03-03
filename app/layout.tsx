@@ -76,8 +76,8 @@ export default function RootLayout({
 
           <footer className="py-6 px-4 md:px-6 bg-background">
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
-              <p className="text-black dark:text-white mb-4 md:mb-0">
-                © 2025 by <span className="text-transparent bg-clip-text bg-gradien-to-r from-pink500 to purple-500 font-oswald italic">SnowRainX</span>
+              <p className="text-purple dark:text-pink mb-4 md:mb-0">
+                © 2025 by <span className="font-oswald italic">SnowRainX</span>
               </p>
               <div className="flex space-x-6">
                 {/* Social Icons */}
