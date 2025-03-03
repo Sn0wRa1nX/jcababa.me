@@ -25,7 +25,7 @@ export default function Home() {
 
             {/* Contact Information */}
             <div className="space-y-5 flex-grow">
-              <Link href="itsmejesse@jcababa.me" className="flex items-center gap-4 group">
+              <Link href="mailto:itsmejesse@jcababa.me" className="flex items-center gap-4 group">
                 <div className="bg-zinc-900 dark:bg-white p-3 rounded-lg group-hover:bg-transparent transition-colors duration-200">
                   <Mail className="w-5 h-5 text-purple-400 dark:text-purple-500 group-hover:text-pink-600 dark:group-hover:text-pink-600 transition-colors duration-200" />
                 </div>
@@ -84,14 +84,14 @@ export default function Home() {
 
             {/* Social Links - Fixed at bottom */}
             <div className="flex gap-5 justify-center pt-6 border-t border-zinc-800 mt-8">
-              <Link href="#" className="transition-colors duration-150">
-                <Facebook className="w-5 h-5 text-purple-400 hover:text-black dark:hover:text-white" />
+              <Link href="#" className="group">
+                <Facebook className="w-5 h-5 text-purple-400 transition-colors duration-100 group-hover:text-black dark:group-hover:text-white" />
               </Link>
-              <Link href="#" className="transition-colors duration-150">
-                <Instagram className="w-5 h-5 text-purple-400 hover:text-black dark:hover:text-white" />
+              <Link href="#" className="group">
+                <Instagram className="w-5 h-5 text-purple-400 transition-colors duration-100 group-hover:text-black dark:group-hover:text-white" />
               </Link>
-              <Link href="#" className="transition-colors duration-150">
-                <BrandTwitter className="w-5 h-5 text-purple-400 hover:text-black dark:hover:text-white" />
+              <Link href="#" className="group">
+                <BrandTwitter className="w-5 h-5 text-purple-400 transition-colors duration-100 group-hover:text-black dark:group-hover:text-white" />
               </Link>
             </div>
           </div>
