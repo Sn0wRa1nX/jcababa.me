@@ -26,7 +26,7 @@ export default function Home() {
             {/* Contact Information */}
             <div className="space-y-5 flex-grow">
               <Link href="mailto:itsmejesse@jcababa.me" className="flex items-center gap-4 group">
-                <div className="bg-zinc-900 dark:bg-white p-3 rounded-lg group-hover:bg-transparent transition-colors duration-200">
+                <div className="bg-zinc-900 dark:bg-white p-3 rounded-lg group-hover:bg-transparent transition-all duration-200 group-hover:scale-110">
                   <Mail className="w-5 h-5 text-purple-400 dark:text-purple-500 group-hover:text-pink-600 dark:group-hover:text-pink-600 transition-colors duration-200" />
                 </div>
                 <div className="flex flex-col">
@@ -38,12 +38,12 @@ export default function Home() {
               </Link>
 
               <Link href="tel:+63995526466" className="flex items-center gap-4 group">
-                <div className="bg-zinc-900 dark:bg-white p-3 rounded-lg group-hover:bg-transparent transition-colors duration-200">
-                  <Phone className="w-5 h-5 text-purple-400 dark:text-purple-500 group-hover:text-pink-600 dark:group-hover:text-pink-600 transition-colors duration-200" />
+                <div className="bg-zinc-900 dark:bg-white p-3 rounded-lg group-hover:bg-transparent transition-all duration-150 group-hover:scale-110">
+                  <Phone className="w-5 h-5 text-purple-400 dark:text-purple-500 group-hover:text-pink-600 dark:group-hover:text-pink-600 transition-colors duration-100" />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-purple-500 dark:text-purple-400 text-sm">PHONE</span>
-                  <span className="text-gray-700 dark:text-gray-300 group-hover:text-pink-500 transition-colors duration-200">
+                  <span className="text-gray-700 dark:text-gray-300 group-hover:text-pink-500 transition-colors duration-100">
                     +63 995 526 4668
                   </span>
                 </div>
@@ -54,12 +54,12 @@ export default function Home() {
                 target="_blank"
                 className="flex items-center gap-4 group"
               >
-                <div className="bg-zinc-900 dark:bg-white p-3 rounded-lg group-hover:bg-transparent transition-colors duration-200">
-                  <Calendar className="w-5 h-5 text-purple-400 dark:text-purple-500 group-hover:text-pink-600 dark:group-hover:text-pink-600 transition-colors duration-200" />
+                <div className="bg-zinc-900 dark:bg-white p-3 rounded-lg group-hover:bg-transparent transition-all duration-150 group-hover:scale-110">
+                  <Calendar className="w-5 h-5 text-purple-400 dark:text-purple-500 group-hover:text-pink-600 dark:group-hover:text-pink-600 transition-colors duration-100" />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-purple-500 dark:text-purple-400 text-sm">BIRTHDATE</span>
-                  <span className="text-gray-700 dark:text-gray-300 group-hover:text-pink-500 transition-colors duration-200">
+                  <span className="text-gray-700 dark:text-gray-300 group-hover:text-pink-500 transition-colors duration-100">
                     November 18, 2002
                   </span>
                 </div>
@@ -70,12 +70,12 @@ export default function Home() {
                 target="_blank"
                 className="flex items-center gap-4 group"
               >
-                <div className="bg-zinc-900 dark:bg-white p-3 rounded-lg group-hover:bg-transparent transition-colors duration-200">
-                  <MapPin className="w-5 h-5 text-purple-400 dark:text-purple-500 group-hover:text-pink-600 dark:group-hover:text-pink-600 transition-colors duration-200" />
+                <div className="bg-zinc-900 dark:bg-white p-3 rounded-lg group-hover:bg-transparent transition-all duration-150 group-hover:scale-110">
+                  <MapPin className="w-5 h-5 text-purple-400 dark:text-purple-500 group-hover:text-pink-600 dark:group-hover:text-pink-600 transition-colors duration-100" />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-purple-500 dark:text-purple-400 text-sm">LOCATION</span>
-                  <span className="text-gray-700 dark:text-gray-300 group-hover:text-pink-500 transition-colors duration-200">
+                  <span className="text-gray-700 dark:text-gray-300 group-hover:text-pink-500 transition-colors duration-100">
                     Bohol, Philippines, Earth
                   </span>
                 </div>
@@ -85,13 +85,13 @@ export default function Home() {
             {/* Social Links - Fixed at bottom */}
             <div className="flex gap-5 justify-center pt-6 border-t border-zinc-800 mt-8">
               <Link href="#" className="group">
-                <Facebook className="w-5 h-5 text-purple-400 transition-all duration-90 group-hover:text-black dark:group-hover:text-white group-hover:scale-130" />
+                <Facebook className="w-6 h-6 text-purple-400 transition-all duration-90 group-hover:text-black dark:group-hover:text-white group-hover:scale-110" />
               </Link>
               <Link href="#" className="group">
-                <Instagram className="w-5 h-5 text-purple-400 transition-all duration-90 group-hover:text-black dark:group-hover:text-white group-hover:scale-130" />
+                <Instagram className="w-6 h-6 text-purple-400 transition-all duration-90 group-hover:text-black dark:group-hover:text-white group-hover:scale-110" />
               </Link>
               <Link href="#" className="group">
-                <BrandTwitter className="w-5 h-5 text-purple-400 transition-all duration-90 group-hover:text-black dark:group-hover:text-white group-hover:scale-130" />
+                <BrandTwitter className="w-6 h-6 text-purple-400 transition-all duration-190 group-hover:text-black dark:group-hover:text-white group-hover:scale-110" />
               </Link>
             </div>
           </div>
@@ -120,7 +120,7 @@ export default function Home() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-white dark:bg-zinc-900 p-4 rounded-lg shadow-md border border-gray-200 dark:border-zinc-800">
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="p-2 bg-gray-100 dark:bg-black rounded-full">
+                  <span className="p-2 bg-gray-100 dark:bg-black rounded-full transition-all duration-200 hover:scale-110">
                     <svg className="w-4 h-4 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                       <path
                         d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
@@ -136,7 +136,7 @@ export default function Home() {
               </div>
               <div className="bg-white dark:bg-zinc-900 p-4 rounded-lg shadow-md border border-gray-200 dark:border-zinc-800">
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="p-2 bg-gray-100 dark:bg-black rounded-full">
+                  <span className="p-2 bg-gray-100 dark:bg-black rounded-full transition-all duration-200 hover:scale-110">
                     <svg className="w-4 h-4 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                       <path
                         d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"
@@ -155,7 +155,7 @@ export default function Home() {
               </div>
               <div className="bg-white dark:bg-zinc-900 p-4 rounded-lg shadow-md border border-gray-200 dark:border-zinc-800">
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="p-2 bg-gray-100 dark:bg-black rounded-full">
+                  <span className="p-2 bg-gray-100 dark:bg-black rounded-full transition-all duration-200 hover:scale-110">
                     <svg className="w-4 h-4 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                       <path
                         d="M16 18l6-6-6-6M8 6l-6 6 6 6"
@@ -173,7 +173,7 @@ export default function Home() {
               </div>
               <div className="bg-white dark:bg-zinc-900 p-4 rounded-lg shadow-md border border-gray-200 dark:border-zinc-800">
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="p-2 bg-gray-100 dark:bg-black rounded-full">
+                  <span className="p-2 bg-gray-100 dark:bg-black rounded-full transition-all duration-200 hover:scale-110">
                     <svg className="w-4 h-4 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                       <path
                         d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 3a4 4 0 100 8 4 4 0 000-8z"
