@@ -18,8 +18,8 @@ export default function Home() {
             {/* Name and Title with more spacing */}
             <div className="text-center mb-8">
               <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Johncarlo Ababa</h1>
-              <div className="bg-gradient-to-r from-pink-500 to-purple-500 px-4 py-2 rounded-full text-sm inline-block transition-transform duration-100 hover:scale-110">
-                <span className="text-black font-medium">IT | Photographer | General VA</span>
+              <div className="bg-gradient-to-r from-pink-500 to-purple-500 px-4 py-2 rounded-full text-sm inline-block">
+                <span className="text-black font-medium transition-transform duration-100 hover:scale-110">IT | Photographer | General VA</span>
               </div>
             </div>
 
@@ -85,13 +85,13 @@ export default function Home() {
             {/* Social Links - Fixed at bottom */}
             <div className="flex gap-5 justify-center pt-6 border-t border-zinc-800 mt-8">
               <Link href="https://www.facebook.com/firemax13" className="group">
-                <Facebook className="w-6 h-6 text-purple-400 transition-all duration-90 group-hover:text-black dark:group-hover:text-white group-hover:scale-110" />
+                <Facebook className="w-6 h-6 text-transparent bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text transition-all duration-200 group-hover:text-black dark:group-hover:text-white group-hover:scale-110" />
               </Link>
               <Link href="https://www.instagram.com/jacoboi13/" className="group">
-                <Instagram className="w-6 h-6 text-purple-400 transition-all duration-90 group-hover:text-black dark:group-hover:text-white group-hover:scale-110" />
+                <Instagram className="w-6 h-6 text-transparent bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text transition-all duration-200 group-hover:text-black dark:group-hover:text-white group-hover:scale-110" />
               </Link>
               <Link href="https://www.twitter.com" className="group">
-                <BrandTwitter className="w-6 h-6 text-purple-400 transition-all duration-190 group-hover:text-black dark:group-hover:text-white group-hover:scale-110" />
+                <BrandTwitter className="w-6 h-6 text-transparent bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text transition-all duration-200 group-hover:text-black dark:group-hover:text-white group-hover:scale-110" />
               </Link>
             </div>
           </div>
