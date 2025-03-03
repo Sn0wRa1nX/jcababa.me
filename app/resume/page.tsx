@@ -16,6 +16,7 @@ export default function Resume() {
               width={300}
               height={300}
               className="rounded-lg mx-auto mb-4"
+              priority
             />
             <h2 className="text-2xl font-bold mt-4 mb-2 heading-special text-purple-400">Who I Am</h2>
             <p className="text-muted-foreground mb-4">
@@ -23,7 +24,7 @@ export default function Resume() {
             </p>
             <div className="flex flex-col space-y-2">
               <a
-                href="/resume.pdf"
+                href="/JcAbaba_IT-Technician_Full_Resume.pdf"
                 download="JcAbaba_IT-Technician_Full_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
