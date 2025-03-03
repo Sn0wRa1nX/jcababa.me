@@ -9,6 +9,7 @@ import { PageTransition } from "./components/page-transition"
 import { NavLink } from "./components/nav-link"
 import { PreventRightClick } from "./components/prevent-right-click"
 import { SocialIcon } from "./components/social-icon"
+import Image from "next/image"
 
 // Font for the logo
 const oswald = Oswald({
@@ -54,11 +55,14 @@ export default function RootLayout({
           <PreventRightClick />
           <header className="sticky top-0 z-50 py-6 px-4 md:px-6 bg-background/80 backdrop-blur-sm">
             <div className="max-w-6xl mx-auto flex justify-between items-center">
-              <Link
-                href="/"
-                className="${azeretMono.variable} text-3xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 font-mono italic"
-              >
-                JCA
+              <Link href="/">
+                <Image
+                  src="/ZLogo.png"
+                  alt="Logo"
+                  width={500} // Adjust size as needed
+                  height={500}
+                  priority
+                />
               </Link>
               <nav className="hidden md:flex space-x-8 items-center">
                 <NavLink href="/">Home</NavLink>
