@@ -11,11 +11,11 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
     <AnimatePresence mode="wait">
       <motion.div
         key={pathname}
-        initial={{ opacity: 0 }}
+        initial={{ opacity: 1 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 1 }}
         transition={{
-          duration: 0.35, // Reduced duration for snappier transitions
+          duration: 0.5, // Reduced duration for snappier transitions
           ease: "linear", // Changed to linear for smoother fade
         }}
       >
