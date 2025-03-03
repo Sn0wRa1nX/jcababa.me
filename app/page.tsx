@@ -84,13 +84,13 @@ export default function Home() {
 
             {/* Social Links - Fixed at bottom */}
             <div className="flex gap-5 justify-center pt-6 border-t border-zinc-800 mt-8">
-              <Link href="#" className="group">
+              <Link href="https://www.facebook.com/firemax13" className="group">
                 <Facebook className="w-6 h-6 text-purple-400 transition-all duration-90 group-hover:text-black dark:group-hover:text-white group-hover:scale-110" />
               </Link>
-              <Link href="#" className="group">
+              <Link href="https://www.instagram.com/jacoboi13/" className="group">
                 <Instagram className="w-6 h-6 text-purple-400 transition-all duration-90 group-hover:text-black dark:group-hover:text-white group-hover:scale-110" />
               </Link>
-              <Link href="#" className="group">
+              <Link href="https://www.twitter.com" className="group">
                 <BrandTwitter className="w-6 h-6 text-purple-400 transition-all duration-190 group-hover:text-black dark:group-hover:text-white group-hover:scale-110" />
               </Link>
             </div>
