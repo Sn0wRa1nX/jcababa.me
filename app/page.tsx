@@ -109,15 +109,14 @@ export default function Home() {
                 
               </p>
               <p className="mb-4 text-gray-600 dark:text-gray-300">
-                Beyond tech, I'm passionate about photography—capturing compelling portraits that tell your story. I
-                shoot professionally, creating high-quality images that showcase personality and vision. Check out my
-                work on Instagram!
+                Beyond tech, I'm passionate about photography—capturing compelling portraits that tell your story. 
+                Check out my work on Instagram!
               </p>
               <p className="mb-4 text-gray-600 dark:text-gray-300">
-                Skilled in technology solutions, visual storytelling, and virtual operations, with a passion for
+                Just me who is skilled in technology solutions, visual storytelling, and virtual operations, with a passion for
                 innovation and problem-solving.
               </p>
-              <p className="text-gray-600 dark:text-gray-300">Let's connect and bring your ideas to life.</p>
+              <p className="text-gray-600 dark:text-gray-300">So let's connect and bring your ideas to life.</p>
             </div>
           </section>
 
