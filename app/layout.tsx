@@ -56,7 +56,7 @@ export default function RootLayout({
           <PreventRightClick />
           <header className="sticky top-0 z-50 py-6 px-4 md:px-6 bg-background/80 backdrop-blur-sm">
             <div className="max-w-6xl mx-auto flex justify-between items-center">
-              <Link href="/" className="transition-transform duration-300 hover:scale-110 hover:drop-shadow-lg">
+              <Link href="/" className="transition-transform duration-200 hover:scale-110 hover:drop-shadow-lg">
                 <Image
                   src="/ZLogo60.png"
                   alt="Logo"
@@ -88,7 +88,7 @@ export default function RootLayout({
                 {/* Social Icons */}
                 <SocialIcon href="https://www.facebook.com/firemax13" label="Facebook">
                   <svg
-                    className="w-6 h-6 text-black dark:text-white group-hover:text-pink-500 transition-all duration-150 group-hover:scale-110"
+                    className="w-6 h-6 text-black dark:text-white group-hover:text-pink-500 transition-all duration-50 group-hover:scale-110"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -102,7 +102,7 @@ export default function RootLayout({
                 </SocialIcon>
                 <SocialIcon href="https://www.instagram.com/jacoboi13/" label="Instagram">
                   <svg
-                    className="w-6 h-6 text-black dark:text-white group-hover:text-pink-500 transition-all duration-150 group-hover:scale-110"
+                    className="w-6 h-6 text-black dark:text-white group-hover:text-pink-500 transition-all duration-50 group-hover:scale-110"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -116,7 +116,7 @@ export default function RootLayout({
                 </SocialIcon>
                 <SocialIcon href="https://t.me/offlinejc" label="Telegram">
                   <svg
-                    className="w-6 h-6 text-black dark:text-white group-hover:text-pink-500 transition-all duration-150 group-hover:scale-110"
+                    className="w-6 h-6 text-black dark:text-white group-hover:text-pink-500 transition-all duration-50 group-hover:scale-110"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -125,7 +125,7 @@ export default function RootLayout({
                 </SocialIcon>
                 <SocialIcon href="#" label="WhatsApp">
                   <svg
-                    className="w-6 h-6 text-black dark:text-white group-hover:text-pink-500 transition-all duration-150 group-hover:scale-110"
+                    className="w-6 h-6 text-black dark:text-white group-hover:text-pink-500 transition-all duration-50 group-hover:scale-110"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -133,7 +133,7 @@ export default function RootLayout({
                   </svg>
                 </SocialIcon>
                 <SocialIcon href="https://www.onlinejobs.ph/jobseekers/info/3775723" label="Online Jobs PH">
-                  <span className="font-bold text-sm px-2 py-1 border border-black dark:border-white text-black dark:text-white group-hover:text-pink-500 group-hover:border-pink-500 transition-all duration-150 rounded-md group-hover:scale-110">
+                  <span className="font-bold text-sm px-2 py-1 border border-black dark:border-white text-black dark:text-white group-hover:text-pink-500 group-hover:border-pink-500 transition-all duration-50 rounded-md group-hover:scale-110">
                     OJ.ph
                   </span>
                 </SocialIcon>
