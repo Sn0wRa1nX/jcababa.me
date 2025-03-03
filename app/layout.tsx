@@ -49,14 +49,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${oswald.variable} ${poppins.variable} font-sans min-h-screen flex flex-col select-none`}>
+      <body className={`${oswald.variable} ${poppins.variable} ${azeretMono.variable} font-sans min-h-screen flex flex-col select-none`}>
         <ThemeProvider>
           <PreventRightClick />
           <header className="sticky top-0 z-50 py-6 px-4 md:px-6 bg-background/80 backdrop-blur-sm">
             <div className="max-w-6xl mx-auto flex justify-between items-center">
               <Link
                 href="/"
-                className="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 font-azeret-mono italic"
+                className="${azeretMono.variable} text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 font-mono italic"
               >
                 JCA
               </Link>
@@ -77,7 +77,7 @@ export default function RootLayout({
           <footer className="py-6 px-4 md:px-6 bg-background">
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
               <p className="text-black dark:text-white mb-4 md:mb-0">
-                © 2025 by <span className="font-azeret-mono italic">SnowRainX</span>
+                © 2025 by <span className="${azeretMono.variable} font-mono italic">SnowRainX</span>
               </p>
               <div className="flex space-x-6">
                 {/* Social Icons */}
