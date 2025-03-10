@@ -74,9 +74,11 @@ export default function Resume() {
               </ul>
             </div>
             <div className="bg-white dark:bg-zinc-800/50 p-6 rounded-lg shadow-md border border-gray-200 dark:border-zinc-700">
-              <h3 className="text-xl font-bold mb-4 text-pink-400">Trainings & Certifications:</h3>
-              <ul className="list-disc list-inside space-y-2 text-foreground">
-                <li>Virtual Assistant Training (PH) - Specialization: Social Media Management & General VA</li>
+              <h3 className="text-xl font-bold mb-4 text-pink-400">Virtual Assistant Training (Philippines)</h3>
+              <ul className="space-y-2 text-foreground">
+                <li className="font-bold">Specialization:</li>
+                <li className="list-disc list-inside">Social Media Management</li>
+                <li className="list-disc list-inside">General Virtual Assistant</li>
               </ul>
             </div>
           </div>
