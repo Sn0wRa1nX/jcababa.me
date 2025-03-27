@@ -37,7 +37,7 @@ export default function Home() {
                 </div>
               </Link>
 
-              <Link href="tel:+63995526466" className="flex items-center gap-4 group">
+              <Link href="https://wa.me/639955264668" className="flex items-center gap-4 group">
                 <div className="bg-zinc-900 dark:bg-white p-3 rounded-lg group-hover:bg-transparent transition-all duration-150 group-hover:scale-110">
                   <Phone className="w-5 h-5 text-purple-400 dark:text-purple-500 group-hover:text-pink-600 dark:group-hover:text-pink-600 transition-colors duration-100" />
                 </div>
@@ -90,7 +90,7 @@ export default function Home() {
               <Link href="https://www.instagram.com/jacoboi13/" className="group">
                 <Instagram className="w-6 h-6 text-purple-400 transition-all duration-200 group-hover:text-black dark:group-hover:text-white group-hover:scale-110" />
               </Link>
-              <Link href="https://www.twitter.com" className="group">
+              <Link href="#" className="group">
                 <BrandTwitter className="w-6 h-6 text-purple-400 transition-all duration-200 group-hover:text-black dark:group-hover:text-white group-hover:scale-110" />
               </Link>
             </div>
