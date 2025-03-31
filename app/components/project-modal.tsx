@@ -106,7 +106,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
 
               {/* Second image */}
               <div className="mt-8 mb-8">
-                <div className="relative h-[1080px] md:h-[1920px] rounded-lg overflow-hidden">
+                <div className="relative h-[300px] md:h-[300px] rounded-lg overflow-hidden">
                   <Image
                     src="/KernalDevelopment.jpg?height=1080&width=1920"
                     alt="Additional project view"
