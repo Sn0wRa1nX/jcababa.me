@@ -108,7 +108,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
               <div className="mt-8 mb-8">
                 <div className="relative h-[200px] md:h-[300px] rounded-lg overflow-hidden">
                   <Image
-                    src="/placeholder.svg?height=600&width=1200"
+                    src="/KernalDevelopment.jpg?height=600&width=1200"
                     alt="Additional project view"
                     fill
                     className="object-cover"
@@ -128,7 +128,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
               <div className="space-y-6">
                 <p className="text-sm md:text-base text-muted-foreground">
                   {project.id === 1
-                    ? "The custom kernel for the Samsung Galaxy A70 and A80 significantly enhances overall device efficiency by improving processing power, optimizing battery consumption, and refining system responsiveness. It features upgraded CPU and GPU performance, streamlined memory management, improved security measures, and extended compatibility with custom ROMs. The combination of these enhancements ensures a well-balanced and high-performing Android experience."
+                    ? "The Fire Kernel for the Samsung Galaxy A70 and A80 significantly enhances overall device efficiency by improving processing power, optimizing battery consumption, and refining system responsiveness. It features upgraded CPU and GPU performance, streamlined memory management, improved security measures, and extended compatibility with custom ROMs. The combination of these enhancements ensures a well-balanced and high-performing Android experience."
                     : project.id === 2
                       ? "This project involves creating a custom ROM for Samsung devices (SM-A705 & SM-805), focusing on delivering a clean, bloat-free Android experience with enhanced performance and battery life. The custom ROM includes carefully selected features, optimized system processes, and a streamlined interface that maintains the core Android experience while adding useful customization options. The development process includes rigorous testing to ensure stability across different usage scenarios, regular security updates, and compatibility with popular applications."
                       : project.id === 3
@@ -144,7 +144,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
 
                 <p className="text-sm md:text-base text-muted-foreground">
                   {project.id === 1
-                    ? "Source code: https://github.com/sm7150/a70qkernel"
+                    ? "Later on, it was rebranded into Ice Kernel which surpasses the speed and stability of Fire Kernel. It clocked 10% faster from any benchmarking apps and faster boot times than Fire Kernel. It still retain some superb security patches from CAF Sources while reducing unnecessary processes to make the device run cooler and peaceful. If like to see the Source Code of it then; here come check my work: https://github.com/sm7150/a70qkernel"
                     : project.id === 2
                       ? "This project involves creating a custom ROM for Samsung devices (SM-A705 & SM-805), focusing on delivering a clean, bloat-free Android experience with enhanced performance and battery life. The custom ROM includes carefully selected features, optimized system processes, and a streamlined interface that maintains the core Android experience while adding useful customization options. The development process includes rigorous testing to ensure stability across different usage scenarios, regular security updates, and compatibility with popular applications."
                       : project.id === 3

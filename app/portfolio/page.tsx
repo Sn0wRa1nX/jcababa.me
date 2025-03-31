@@ -26,7 +26,7 @@ export default function Portfolio() {
       description: "Samsung a70q and r1q development",
       image: "/kernel.jpg?height=300&width=400",
       year: "2020",
-      link: "https://github.com/sm7150/a70qkernel",
+      link: "https://xdaforums.com/t/kernel-fire_kernel-official-custom-extreme-kernel-for-galaxy-a70.4174819/",
       technologies: ["Android", "Linux Kernel", "C/C++", "Git", "Shell Scripting"],
     },
     {
