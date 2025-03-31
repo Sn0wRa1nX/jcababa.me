@@ -24,7 +24,7 @@ export default function Portfolio() {
       title: "Custom Device Kernel Development",
       category: "development",
       description: "Samsung a70q and r1q development",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/Kernel.jpg?height=300&width=400",
       year: "2020",
       link: "https://github.com/sm7150/a70qkernel",
       technologies: ["Android", "Linux Kernel", "C/C++", "Git", "Shell Scripting"],
