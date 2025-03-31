@@ -93,3 +93,47 @@ body {
   @apply text-black dark:text-white font-medium;
 }
 
+/* Prevent layout breaking on zoom */
+html {
+  /* Prevent text resizing */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  /* Force vertical scrollbar */
+  overflow-y: scroll;
+}
+
+/* Lock the layout width */
+.max-w-6xl {
+  max-width: 72rem !important;
+  width: 100% !important;
+}
+
+/* Ensure content doesn't overflow containers */
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Prevent images from breaking layout */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Add viewport meta tag to prevent scaling */
+@media screen and (min-width: 768px) {
+  body {
+    min-width: 768px;
+  }
+}
+
+/* Ensure grid items don't collapse */
+.grid {
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+}
+
+/* Prevent flex items from shrinking too much */
+.flex > * {
+  min-width: 0;
+}
+
