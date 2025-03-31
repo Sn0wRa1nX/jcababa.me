@@ -14,6 +14,7 @@ interface ProjectModalProps {
     description: string
     fullDescription?: string
     image: string
+    secimage: string
     year: string
     link: string
     technologies?: string[]
@@ -108,8 +109,8 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
               <div className="mt-8 mb-8">
                 <div className="relative h-[500px] md:h-[600px] rounded-lg overflow-hidden">
                   <Image
-                    src="/kern.jpg?height=600&width=1200"
-                    alt="Additional project view"
+                    src={project.secimage}
+                    alt={project.title}
                     fill
                     className="object-cover"
                   />
