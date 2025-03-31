@@ -131,9 +131,10 @@ export default function Portfolio() {
         {filteredProjects.map((project) => (
           <div
             key={project.id}
-            className="bg-white dark:bg-zinc-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-zinc-800"
+            className="bg-white dark:bg-zinc-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-zinc-800 cursor-pointer transform hover:scale-[1.02]"
             onMouseEnter={() => setHoveredProject(project.id)}
             onMouseLeave={() => setHoveredProject(null)}
+            onClick={() => setSelectedProject(project.id)}
           >
             <div className="relative overflow-hidden">
               <Image
@@ -158,10 +159,7 @@ export default function Portfolio() {
               </div>
             </div>
             <div className="p-6">
-              <h3
-                className="text-xl font-bold mb-2 text-foreground cursor-pointer hover:text-pink-500 transition-colors duration-300"
-                onClick={() => setSelectedProject(project.id)}
-              >
+              <h3 className="text-xl font-bold mb-2 text-foreground hover:text-pink-500 transition-colors duration-300">
                 {project.title}
               </h3>
               <p className="text-muted-foreground mb-4">{project.description}</p>
@@ -171,17 +169,14 @@ export default function Portfolio() {
                     {categories.find((cat) => cat.id === project.category)?.name}
                   </span>
                 )}
-                <button
-                  onClick={() => setSelectedProject(project.id)}
-                  className="text-pink-500 hover:text-purple-500 font-medium flex items-center gap-1 transition-colors duration-300"
-                >
+                <span className="text-pink-500 hover:text-purple-500 font-medium flex items-center gap-1 transition-colors duration-300">
                   View Details
                   <ExternalLink
                     className={`w-4 h-4 transition-transform duration-300 ${
                       hoveredProject === project.id ? "translate-x-1" : ""
                     }`}
                   />
-                </button>
+                </span>
               </div>
             </div>
           </div>

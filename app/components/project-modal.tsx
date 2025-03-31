@@ -1,8 +1,8 @@
 "use client"
 
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { Calendar, ExternalLink, Tag } from "lucide-react"
+import { X } from "lucide-react"
 import Image from "next/image"
+import { useEffect } from "react"
 
 interface ProjectModalProps {
   isOpen: boolean
@@ -22,35 +22,64 @@ interface ProjectModalProps {
 }
 
 export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
-  return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl w-[90vw] max-h-[85vh] overflow-y-auto bg-background">
-        <DialogHeader>
-          <DialogTitle className="text-2xl font-bold">{project.title}</DialogTitle>
-        </DialogHeader>
+  // Prevent body scrolling when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = "auto"
+    }
+    return () => {
+      document.body.style.overflow = "auto"
+    }
+  }, [isOpen])
 
-        <div className="mt-4">
+  if (!isOpen) return null
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center">
+      {/* Backdrop */}
+      <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={onClose} />
+
+      {/* Modal */}
+      <div className="relative w-[95vw] max-w-5xl max-h-[90vh] bg-background rounded-lg overflow-hidden">
+        {/* Close button - positioned outside the scrollable area */}
+        <button
+          onClick={onClose}
+          className="absolute -top-10 -left-10 z-10 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+          aria-label="Close modal"
+        >
+          <X className="w-5 h-5" />
+        </button>
+
+        {/* Modal content - scrollable */}
+        <div className="overflow-y-auto max-h-[90vh] custom-scrollbar">
+          {/* Header */}
+          <div className="p-6 pb-0">
+            <h2 className="text-2xl font-bold">{project.title}</h2>
+          </div>
+
           {/* Main project image */}
-          <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden">
-            <Image
-              src={project.image || "/placeholder.svg?height=600&width=1200"}
-              alt={project.title}
-              fill
-              className="object-cover"
-            />
-            <div className="absolute bottom-0 left-0 p-4 flex gap-2">
-              <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm flex items-center gap-1 text-white">
-                <Calendar className="w-4 h-4" />
-                {project.year}
-              </span>
-              <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm flex items-center gap-1 text-white">
-                <Tag className="w-4 h-4" />
-                {project.category}
-              </span>
+          <div className="relative h-[300px] md:h-[400px] p-6">
+            <div className="relative h-full w-full rounded-lg overflow-hidden">
+              <Image
+                src={project.image || "/placeholder.svg?height=600&width=1200"}
+                alt={project.title}
+                fill
+                className="object-cover"
+              />
+              <div className="absolute bottom-0 left-0 p-4 flex gap-2">
+                <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm flex items-center gap-1 text-white">
+                  {project.year}
+                </span>
+                <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm flex items-center gap-1 text-white">
+                  {project.category}
+                </span>
+              </div>
             </div>
           </div>
 
-          <div className="mt-6 grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 p-6">
             <div className="md:col-span-2">
               <h3 className="text-xl font-semibold mb-4">Project Overview</h3>
 
@@ -86,11 +115,9 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
                   />
                   <div className="absolute bottom-0 left-0 p-4 flex gap-2">
                     <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm flex items-center gap-1 text-white">
-                      <Calendar className="w-4 h-4" />
                       {project.year}
                     </span>
                     <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm flex items-center gap-1 text-white">
-                      <Tag className="w-4 h-4" />
                       {project.category}
                     </span>
                   </div>
@@ -167,14 +194,27 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
                   className="mt-6 w-full inline-flex items-center justify-center px-4 py-2 bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition-colors"
                 >
                   View Live Project
-                  <ExternalLink className="w-4 h-4 ml-2" />
+                  <svg
+                    className="w-4 h-4 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
                 </a>
               </div>
             </div>
           </div>
         </div>
-      </DialogContent>
-    </Dialog>
+      </div>
+    </div>
   )
 }
 
