@@ -156,7 +156,7 @@ export default function Home() {
                   </span>
                   <h3 className="font-bold text-lg text-gray-900 dark:text-white">Data Scraping</h3>
                 </div>
-                <p className="text-sm text-gray-600 dark:text-gray-300">Professional social media data extraction.</p>
+                <p className="text-sm text-gray-600 dark:text-gray-300">Professional social media data extraction</p>
               </div>
               <div className="bg-white dark:bg-zinc-900 p-4 rounded-lg shadow-md border border-gray-200 dark:border-zinc-800">
                 <div className="flex items-center gap-2 mb-2 transition-all duration-200 hover:scale-110">
@@ -174,7 +174,7 @@ export default function Home() {
                   <h3 className="font-bold text-lg text-gray-900 dark:text-white">Photographer</h3>
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-300">
-                  Capturing high-quality photos across various categories at a professional level.
+                  Capturing high-quality photos across various categories at a professional level
                 </p>
               </div>
               <div className="bg-white dark:bg-zinc-900 p-4 rounded-lg shadow-md border border-gray-200 dark:border-zinc-800">
@@ -189,10 +189,10 @@ export default function Home() {
                       />
                     </svg>
                   </span>
-                  <h3 className="font-bold text-lg text-gray-900 dark:text-white">Automation</h3>
+                  <h3 className="font-bold text-lg text-gray-900 dark:text-white">Graphic Designing</h3>
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-300">
-                  Converting time-consuming tasks into efficient, automated processes.
+                  Delivering innovative and professional designs that make a lasting impression
                 </p>
               </div>
               <div className="bg-white dark:bg-zinc-900 p-4 rounded-lg shadow-md border border-gray-200 dark:border-zinc-800">
@@ -209,7 +209,7 @@ export default function Home() {
                   </span>
                   <h3 className="font-bold text-lg text-gray-900 dark:text-white">Virtual Assistant</h3>
                 </div>
-                <p className="text-sm text-gray-600 dark:text-gray-300">Providing support for a wide range of tasks.</p>
+                <p className="text-sm text-gray-600 dark:text-gray-300">Providing support for a wide range of tasks</p>
               </div>
             </div>
           </section>
@@ -218,3 +218,4 @@ export default function Home() {
     </div>
   )
 }
+
