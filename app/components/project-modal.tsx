@@ -17,6 +17,7 @@ interface ProjectModalProps {
     secimage: string
     year: string
     link: string
+    code: string
     technologies?: string[]
     gallery?: string[]
   }
@@ -195,6 +196,28 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
                   className="mt-6 w-full inline-flex items-center justify-center px-4 py-2 bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition-colors"
                 >
                   View Live Project
+                  <svg
+                    className="w-4 h-4 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href={project.code}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 w-full inline-flex items-center justify-center px-4 py-2 bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition-colors"
+                >
+                  View Source Code
                   <svg
                     className="w-4 h-4 ml-2"
                     fill="none"

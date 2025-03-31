@@ -28,6 +28,7 @@ export default function Portfolio() {
       secimage: "/kern.jpg?height=600&width=1200",
       year: "2020",
       link: "https://xdaforums.com/t/kernel-fire_kernel-official-custom-extreme-kernel-for-galaxy-a70.4174819/",
+      code: "https://github.com/sm7150/a70qkernel",
       technologies: ["Android", "Linux Kernel", "C/C++", "Git", "Shell Scripting"],
     },
     {
@@ -39,6 +40,7 @@ export default function Portfolio() {
       secimage: "/cr.jpg?height=600&width=1200",
       year: "2020",
       link: "https://xdaforums.com/t/rom-stable-crdroidandroid-unofficial-6-13-10-0-2021-01-01.4209323/",
+      code: "https://github.com/sm7150",
       technologies: ["Android", "ASOP", "Java", "XML", "Gradle", "Git"],
     },
     {
