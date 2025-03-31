@@ -39,7 +39,15 @@ export default function Resume() {
                 className="inline-block px-4 py-2 bg-[#000000] text-white rounded-full font-medium text-center transition-all duration-300 hover:bg-white hover:shadow-lg hover:shadow-pink-500/50"
               >
                 <span className="inline-block transition-transform duration-300 hover:scale-110 hover:text-black bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
-                  VA Training PH Certificate
+                  View VA Certificate
+                </span>
+              </Link>
+              <Link
+                href="/portfolio"
+                className="inline-block px-4 py-2 bg-[#000000] text-white rounded-full font-medium text-center transition-all duration-300 hover:bg-white hover:shadow-lg hover:shadow-pink-500/50"
+              >
+                <span className="inline-block transition-transform duration-300 hover:scale-110 hover:text-black bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+                  View Full Portfolio
                 </span>
               </Link>
             </div>
@@ -53,6 +61,7 @@ export default function Resume() {
                 <li>Graphic Design</li>
                 <li>Automation</li>
                 <li>Photography</li>
+                <li>Vibe Coding</li>
               </ul>
             </div>
             <div className="bg-white dark:bg-zinc-800/50 p-6 rounded-lg shadow-md border border-gray-200 dark:border-zinc-700">
@@ -66,19 +75,20 @@ export default function Resume() {
             <div className="bg-white dark:bg-zinc-800/50 p-6 rounded-lg shadow-md border border-gray-200 dark:border-zinc-700">
               <h3 className="text-xl font-bold mb-4 text-purple-400">Tools & Software:</h3>
               <ul className="list-disc list-inside space-y-2 text-foreground">
-                <li>Photoshop</li>
-                <li>Lightroom</li>
+                <li>Adobe Photoshop</li>
+                <li>Adobe Lightroom</li>
                 <li>Canva</li>
                 <li>GitHub</li>
                 <li>Figma</li>
+                <li>Microsoft Office Suite</li>
               </ul>
             </div>
             <div className="bg-white dark:bg-zinc-800/50 p-6 rounded-lg shadow-md border border-gray-200 dark:border-zinc-700">
               <h3 className="text-xl font-bold mb-4 text-pink-400">Virtual Assistant Training (Philippines)</h3>
               <ul className="space-y-2 text-foreground">
                 <li className="font-bold">Specialization:</li>
-                <li className="list-disc list-inside">Social Media Management</li>
                 <li className="list-disc list-inside">General Virtual Assistant</li>
+                <li className="list-disc list-inside">Social Media Management</li>
               </ul>
             </div>
           </div>
@@ -86,36 +96,73 @@ export default function Resume() {
           <h2 className="text-2xl font-bold mt-8 mb-4 heading-special text-pink-400">Open-Source Work</h2>
           <div className="bg-white dark:bg-zinc-800/50 p-6 rounded-lg shadow-md border border-gray-200 dark:border-zinc-700 space-y-4">
             <div>
-              <h3 className="text-lg font-semibold">Custom Device Kernel Development (SM-A705 & SM-805)</h3>
-              <p className="text-pink-400">Junior Developer, Contributor & Lead Tester (2019-2021)</p>
+              <h3 className="text-lg font-semibold">Custom Device Kernel Development (Samsung SM-A705 & SM-805)</h3>
+              <p className="text-muted-foreground">Junior Developer, Contributor & Lead Tester (2019-2021)</p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold">Custom Device ROM Development (SM-A705 & SM-805)</h3>
-              <p className="text-pink-400">Contributor, Builder & Automator; Lead Tester (2019-2021)</p>
+              <h3 className="text-lg font-semibold">Custom Device ROM Development (Samsung SM-A705 & SM-805)</h3>
+              <p className="text-muted-foreground">Contributor, Builder & Automator; Lead Tester (2019-2021)</p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold">Repository Automation Development (SM6150 & SM7150)</h3>
-              <p className="text-pink-400">Junior Developer (2019-2021)</p>
+              <h3 className="text-lg font-semibold">Repository Automation Development (Samsung SM6150 & SM7150)</h3>
+              <p className="text-muted-foreground">Junior Developer (2019-2021)</p>
             </div>
           </div>
 
           <h2 className="text-2xl font-bold mt-8 mb-4 heading-special text-purple-400">Graphic Design Work</h2>
           <div className="bg-white dark:bg-zinc-800/50 p-6 rounded-lg shadow-md border border-gray-200 dark:border-zinc-700 space-y-4">
             <div>
-              <h3 className="text-lg font-semibold">Photoshop Designing</h3>
-              <p className="text-purple-400">Entry Designer (Myink Printing Shop) [2016-2017]</p>
-              <p className="text-purple-400">Designer (2017-2025)</p>
+              <h3 className="text-lg font-semibold">Photoshop (MyInk Printing Shop)</h3>
+              <p className="text-muted-foreground">Entry Level Graphic Designer (2016-2017)</p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold">Canva Photo Designing (Photography)</h3>
-              <p className="text-purple-400">Canva Graphic Designer (2024-2025)</p>
+              <h3 className="text-lg font-semibold">Photoshop (Self Projects)</h3>
+              <p className="text-muted-foreground">Graphic Designer & Consultant (2017-2025)</p>
+              <p className="text-muted-foreground">Image Enhancer & Manipulator (2020-2025)</p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold">Adobe Lightroom RAW Image Editing (Photography)</h3>
-              <p className="text-purple-400">Photo Retoucher (2021-2025)</p>
+              <h3 className="text-lg font-semibold">Canva (Self Project)</h3>
+              <p className="text-muted-foreground">Photo Enhancer & Retoucher (2023-2025)</p>
+              <p className="text-muted-foreground">Graphic Designer (2024-2025)</p>
+              <p className="text-muted-foreground">Email Designer (2024-2025)</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold">Figma (Self Project)</h3>
+              <p className="text-muted-foreground">Email Designer (2024-2025)</p>
             </div>
           </div>
 
+          <h2 className="text-2xl font-bold mt-8 mb-4 heading-special text-purple-400">Photography & Visual Arts</h2>
+          <div className="bg-white dark:bg-zinc-800/50 p-6 rounded-lg shadow-md border border-gray-200 dark:border-zinc-700 space-y-4">
+            <div>
+              <h3 className="text-lg font-semibold">Portrait & Nature Photography (Self Projects)</h3>
+              <p className="text-muted-foreground">Photographer & Photography Consultant (2019-2025)</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold">Event & Creative Shoots (Self Projects)</h3>
+              <p className="text-muted-foreground">Photographer & Creative Director (2020-2025)</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold">Photo Retouching (Adobe Lightroom, Photoshop & Canva)</h3>
+              <p className="text-muted-foreground">Photo Editor & Retouching Consultant (2021-2025)</p>
+            </div>
+          </div>
+
+          <h2 className="text-2xl font-bold mt-8 mb-4 heading-special text-purple-400">IT Technician Work</h2>
+          <div className="bg-white dark:bg-zinc-800/50 p-6 rounded-lg shadow-md border border-gray-200 dark:border-zinc-700 space-y-4">
+            <div>
+              <h3 className="text-lg font-semibold">IT System Troubleshooting (Wetland Transport Solutions)</h3>
+              <p className="text-muted-foreground">Lead Technical Support (2019-2023)</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold">Hardware & Software Maintenance (Wetland Transport Solutions)</h3>
+              <p className="text-muted-foreground">Lead IT Technician (2019-2023)</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold">PC Building & Hardware Optimization (Wetland Transport Solutions)</h3>
+              <p className="text-muted-foreground">System Builder & Optimization Expert (2019-2023)</p>
+            </div>
+          </div>
           {/* Add more sections as needed */}
         </div>
       </div>
