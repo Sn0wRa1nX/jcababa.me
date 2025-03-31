@@ -7,7 +7,6 @@ export const metadata: Metadata = {
   description: "Personal info of Johncarlo Ababa",
   generator: "v0.dev | Sn0wRainX",
   icons: "/favicon.ico",
-  viewport: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0",
 }
 
 export default function RootLayout({
