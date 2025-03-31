@@ -146,9 +146,9 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
 
                 <p className="text-sm md:text-base text-muted-foreground">
                   {project.id === 1
-                    ? "Later on, it was rebranded into Ice Kernel which surpasses the speed and stability of Fire Kernel. It clocked 10% faster from any benchmarking apps and faster boot times than Fire Kernel. It still retain some superb security patches from CAF Sources while reducing unnecessary processes to make the device run cooler and peaceful. If like to see the Source Code of it then; here come check my work: https://github.com/sm7150/a70qkernel"
+                    ? "Later on, it was rebranded into Ice Kernel which surpasses the speed and stability of Fire Kernel. It clocked 10% faster from any benchmarking apps and faster boot times than Fire Kernel. It still retain some superb security patches from CAF Sources while reducing unnecessary processes to make the device run cooler and peaceful."
                     : project.id === 2
-                      ? " Overall, this project delivers a lightweight, high-performance alternative to the stock firmware, enhancing the user experience on Samsung Galaxy A70 and A80 devices. Source code: https://github.com/sm7150"
+                      ? " Overall, this project delivers a lightweight, high-performance alternative to the stock firmware, enhancing the user experience on Samsung Galaxy A70 and A80 devices."
                       : project.id === 3
                         ? "This repository automation project streamlines the development workflow for SM6150 & SM7150 device platforms by implementing CI/CD pipelines, automated build processes, and quality assurance checks. The system automatically handles code compilation, testing, and deployment, significantly reducing manual intervention and human error. Key features include scheduled builds, dependency management, error reporting, and integration with version control systems, allowing developers to focus on code quality rather than repetitive build tasks."
                         : project.id === 4
