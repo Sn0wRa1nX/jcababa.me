@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Camera, Code, Database, Cpu, ExternalLink } from "lucide-react"
+import { Camera, Code, Database, Cpu, ExternalLink, Paintbrush, UsersRound, PencilRuler } from "lucide-react"
 import { ProjectModal } from "../components/project-modal"
 
 export default function Portfolio() {
@@ -12,10 +12,10 @@ export default function Portfolio() {
   const [selectedProject, setSelectedProject] = useState<number | null>(null)
 
   const categories = [
-    { id: "photography", name: "Photography", icon: Camera },
+    { id: "graphic design", name: "Graphic Design", icon: Paintbrush },
     { id: "development", name: "Development", icon: Code },
-    { id: "data", name: "Data Projects", icon: Database },
-    { id: "hardware", name: "Hardware", icon: Cpu },
+    { id: "photography", name: "Photography", icon: Camera },
+    { id: "va training", name: "VA Training", icon: PencilRuler },
   ]
 
   const projects = [
@@ -23,37 +23,47 @@ export default function Portfolio() {
       id: 1,
       title: "Custom Device Kernel Development",
       category: "development",
-      description: "SM-A705 & SM-805",
+      description: "Samsung a70q and r1q development",
       image: "/placeholder.svg?height=300&width=400",
-      year: "2023",
-      link: "#",
+      year: "2020",
+      link: "https://github.com/sm7150/a70qkernel",
       technologies: ["Android", "Linux Kernel", "C/C++", "Git", "Shell Scripting"],
     },
     {
       id: 2,
       title: "Custom Device ROM Development",
       category: "development",
-      description: "SM-A705 & SM-805",
+      description: "Samsung a70q and r1q development",
       image: "/placeholder.svg?height=300&width=400",
-      year: "2022",
-      link: "#",
-      technologies: ["Android", "Java", "XML", "Gradle", "Git"],
+      year: "2020",
+      link: "https://github.com/sm7150",
+      technologies: ["Android", "ASOP", "Java", "XML", "Gradle", "Git"],
     },
     {
       id: 3,
       title: "Repository Automation Development",
       category: "development",
-      description: "SM6150 & SM7150",
+      description: "Samsung SM6150/SM7150 repositories",
       image: "/placeholder.svg?height=300&width=400",
-      year: "2021",
+      year: "2020",
       link: "#",
-      github: "https://github.com",
-      technologies: ["Python", "Shell Scripting", "CI/CD", "Jenkins", "GitHub Actions"],
+      github: "https://github.com/sm7150",
+      technologies: ["Python", "Shell Scripting", "CI/CD", "Jenkins", "GitHub Actions", "BuildKite"],
     },
     {
       id: 4,
-      title: "Photoshop Designing",
-      category: "photography",
+      title: "Email Designing",
+      category: "graphic design",
+      description: "Various email design projects",
+      image: "/placeholder.svg?height=300&width=400",
+      year: "2021",
+      link: "#",
+      technologies: ["Adobe Photoshop", "Email Design", "Canva", "Figma"],
+    },
+    {
+      id: 5,
+      title: "Adobe Photoshop Designing",
+      category: "graphic design",
       description: "Various design projects",
       image: "/placeholder.svg?height=300&width=400",
       year: "2020",
@@ -62,24 +72,44 @@ export default function Portfolio() {
       technologies: ["Adobe Photoshop", "Digital Art", "Photo Manipulation", "Graphic Design"],
     },
     {
-      id: 5,
-      title: "Canva Photo Designing",
-      category: "photography",
-      description: "Photography projects",
+      id: 6,
+      title: "Canva Designing",
+      category: "graphic design",
+      description: "Various design projects",
       image: "/placeholder.svg?height=300&width=400",
       year: "2022",
       link: "#",
       technologies: ["Canva", "Social Media Graphics", "Marketing Materials", "Brand Design"],
     },
     {
-      id: 6,
-      title: "Adobe Lightroom RAW Image Editing",
+      id: 7,
+      title: "Adobe Lightroom",
       category: "photography",
       description: "Photo retouching projects",
       image: "/placeholder.svg?height=300&width=400",
       year: "2021",
       link: "#",
       technologies: ["Adobe Lightroom", "RAW Processing", "Color Grading", "Photo Retouching"],
+    },
+    {
+      id: 8,
+      title: "Photographs",
+      category: "photography",
+      description: "Various of shots",
+      image: "/placeholder.svg?height=300&width=400",
+      year: "2021",
+      link: "#",
+      technologies: ["Sony", "Image Hunting", "Portrait", "Landscape"],
+    },
+    {
+      id: 9,
+      title: "VA/SMM Training",
+      category: "va training",
+      description: "Various of learnings",
+      image: "/placeholder.svg?height=300&width=400",
+      year: "2025",
+      link: "#",
+      technologies: ["Virtual Assitant", "Social Media Marketing", "Training", "Live"],
     },
   ]
 
