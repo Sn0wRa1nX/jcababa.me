@@ -24,7 +24,7 @@ export default function Portfolio() {
       title: "Custom Device Kernel Development",
       category: "development",
       description: "Samsung a70q and r1q development",
-      image: "/Kernel.jpg?height=300&width=400",
+      image: "/kernel.jpg?height=300&width=400",
       secimage: "/kern.jpg?height=600&width=1200",
       year: "2020",
       link: "https://xdaforums.com/t/kernel-fire_kernel-official-custom-extreme-kernel-for-galaxy-a70.4174819/",
