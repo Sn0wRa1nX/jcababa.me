@@ -3,8 +3,8 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Camera, Code, Database, Cpu, ExternalLink, Github } from "lucide-react"
-import { ProjectModal } from "@/components/project-modal"
+import { Camera, Code, Database, Cpu, ExternalLink } from "lucide-react"
+import { ProjectModal } from "../components/project-modal"
 
 export default function Portfolio() {
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null)
@@ -27,6 +27,7 @@ export default function Portfolio() {
       image: "/placeholder.svg?height=300&width=400",
       year: "2023",
       link: "#",
+      technologies: ["Android", "Linux Kernel", "C/C++", "Git", "Shell Scripting"],
     },
     {
       id: 2,
@@ -36,6 +37,7 @@ export default function Portfolio() {
       image: "/placeholder.svg?height=300&width=400",
       year: "2022",
       link: "#",
+      technologies: ["Android", "Java", "XML", "Gradle", "Git"],
     },
     {
       id: 3,
@@ -46,6 +48,7 @@ export default function Portfolio() {
       year: "2021",
       link: "#",
       github: "https://github.com",
+      technologies: ["Python", "Shell Scripting", "CI/CD", "Jenkins", "GitHub Actions"],
     },
     {
       id: 4,
@@ -56,6 +59,7 @@ export default function Portfolio() {
       year: "2020",
       link: "#",
       github: "https://github.com",
+      technologies: ["Adobe Photoshop", "Digital Art", "Photo Manipulation", "Graphic Design"],
     },
     {
       id: 5,
@@ -65,6 +69,7 @@ export default function Portfolio() {
       image: "/placeholder.svg?height=300&width=400",
       year: "2022",
       link: "#",
+      technologies: ["Canva", "Social Media Graphics", "Marketing Materials", "Brand Design"],
     },
     {
       id: 6,
@@ -74,6 +79,7 @@ export default function Portfolio() {
       image: "/placeholder.svg?height=300&width=400",
       year: "2021",
       link: "#",
+      technologies: ["Adobe Lightroom", "RAW Processing", "Color Grading", "Photo Retouching"],
     },
   ]
 
@@ -147,32 +153,17 @@ export default function Portfolio() {
                 <div className="p-4 text-white">
                   <div className="flex justify-between items-center">
                     <span className="text-sm font-medium">{project.year}</span>
-                    <div className="flex gap-2">
-                      {project.github && (
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="p-2 rounded-full bg-white/20 hover:bg-white/40 transition-colors duration-300"
-                        >
-                          <Github className="w-4 h-4" />
-                        </a>
-                      )}
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 rounded-full bg-white/20 hover:bg-white/40 transition-colors duration-300"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    </div>
                   </div>
                 </div>
               </div>
             </div>
             <div className="p-6">
-              <h3 className="text-xl font-bold mb-2 text-foreground">{project.title}</h3>
+              <h3
+                className="text-xl font-bold mb-2 text-foreground cursor-pointer hover:text-pink-500 transition-colors duration-300"
+                onClick={() => setSelectedProject(project.id)}
+              >
+                {project.title}
+              </h3>
               <p className="text-muted-foreground mb-4">{project.description}</p>
               <div className="flex justify-between items-center">
                 {categories.find((cat) => cat.id === project.category) && (
@@ -214,8 +205,6 @@ export default function Portfolio() {
           project={projects.find((p) => p.id === selectedProject)!}
         />
       )}
-
-      {/* Footer removed to avoid duplication with the global footer */}
     </div>
   )
 }
