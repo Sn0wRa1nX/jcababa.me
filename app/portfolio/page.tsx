@@ -38,7 +38,7 @@ export default function Portfolio() {
       image: "/AOSP.png?height=300&width=400",
       secimage: "/cr.jpg?height=600&width=1200",
       year: "2020",
-      link: "https://github.com/sm7150",
+      link: "https://xdaforums.com/t/rom-stable-crdroidandroid-unofficial-6-13-10-0-2021-01-01.4209323/",
       technologies: ["Android", "ASOP", "Java", "XML", "Gradle", "Git"],
     },
     {
