@@ -106,7 +106,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
 
               {/* Second image */}
               <div className="mt-8 mb-8">
-                <div className="relative h-[200px] md:h-[300px] rounded-lg overflow-hidden">
+                <div className="relative h-[600px] md:h-[1200px] rounded-lg overflow-hidden">
                   <Image
                     src="/kern.jpg?height=600&width=1200"
                     alt="Additional project view"
@@ -114,10 +114,10 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
                     className="object-cover"
                   />
                   <div className="absolute bottom-0 left-0 p-4 flex gap-2">
-                    <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm flex items-center gap-1 text-white">
+                    <span className="px-3 py-1 bg-black/20 backdrop-blur-sm rounded-full text-sm flex items-center gap-1 text-white">
                       {project.year}
                     </span>
-                    <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm flex items-center gap-1 text-white">
+                    <span className="px-3 py-1 bg-black/20 backdrop-blur-sm rounded-full text-sm flex items-center gap-1 text-white">
                       {project.category}
                     </span>
                   </div>
