@@ -17,7 +17,21 @@ export default function Home() {
 
             {/* Name and Title with more spacing */}
             <div className="text-center mb-8">
-              <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Johncarlo Ababa</h1>
+              <div className="flex items-center justify-center mb-4">
+                <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Johncarlo Ababa</h1>
+                <div className="ml-1.5 flex-shrink-0">
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M22.5 12.5C22.5 10.92 21.625 9.55 20.352 8.9C20.506 8.465 20.59 7.995 20.59 7.5C20.59 5.29 18.88 3.502 16.772 3.502C16.302 3.502 15.852 3.586 15.436 3.752C14.818 2.415 13.51 1.5 12 1.5C10.49 1.5 9.18402 2.417 8.56302 3.75C8.14802 3.585 7.69702 3.5 7.22702 3.5C5.11702 3.5 3.40902 5.29 3.40902 7.5C3.40902 7.994 3.49302 8.464 3.64602 8.9C2.37402 9.55 1.49902 10.918 1.49902 12.5C1.49902 13.995 2.28102 15.298 3.44102 15.986C3.42102 16.156 3.40902 16.326 3.40902 16.5C3.40902 18.71 5.11702 20.5 7.22702 20.5C7.69702 20.5 8.14702 20.414 8.56202 20.25C9.18202 21.584 10.488 22.5 11.999 22.5C13.511 22.5 14.817 21.584 15.436 20.25C15.851 20.413 16.301 20.498 16.772 20.498C18.882 20.498 20.59 18.708 20.59 16.498C20.59 16.324 20.578 16.154 20.557 15.984C21.715 15.298 22.5 13.994 22.5 12.5Z"
+                      fill="#1D9BF0"
+                    />
+                    <path
+                      d="M11.302 15.1991L8.90202 12.7991C8.51202 12.4091 8.51202 11.7791 8.90202 11.3891C9.29202 10.9991 9.92202 10.9991 10.312 11.3891L11.998 13.0751L16.688 8.38506C17.078 7.99506 17.708 7.99506 18.098 8.38506C18.488 8.77506 18.488 9.40506 18.098 9.79506L12.688 15.2051C12.298 15.5951 11.702 15.5951 11.312 15.2051L11.302 15.1991Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </div>
               <div className="bg-gradient-to-r from-pink-500 to-purple-500 px-4 py-2 rounded-full text-sm inline-block transition-transform duration-100 hover:scale-110 drop-shadow-[0_2px_8px_rgba(236,72,153,0.5)] hover:drop-shadow-[0_4px_12px_rgba(168,85,247,0.5)]">
                 <span className="text-black font-medium">IT | Photographer | General VA</span>
               </div>
@@ -89,6 +103,15 @@ export default function Home() {
               </Link>
               <Link href="https://www.instagram.com/jacoboi13/" className="group">
                 <Instagram className="w-6 h-6 text-purple-400 transition-all duration-200 group-hover:text-black dark:group-hover:text-white group-hover:scale-110" />
+              </Link>
+              <Link href="https://t.me/itsmejesseme" className="group">
+                <svg
+                  className="w-6 h-6 text-purple-400 transition-all duration-200 group-hover:text-black dark:group-hover:text-white group-hover:scale-110"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+                </svg>
               </Link>
               <Link href="#" className="group">
                 <BrandTwitter className="w-6 h-6 text-purple-400 transition-all duration-200 group-hover:text-black dark:group-hover:text-white group-hover:scale-110" />
