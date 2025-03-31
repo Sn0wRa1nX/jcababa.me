@@ -108,7 +108,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
               <div className="mt-8 mb-8">
                 <div className="relative h-[200px] md:h-[300px] rounded-lg overflow-hidden">
                   <Image
-                    src="/KernalDevelopment.jpg?height=600&width=1200"
+                    src="/kern.jpg?height=600&width=1200"
                     alt="Additional project view"
                     fill
                     className="object-cover"
