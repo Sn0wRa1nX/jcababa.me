@@ -86,15 +86,11 @@ export default function ClientLayout({
                     <span className="sr-only">Toggle navigation menu</span>
                   </button>
                 </SheetTrigger>
-                <SheetContent
-                  side="right"
-                  className="w-[300px] sm:w-[400px] bg-background/65 backdrop-blur-sm"
-                >
+                <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-background/65 backdrop-blur-sm">
                   <nav className="flex flex-col space-y-4 mt-6">
                     <NavLink href="/">Home</NavLink>
                     <NavLink href="/resume">Resume</NavLink>
                     <NavLink href="/portfolio">Portfolio</NavLink>
-                    <NavLink href="/contact">Contact</NavLink>
                     <div className="mt-2">
                       <ThemeToggle />
                     </div>
@@ -103,11 +99,10 @@ export default function ClientLayout({
               </Sheet>
 
               {/* Desktop Navigation */}
-              <nav className="hidden md:flex space-x-4 items-center">
+              <nav className="hidden md:flex space-x-6 items-center">
                 <NavLink href="/">Home</NavLink>
                 <NavLink href="/resume">Resume</NavLink>
                 <NavLink href="/portfolio">Portfolio</NavLink>
-                <NavLink href="/contact">Contact</NavLink>
                 <ThemeToggle />
               </nav>
             </div>
@@ -183,3 +178,4 @@ export default function ClientLayout({
     </html>
   )
 }
+
