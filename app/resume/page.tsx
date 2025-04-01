@@ -9,7 +9,7 @@ export default function Resume() {
       </h1>
       <div className="grid md:grid-cols-3 gap-8">
         <div className="md:col-span-1">
-          <div className="bg-white dark:bg-zinc-800/50 p-6 rounded-lg shadow-md border border-gray-200 dark:border-zinc-700">
+          <div className="bg-white dark:bg-zinc-800/50 p-6 rounded-lg shadow-md border border-gray-200 dark:border-zinc-700 transition-transform duration-300 hover:scale-105 sticky top-24">
             <Image
               src="/jca.png?height=300&width=300"
               alt="Johncarlo Ababa"
@@ -55,7 +55,7 @@ export default function Resume() {
         </div>
         <div className="md:col-span-2">
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white dark:bg-zinc-800/50 p-6 rounded-lg shadow-md border border-gray-200 dark:border-zinc-700">
+            <div className="bg-white dark:bg-zinc-800/50 p-6 rounded-lg shadow-md border border-gray-200 dark:border-zinc-700 transition-transform duration-300 hover:scale-105">
               <h3 className="text-xl font-bold mb-4 text-purple-400">Specialties:</h3>
               <ul className="list-disc list-inside space-y-2 text-foreground">
                 <li>Graphic Design</li>
@@ -64,7 +64,7 @@ export default function Resume() {
                 <li>Vibe Coding</li>
               </ul>
             </div>
-            <div className="bg-white dark:bg-zinc-800/50 p-6 rounded-lg shadow-md border border-gray-200 dark:border-zinc-700">
+            <div className="bg-white dark:bg-zinc-800/50 p-6 rounded-lg shadow-md border border-gray-200 dark:border-zinc-700 transition-transform duration-300 hover:scale-105">
               <h3 className="text-xl font-bold mb-4 text-purple-400">Languages:</h3>
               <ul className="list-disc list-inside space-y-2 text-foreground">
                 <li>English</li>
@@ -72,7 +72,7 @@ export default function Resume() {
                 <li>Cebuano</li>
               </ul>
             </div>
-            <div className="bg-white dark:bg-zinc-800/50 p-6 rounded-lg shadow-md border border-gray-200 dark:border-zinc-700">
+            <div className="bg-white dark:bg-zinc-800/50 p-6 rounded-lg shadow-md border border-gray-200 dark:border-zinc-700 transition-transform duration-300 hover:scale-105">
               <h3 className="text-xl font-bold mb-4 text-purple-400">Tools & Software:</h3>
               <ul className="list-disc list-inside space-y-2 text-foreground">
                 <li>Adobe Photoshop</li>
@@ -83,7 +83,7 @@ export default function Resume() {
                 <li>Microsoft Office Suite</li>
               </ul>
             </div>
-            <div className="bg-white dark:bg-zinc-800/50 p-6 rounded-lg shadow-md border border-gray-200 dark:border-zinc-700">
+            <div className="bg-white dark:bg-zinc-800/50 p-6 rounded-lg shadow-md border border-gray-200 dark:border-zinc-700 transition-transform duration-300 hover:scale-105">
               <h3 className="text-xl font-bold mb-4 text-pink-400">Virtual Assistant Training (Philippines)</h3>
               <ul className="space-y-2 text-foreground">
                 <li className="font-bold">Specialization:</li>
@@ -94,7 +94,7 @@ export default function Resume() {
           </div>
 
           <h2 className="text-2xl font-bold mt-8 mb-4 heading-special text-pink-400">Open-Source Work</h2>
-          <div className="bg-white dark:bg-zinc-800/50 p-6 rounded-lg shadow-md border border-gray-200 dark:border-zinc-700 space-y-4">
+          <div className="bg-white dark:bg-zinc-800/50 p-6 rounded-lg shadow-md border border-gray-200 dark:border-zinc-700 space-y-4 transition-transform duration-300 hover:scale-105">
             <div>
               <h3 className="text-lg font-semibold">Custom Device Kernel Development (Samsung SM-A705 & SM-805)</h3>
               <p className="text-muted-foreground">Junior Developer, Contributor & Lead Tester (2019-2021)</p>
@@ -110,7 +110,7 @@ export default function Resume() {
           </div>
 
           <h2 className="text-2xl font-bold mt-8 mb-4 heading-special text-purple-400">Graphic Design Work</h2>
-          <div className="bg-white dark:bg-zinc-800/50 p-6 rounded-lg shadow-md border border-gray-200 dark:border-zinc-700 space-y-4">
+          <div className="bg-white dark:bg-zinc-800/50 p-6 rounded-lg shadow-md border border-gray-200 dark:border-zinc-700 space-y-4 transition-transform duration-300 hover:scale-105">
             <div>
               <h3 className="text-lg font-semibold">Photoshop (MyInk Printing Shop)</h3>
               <p className="text-muted-foreground">Entry Level Graphic Designer (2016-2017)</p>
@@ -133,7 +133,7 @@ export default function Resume() {
           </div>
 
           <h2 className="text-2xl font-bold mt-8 mb-4 heading-special text-purple-400">Photography & Visual Arts</h2>
-          <div className="bg-white dark:bg-zinc-800/50 p-6 rounded-lg shadow-md border border-gray-200 dark:border-zinc-700 space-y-4">
+          <div className="bg-white dark:bg-zinc-800/50 p-6 rounded-lg shadow-md border border-gray-200 dark:border-zinc-700 space-y-4 transition-transform duration-300 hover:scale-105">
             <div>
               <h3 className="text-lg font-semibold">Portrait & Nature Photography (Self Projects)</h3>
               <p className="text-muted-foreground">Photographer & Photography Consultant (2019-2025)</p>
@@ -149,7 +149,7 @@ export default function Resume() {
           </div>
 
           <h2 className="text-2xl font-bold mt-8 mb-4 heading-special text-purple-400">IT Technician Work</h2>
-          <div className="bg-white dark:bg-zinc-800/50 p-6 rounded-lg shadow-md border border-gray-200 dark:border-zinc-700 space-y-4">
+          <div className="bg-white dark:bg-zinc-800/50 p-6 rounded-lg shadow-md border border-gray-200 dark:border-zinc-700 space-y-4 transition-transform duration-300 hover:scale-105">
             <div>
               <h3 className="text-lg font-semibold">IT System Troubleshooting (Wetland Transport Solutions)</h3>
               <p className="text-muted-foreground">Lead Technical Support (2019-2023)</p>
@@ -159,7 +159,9 @@ export default function Resume() {
               <p className="text-muted-foreground">Lead IT Technician (2019-2023)</p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold">PC Building & Hardware Optimization (Wetland Transport Solutions)</h3>
+              <h3 className="text-lg font-semibold">
+                PC Building & Hardware Optimization (Wetland Transport Solutions)
+              </h3>
               <p className="text-muted-foreground">System Builder & Optimization Expert (2019-2023)</p>
             </div>
           </div>

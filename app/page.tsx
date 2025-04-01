@@ -9,7 +9,7 @@ export default function Home() {
         {/* Profile Section */}
         <div className="flex flex-col">
           {/* Info Card with Profile Image */}
-          <div className="flex flex-col bg-white dark:bg-zinc-900 rounded-xl p-8 shadow-xl border border-gray-200 dark:border-zinc-800">
+          <div className="flex flex-col bg-white dark:bg-zinc-900 rounded-xl p-8 shadow-xl border border-gray-200 dark:border-zinc-800 transition-transform duration-300 hover:scale-105">
             {/* Profile Image */}
             <div className="relative w-40 h-40 rounded-full overflow-hidden mx-auto mb-8 border-4 border-purple-500/20">
               <Image src="/jc.png?height=200&width=200" alt="Profile" fill className="object-cover" />
@@ -121,7 +121,7 @@ export default function Home() {
         <div className="md:col-span-2 space-y-8">
           <section>
             <h2 className="text-3xl font-bold mb-4 text-purple-400 heading-special">About Me</h2>
-            <div className="bg-white dark:bg-zinc-900/50 rounded-lg shadow-md p-6 border border-gray-200 dark:border-zinc-800">
+            <div className="bg-white dark:bg-zinc-900/50 rounded-lg shadow-md p-6 border border-gray-200 dark:border-zinc-800 transition-transform duration-300 hover:scale-105">
               <p className="mb-4 text-gray-600 dark:text-gray-300">
                 I'm a Versatile IT Technician, Professional Photographer, and Certified Virtual Assistant with 3 years
                 of expertise in custom kernel and ROM development for Samsung devices. I also specialize in turning
@@ -142,7 +142,7 @@ export default function Home() {
           <section>
             <h2 className="text-3xl font-bold mb-4 text-pink-400 heading-special">What I'm Doing</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="bg-white dark:bg-zinc-900 p-4 rounded-lg shadow-md border border-gray-200 dark:border-zinc-800">
+              <div className="bg-white dark:bg-zinc-900 p-4 rounded-lg shadow-md border border-gray-200 dark:border-zinc-800 transition-transform duration-300 hover:scale-105">
                 <div className="flex items-center gap-2 mb-2 transition-all duration-200 hover:scale-110">
                   <span className="p-2 bg-gray-100 dark:bg-black rounded-full transition-all duration-200 hover:scale-110">
                     <svg className="w-4 h-4 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -158,7 +158,7 @@ export default function Home() {
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-300">Professional social media data extraction</p>
               </div>
-              <div className="bg-white dark:bg-zinc-900 p-4 rounded-lg shadow-md border border-gray-200 dark:border-zinc-800">
+              <div className="bg-white dark:bg-zinc-900 p-4 rounded-lg shadow-md border border-gray-200 dark:border-zinc-800 transition-transform duration-300 hover:scale-105">
                 <div className="flex items-center gap-2 mb-2 transition-all duration-200 hover:scale-110">
                   <span className="p-2 bg-gray-100 dark:bg-black rounded-full transition-all duration-200 hover:scale-110">
                     <svg className="w-4 h-4 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -177,12 +177,12 @@ export default function Home() {
                   Capturing high-quality photos across various categories at a professional level
                 </p>
               </div>
-              <div className="bg-white dark:bg-zinc-900 p-4 rounded-lg shadow-md border border-gray-200 dark:border-zinc-800">
+              <div className="bg-white dark:bg-zinc-900 p-4 rounded-lg shadow-md border border-gray-200 dark:border-zinc-800 transition-transform duration-300 hover:scale-105">
                 <div className="flex items-center gap-2 mb-2 transition-all duration-200 hover:scale-110">
                   <span className="p-2 bg-gray-100 dark:bg-black rounded-full transition-all duration-200 hover:scale-110">
                     <svg className="w-4 h-4 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                       <path
-                        d="M16 18l6-6-6-6M8 6l-6 6 6 6"
+                        d="M15.5 15.5L5 5M7.036 7.036l.707-.707a4 4 0 0 1 5.657 0l4.243 4.243a4 4 0 0 1 0 5.657l-.707.707M12 12l4.5 4.5"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         strokeWidth={2}
@@ -195,7 +195,7 @@ export default function Home() {
                   Delivering innovative and professional designs that make a lasting impression
                 </p>
               </div>
-              <div className="bg-white dark:bg-zinc-900 p-4 rounded-lg shadow-md border border-gray-200 dark:border-zinc-800">
+              <div className="bg-white dark:bg-zinc-900 p-4 rounded-lg shadow-md border border-gray-200 dark:border-zinc-800 transition-transform duration-300 hover:scale-105">
                 <div className="flex items-center gap-2 mb-2 transition-all duration-200 hover:scale-110">
                   <span className="p-2 bg-gray-100 dark:bg-black rounded-full">
                     <svg className="w-4 h-4 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -210,6 +210,43 @@ export default function Home() {
                   <h3 className="font-bold text-lg text-gray-900 dark:text-white">Virtual Assistant</h3>
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-300">Providing support for a wide range of tasks</p>
+              </div>
+              <div className="bg-white dark:bg-zinc-900 p-4 rounded-lg shadow-md border border-gray-200 dark:border-zinc-800 transition-transform duration-300 hover:scale-105">
+                <div className="flex items-center gap-2 mb-2 transition-all duration-200 hover:scale-110">
+                  <span className="p-2 bg-gray-100 dark:bg-black rounded-full transition-all duration-200 hover:scale-110">
+                    <svg className="w-4 h-4 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                      <path
+                        d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                      />
+                    </svg>
+                  </span>
+                  <h3 className="font-bold text-lg text-gray-900 dark:text-white">Vibe Coding</h3>
+                </div>
+                <p className="text-sm text-gray-600 dark:text-gray-300">
+                  Crafting elegant digital solutions with a harmonious blend of creativity and technical precision
+                </p>
+              </div>
+
+              <div className="bg-white dark:bg-zinc-900 p-4 rounded-lg shadow-md border border-gray-200 dark:border-zinc-800 transition-transform duration-300 hover:scale-105">
+                <div className="flex items-center gap-2 mb-2 transition-all duration-200 hover:scale-110">
+                  <span className="p-2 bg-gray-100 dark:bg-black rounded-full transition-all duration-200 hover:scale-110">
+                    <svg className="w-4 h-4 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                      <path
+                        d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                      />
+                    </svg>
+                  </span>
+                  <h3 className="font-bold text-lg text-gray-900 dark:text-white">Automation</h3>
+                </div>
+                <p className="text-sm text-gray-600 dark:text-gray-300">
+                  Transforming repetitive workflows into seamless, efficient processes that unlock human potential
+                </p>
               </div>
             </div>
           </section>

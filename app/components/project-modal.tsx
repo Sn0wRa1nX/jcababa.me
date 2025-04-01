@@ -48,7 +48,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
         {/* Close button - positioned outside the scrollable area */}
         <button
           onClick={onClose}
-          className="absolute -top-10 -left-10 z-10 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+          className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/70 text-white hover:bg-black/90 transition-colors"
           aria-label="Close modal"
         >
           <X className="w-5 h-5" />
@@ -110,7 +110,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
               <div className="mt-8 mb-8">
                 <div className="relative h-[500px] md:h-[600px] rounded-lg overflow-hidden">
                   <Image
-                    src={project.secimage}
+                    src={project.secimage || "/placeholder.svg"}
                     alt={project.title}
                     fill
                     className="object-cover"
@@ -119,7 +119,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
                     <span className="px-3 py-1 bg-black/20 backdrop-blur-sm rounded-full text-sm flex items-center gap-1 text-white">
                       {project.year}
                     </span>
-                    <span className="px-3 py-1 bg-black/20 backdrop-blur-sm rounded-full text-sm flex items-center gap-1 text-white">
+                    <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm flex items-center gap-1 text-white">
                       {project.category}
                     </span>
                   </div>

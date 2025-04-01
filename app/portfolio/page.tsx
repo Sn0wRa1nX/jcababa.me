@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Camera, Code, Database, Cpu, ExternalLink, Paintbrush, UsersRound, PencilRuler } from "lucide-react"
+import { Camera, Code, ExternalLink, Paintbrush, PencilRuler } from "lucide-react"
 import { ProjectModal } from "../components/project-modal"
 
 export default function Portfolio() {
@@ -130,8 +130,10 @@ export default function Portfolio() {
       <div className="flex flex-wrap justify-center gap-4 mb-12">
         <button
           onClick={() => setActiveCategory(null)}
-          className={`px-6 py-3 rounded-full transition-all duration-300 ${
-            activeCategory === null ? "bg-pink-500 text-white" : "bg-zinc-900 hover:bg-zinc-800 text-gray-200"
+          className={`px-6 py-3 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-pink-500/50 ${
+            activeCategory === null
+              ? "bg-pink-500 text-black font-medium"
+              : "bg-zinc-900 hover:bg-zinc-800 text-gray-200 hover:text-pink-500"
           }`}
         >
           All Projects
@@ -144,10 +146,10 @@ export default function Portfolio() {
               onClick={() => setActiveCategory(category.id)}
               onMouseEnter={() => setHoveredCategory(category.id)}
               onMouseLeave={() => setHoveredCategory(null)}
-              className={`px-6 py-3 rounded-full flex items-center gap-2 transition-all duration-300 ${
+              className={`px-6 py-3 rounded-full flex items-center gap-2 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-pink-500/50 ${
                 activeCategory === category.id
-                  ? "bg-pink-500 text-white"
-                  : "bg-zinc-900 hover:bg-zinc-800 text-gray-200"
+                  ? "bg-pink-500 text-black font-medium"
+                  : "bg-zinc-900 hover:bg-zinc-800 text-gray-200 hover:text-pink-500"
               }`}
             >
               <Icon
