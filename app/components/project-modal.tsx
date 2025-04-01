@@ -16,6 +16,14 @@ interface ProjectModalProps {
     fullDescription?: string
     image: string
     secimage: string
+    thirdimage: string
+    fourthimage: string
+    fifthimage: string
+    sixthimage: string
+    seventhimage: string
+    eighthimage: string
+    ninthimage: string
+    tenthimage: string
     year: string
     link: string
     code: string
@@ -120,29 +128,175 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
                                 : project.fullDescription || project.description}
                   </div>
 
-                  {/* Second image - Now with responsive container */}
-                  <div className="mt-8 mb-8">
-                    <div
-                      className="relative aspect-auto w-full rounded-lg overflow-hidden"
-                      style={{ height: "auto", minHeight: "300px", maxHeight: "600px" }}
-                    >
-                      <Image
-                        src={project.secimage || "/placeholder.svg"}
-                        alt={project.title}
-                        fill
-                        className="object-contain"
-                        sizes="(max-width: 768px) 100vw, 800px"
-                      />
-                      <div className="absolute bottom-0 left-0 p-4 flex gap-2">
-                        <span className="px-3 py-1 bg-black/20 backdrop-blur-sm rounded-full text-sm flex items-center gap-1 text-white">
-                          {project.year}
-                        </span>
-                        <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm flex items-center gap-1 text-white">
-                          {project.category}
-                        </span>
+                  {/* Second image - Only display if secimage exists */}
+                  {project.secimage && (
+                    <div className="mt-8 mb-8">
+                      <div
+                        className="relative aspect-auto w-full rounded-lg overflow-hidden"
+                        style={{ height: "auto", minHeight: "300px", maxHeight: "600px" }}
+                      >
+                        <Image
+                          src={project.secimage || "/placeholder.svg"}
+                          alt={project.title}
+                          fill
+                          className="object-contain"
+                          sizes="(max-width: 768px) 100vw, 800px"
+                        />
+                        <div className="absolute bottom-0 left-0 p-4 flex gap-2">
+                          <span className="px-3 py-1 bg-black/20 backdrop-blur-sm rounded-full text-sm flex items-center gap-1 text-white">
+                            {project.year}
+                          </span>
+                          <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm flex items-center gap-1 text-white">
+                            {project.category}
+                          </span>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  )}
+
+                  {/* Third image - Only display if thirdimage exists */}
+                  {project.thirdimage && (
+                    <div className="mt-8 mb-8">
+                      <div
+                        className="relative aspect-auto w-full rounded-lg overflow-hidden"
+                        style={{ height: "auto", minHeight: "300px", maxHeight: "600px" }}
+                      >
+                        <Image
+                          src={project.thirdimage || "/placeholder.svg"}
+                          alt={`${project.title} - Additional view 1`}
+                          fill
+                          className="object-contain"
+                          sizes="(max-width: 768px) 100vw, 800px"
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Fourth image - Only display if fourthimage exists */}
+                  {project.fourthimage && (
+                    <div className="mt-8 mb-8">
+                      <div
+                        className="relative aspect-auto w-full rounded-lg overflow-hidden"
+                        style={{ height: "auto", minHeight: "300px", maxHeight: "600px" }}
+                      >
+                        <Image
+                          src={project.fourthimage || "/placeholder.svg"}
+                          alt={`${project.title} - Additional view 2`}
+                          fill
+                          className="object-contain"
+                          sizes="(max-width: 768px) 100vw, 800px"
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Fifth image - Only display if fifthimage exists */}
+                  {project.fifthimage && (
+                    <div className="mt-8 mb-8">
+                      <div
+                        className="relative aspect-auto w-full rounded-lg overflow-hidden"
+                        style={{ height: "auto", minHeight: "300px", maxHeight: "600px" }}
+                      >
+                        <Image
+                          src={project.fifthimage || "/placeholder.svg"}
+                          alt={`${project.title} - Additional view 3`}
+                          fill
+                          className="object-contain"
+                          sizes="(max-width: 768px) 100vw, 800px"
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Sixth image - Only display if sixthimage exists */}
+                  {project.sixthimage && (
+                    <div className="mt-8 mb-8">
+                      <div
+                        className="relative aspect-auto w-full rounded-lg overflow-hidden"
+                        style={{ height: "auto", minHeight: "300px", maxHeight: "600px" }}
+                      >
+                        <Image
+                          src={project.sixthimage || "/placeholder.svg"}
+                          alt={`${project.title} - Additional view 4`}
+                          fill
+                          className="object-contain"
+                          sizes="(max-width: 768px) 100vw, 800px"
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Seventh image - Only display if seventhimage exists */}
+                  {project.seventhimage && (
+                    <div className="mt-8 mb-8">
+                      <div
+                        className="relative aspect-auto w-full rounded-lg overflow-hidden"
+                        style={{ height: "auto", minHeight: "300px", maxHeight: "600px" }}
+                      >
+                        <Image
+                          src={project.seventhimage || "/placeholder.svg"}
+                          alt={`${project.title} - Additional view 5`}
+                          fill
+                          className="object-contain"
+                          sizes="(max-width: 768px) 100vw, 800px"
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Eighth image - Only display if eighthimage exists */}
+                  {project.eighthimage && (
+                    <div className="mt-8 mb-8">
+                      <div
+                        className="relative aspect-auto w-full rounded-lg overflow-hidden"
+                        style={{ height: "auto", minHeight: "300px", maxHeight: "600px" }}
+                      >
+                        <Image
+                          src={project.eighthimage || "/placeholder.svg"}
+                          alt={`${project.title} - Additional view 6`}
+                          fill
+                          className="object-contain"
+                          sizes="(max-width: 768px) 100vw, 800px"
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Ninth image - Only display if ninthimage exists */}
+                  {project.ninthimage && (
+                    <div className="mt-8 mb-8">
+                      <div
+                        className="relative aspect-auto w-full rounded-lg overflow-hidden"
+                        style={{ height: "auto", minHeight: "300px", maxHeight: "600px" }}
+                      >
+                        <Image
+                          src={project.ninthimage || "/placeholder.svg"}
+                          alt={`${project.title} - Additional view 7`}
+                          fill
+                          className="object-contain"
+                          sizes="(max-width: 768px) 100vw, 800px"
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Tenth image - Only display if tenthimage exists */}
+                  {project.tenthimage && (
+                    <div className="mt-8 mb-8">
+                      <div
+                        className="relative aspect-auto w-full rounded-lg overflow-hidden"
+                        style={{ height: "auto", minHeight: "300px", maxHeight: "600px" }}
+                      >
+                        <Image
+                          src={project.tenthimage || "/placeholder.svg"}
+                          alt={`${project.title} - Additional view 8`}
+                          fill
+                          className="object-contain"
+                          sizes="(max-width: 768px) 100vw, 800px"
+                        />
+                      </div>
+                    </div>
+                  )}
 
                   {/* Additional paragraphs - Same text repeated */}
                   <div className="space-y-6">
