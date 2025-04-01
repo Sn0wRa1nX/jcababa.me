@@ -48,7 +48,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.2 }}
           />
 
           {/* Modal with fade and slight scale */}
@@ -57,7 +57,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.2 }}
           >
             {/* Close button - positioned outside the scrollable area */}
             <button
@@ -120,14 +120,18 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
                                 : project.fullDescription || project.description}
                   </div>
 
-                  {/* Second image */}
+                  {/* Second image - Now with responsive container */}
                   <div className="mt-8 mb-8">
-                    <div className="relative h-[500px] md:h-[600px] rounded-lg overflow-hidden">
+                    <div
+                      className="relative aspect-auto w-full rounded-lg overflow-hidden"
+                      style={{ height: "auto", minHeight: "300px", maxHeight: "600px" }}
+                    >
                       <Image
                         src={project.secimage || "/placeholder.svg"}
                         alt={project.title}
                         fill
-                        className="object-cover"
+                        className="object-contain"
+                        sizes="(max-width: 768px) 100vw, 800px"
                       />
                       <div className="absolute bottom-0 left-0 p-4 flex gap-2">
                         <span className="px-3 py-1 bg-black/20 backdrop-blur-sm rounded-full text-sm flex items-center gap-1 text-white">
@@ -203,12 +207,12 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
                       )}
                     </div>
 
-                    <div className="mt-6 flex flex-col items-center space-y-3">
+                    <div className="mt-6 space-y-3">
                       <a
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full inline-flex items-center justify-center px-4 py-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-pink-500/50 group"
+                        className="w-[90%] mx-auto inline-flex items-center justify-center px-4 py-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-pink-500/50 group"
                       >
                         <span className="group-hover:text-black transition-colors duration-200">View Live Project</span>
                         <svg
@@ -230,7 +234,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
                         href={project.code}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full inline-flex items-center justify-center px-4 py-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-pink-500/50 group"
+                        className="w-[90%] mx-auto inline-flex items-center justify-center px-4 py-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-pink-500/50 group"
                       >
                         <span className="group-hover:text-black transition-colors duration-200">View Source Code</span>
                         <svg
