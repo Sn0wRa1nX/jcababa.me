@@ -259,7 +259,7 @@ export default function EmailDesigns() {
                         src={emailDesigns.find((d) => d.id === selectedImage)?.src || ""}
                         alt={`${emailDesigns.find((d) => d.id === selectedImage)?.title}`}
                         width={1200}
-                        height={7000}
+                        layout="intrinsic"
                         className="object-contain select-none"
                         draggable="false"
                         unoptimized={true}
