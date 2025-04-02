@@ -260,7 +260,7 @@ export default function EmailDesigns() {
                         alt={`${emailDesigns.find((d) => d.id === selectedImage)?.title}`}
                         //width={1200}
                         layout="intrinsic"
-                        className="object-contain select-none w-full h-auto"
+                        className="object-contain select-none w-full h-10000"
                         draggable="false"
                         unoptimized={true}
                         onContextMenu={(e) => e.preventDefault()}
@@ -317,6 +317,6 @@ function WatermarkOverlay({ name, density = 1 }: { name: string; density?: numbe
     }
   }
 
-  return <div className="w-full h-full overflow-hidden">{watermarks}</div>
+  return <div className="w-full h-10000 overflow-hidden">{watermarks}</div>
 }
 
