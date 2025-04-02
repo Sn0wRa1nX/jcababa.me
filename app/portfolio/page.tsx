@@ -99,7 +99,7 @@ export default function Portfolio() {
       category: "graphic design",
       description: "Various email design projects",
       image: "/EMAILPROJ.png?height=300&width=400",
-      secimage: "/EMAILPROJ2.PNG?height=600&width=1200",
+      secimage: "/EMAILPROJ2.png?height=600&width=1200",
       thirdimage: "",
       fourthimage: "",
       fifthimage: "",
