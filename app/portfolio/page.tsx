@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import Link from "next/link"
 import { Camera, Code, ExternalLink, Paintbrush, PencilRuler } from "lucide-react"
 import { ProjectModal } from "../components/project-modal"
 
@@ -296,16 +295,6 @@ export default function Portfolio() {
             </div>
           </div>
         ))}
-      </div>
-
-      <div className="mt-16 text-center">
-        <h2 className="text-2xl font-bold mb-4 heading-special text-purple-600">Want to see more of my work?</h2>
-        <Link
-          href="/contact"
-          className="inline-block px-8 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-full font-medium hover:from-purple-500 hover:to-pink-500 transition-all duration-300 transform hover:scale-105"
-        >
-          Contact Me
-        </Link>
       </div>
 
       {selectedProject && (
