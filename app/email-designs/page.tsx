@@ -127,10 +127,10 @@ export default function EmailDesigns() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-12" ref={containerRef}>
-      <h1 className="text-4xl font-bold text-center mb-2 heading-special bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500">
+      <h1 className="text-3xl font-bold text-center mb-4 text-purple-600 heading-special">
         Email Designs
       </h1>
-      <div className="w-48 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto mb-12"></div>
+      <div className="w-32 h-1 bg-gradient-to-r from-pink-400 to-pink-500 mx-auto mb-12"></div>
 
       {/* Security notice */}
       <div className="mb-8 p-4 bg-pink-500/10 border border-pink-500/20 rounded-lg">
