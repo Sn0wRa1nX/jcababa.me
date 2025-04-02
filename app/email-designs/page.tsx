@@ -19,27 +19,27 @@ export default function EmailDesigns() {
   const emailDesigns = [
     {
       id: 1,
-      title: "Email Design 1",
-      description: "Corporate newsletter template",
-      src: "/placeholder.svg?height=1600&width=1200&text=Corporate+Newsletter"
+      title: "BMW M4 CSL",
+      description: "Product showcase",
+      src: "/m4highlight.png?height=7185&width=1200&text=BMW+M4CSL"
     },
     {
       id: 2,
-      title: "Email Design 2",
-      description: "Product announcement template",
-      src: "/placeholder.svg?height=1600&width=1200&text=Product+Announcement"
+      title: "Abandoned BMW M4",
+      description: "Follow-up email",
+      src: "/m4abandoned.png?height=5982&width=1200&text=Product+Announcement"
     },
     {
       id: 3,
-      title: "Email Design 3",
-      description: "Event invitation template",
-      src: "/placeholder.svg?height=1600&width=1200&text=Event+Invitation"
+      title: "Lollipop Brushes",
+      description: "Promotional campaign",
+      src: "/lollipopbrushes.png?height=6250&width=1200&text=Event+Invitation"
     },
     {
       id: 4,
-      title: "Email Design 4",
-      description: "Welcome email sequence",
-      src: "/placeholder.svg?height=1600&width=1200&text=Welcome+Email"
+      title: "Shea Terra",
+      description: "Promotional campaign",
+      src: "/SheaTerra.png?height=6250&width=1200&text=Welcome+Email"
     },
     {
       id: 5,
