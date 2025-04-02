@@ -62,7 +62,7 @@ export default function EmailDesigns() {
 
   // Function to handle zoom out
   const handleZoomOut = () => {
-    setZoomLevel((prev) => Math.max(prev - 0.25, 0.5))
+    setZoomLevel((prev) => Math.max(prev - 0.25, 0.1))
   }
 
   // Function to reset zoom when closing modal
@@ -225,7 +225,7 @@ export default function EmailDesigns() {
                   onClick={handleZoomOut}
                   className="p-2 rounded-full bg-black/70 text-white hover:bg-black/90 transition-colors"
                   aria-label="Zoom out"
-                  disabled={zoomLevel <= 0.5}
+                  disabled={zoomLevel <= 0.1}
                 >
                   <ZoomOut className="w-5 h-5" />
                 </button>
@@ -305,7 +305,7 @@ function WatermarkOverlay({ name, density = 1 }: { name: string; density?: numbe
       watermarks.push(
         <div
           key={`${i}-${j}`}
-          className="absolute text-black dark:text-white text-sm font-light opacity-[0.03] whitespace-nowrap transform -rotate-45"
+          className="absolute text-black dark:text-white text-sm font-light opacity-[0.1] whitespace-nowrap transform -rotate-45"
           style={{
             left: `${i * spacing}px`,
             top: `${j * spacing}px`,
