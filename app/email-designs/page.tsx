@@ -130,7 +130,7 @@ export default function EmailDesigns() {
       <h1 className="text-3xl font-bold text-center mb-4 text-purple-600 heading-special">
         Email Designs
       </h1>
-      <div className="w-32 h-1 bg-gradient-to-r from-pink-400 to-pink-500 mx-auto mb-12"></div>
+      <div className="w-100 h-0.5 bg-gradient-to-r from-pink-400 to-pink-500 mx-auto mb-12"></div>
 
       {/* Security notice */}
       <div className="mb-8 p-4 bg-pink-500/10 border border-pink-500/20 rounded-lg">
@@ -258,9 +258,9 @@ export default function EmailDesigns() {
                       <Image
                         src={emailDesigns.find((d) => d.id === selectedImage)?.src || ""}
                         alt={`${emailDesigns.find((d) => d.id === selectedImage)?.title}`}
-                        width={1200}
+                        //width={1200}
                         layout="intrinsic"
-                        className="object-contain select-none"
+                        className="object-contain select-none w-full h-auto"
                         draggable="false"
                         unoptimized={true}
                         onContextMenu={(e) => e.preventDefault()}
