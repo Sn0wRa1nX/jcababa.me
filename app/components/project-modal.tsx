@@ -5,6 +5,7 @@ import Image from "next/image"
 import { useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
+// Update the ProjectModal interface to include the new button properties
 interface ProjectModalProps {
   isOpen: boolean
   onClose: () => void
@@ -29,6 +30,10 @@ interface ProjectModalProps {
     code: string
     technologies?: string[]
     gallery?: string[]
+    firstbutton?: string
+    secbutton?: string
+    thirdbutton?: string
+    fourthbutton?: string
   }
 }
 
@@ -361,51 +366,112 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
                       )}
                     </div>
 
-                    <div className="mt-6 space-y-3">
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-[90%] mx-auto inline-flex items-center justify-center px-4 py-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-pink-500/50 group"
-                      >
-                        <span className="group-hover:text-black transition-colors duration-200">View Live Project</span>
-                        <svg
-                          className="w-4 h-4 ml-2 transition-all duration-300 group-hover:scale-110 group-hover:text-black"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
+                    {/* Replace the buttons section in the component with centered, conditional buttons */}
+                    <div className="mt-6 space-y-3 flex flex-col items-center">
+                      {project.firstbutton && (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full max-w-[250px] inline-flex items-center justify-center px-4 py-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-pink-500/50 group"
                         >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                          />
-                        </svg>
-                      </a>
-                      <a
-                        href={project.code}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-[90%] mx-auto inline-flex items-center justify-center px-4 py-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-pink-500/50 group"
-                      >
-                        <span className="group-hover:text-black transition-colors duration-200">View Source Code</span>
-                        <svg
-                          className="w-4 h-4 ml-2 transition-all duration-300 group-hover:scale-110 group-hover:text-black"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
+                          <span className="group-hover:text-black transition-colors duration-200">
+                            {project.firstbutton}
+                          </span>
+                          <svg
+                            className="w-4 h-4 ml-2 transition-all duration-300 group-hover:scale-110 group-hover:text-black"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                            />
+                          </svg>
+                        </a>
+                      )}
+                      {project.secbutton && (
+                        <a
+                          href={project.code}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full max-w-[250px] inline-flex items-center justify-center px-4 py-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-pink-500/50 group"
                         >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                          />
-                        </svg>
-                      </a>
+                          <span className="group-hover:text-black transition-colors duration-200">
+                            {project.secbutton}
+                          </span>
+                          <svg
+                            className="w-4 h-4 ml-2 transition-all duration-300 group-hover:scale-110 group-hover:text-black"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                            />
+                          </svg>
+                        </a>
+                      )}
+                      {project.thirdbutton && (
+                        <a
+                          href="#"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full max-w-[250px] inline-flex items-center justify-center px-4 py-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-pink-500/50 group"
+                        >
+                          <span className="group-hover:text-black transition-colors duration-200">
+                            {project.thirdbutton}
+                          </span>
+                          <svg
+                            className="w-4 h-4 ml-2 transition-all duration-300 group-hover:scale-110 group-hover:text-black"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                            />
+                          </svg>
+                        </a>
+                      )}
+                      {project.fourthbutton && (
+                        <a
+                          href="#"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full max-w-[250px] inline-flex items-center justify-center px-4 py-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-pink-500/50 group"
+                        >
+                          <span className="group-hover:text-black transition-colors duration-200">
+                            {project.fourthbutton}
+                          </span>
+                          <svg
+                            className="w-4 h-4 ml-2 transition-all duration-300 group-hover:scale-110 group-hover:text-black"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                            />
+                          </svg>
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>

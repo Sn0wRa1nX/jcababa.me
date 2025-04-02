@@ -37,6 +37,11 @@ export default function Portfolio() {
       link: "https://xdaforums.com/t/kernel-fire_kernel-official-custom-extreme-kernel-for-galaxy-a70.4174819/",
       code: "https://github.com/sm7150/a70qkernel",
       technologies: ["Android", "Linux Kernel", "C/C++", "Git", "Shell Scripting"],
+      show: true,
+      firstbutton: "View Live Project",
+      secbutton: "View Source Code",
+      thirdbutton: "",
+      fourthbutton: "",
     },
     {
       id: 2,
@@ -57,6 +62,11 @@ export default function Portfolio() {
       link: "https://xdaforums.com/t/rom-stable-crdroidandroid-unofficial-6-13-10-0-2021-01-01.4209323/",
       code: "https://github.com/sm7150",
       technologies: ["Android", "ASOP", "Java", "XML", "Gradle", "Git"],
+      show: true,
+      firstbutton: "View Live Project",
+      secbutton: "View Source Code",
+      thirdbutton: "",
+      fourthbutton: "",
     },
     {
       id: 3,
@@ -77,6 +87,11 @@ export default function Portfolio() {
       link: "#",
       github: "https://github.com/sm7150",
       technologies: ["Python", "Shell Scripting", "CI/CD", "Jenkins", "GitHub Actions", "BuildKite"],
+      show: false,
+      firstbutton: "View Repository",
+      secbutton: "View Documentation",
+      thirdbutton: "",
+      fourthbutton: "",
     },
     {
       id: 4,
@@ -96,6 +111,11 @@ export default function Portfolio() {
       year: "2021",
       link: "#",
       technologies: ["Adobe Photoshop", "Email Design", "Canva", "Figma"],
+      show: true,
+      firstbutton: "View Portfolio",
+      secbutton: "View Templates",
+      thirdbutton: "",
+      fourthbutton: "",
     },
     {
       id: 5,
@@ -116,6 +136,11 @@ export default function Portfolio() {
       link: "#",
       github: "https://github.com",
       technologies: ["Adobe Photoshop", "Digital Art", "Photo Manipulation", "Graphic Design"],
+      show: false,
+      firstbutton: "View Gallery",
+      secbutton: "",
+      thirdbutton: "",
+      fourthbutton: "",
     },
     {
       id: 6,
@@ -135,6 +160,11 @@ export default function Portfolio() {
       year: "2022",
       link: "#",
       technologies: ["Canva", "Social Media Graphics", "Marketing Materials", "Brand Design"],
+      show: false,
+      firstbutton: "View Designs",
+      secbutton: "",
+      thirdbutton: "",
+      fourthbutton: "",
     },
     {
       id: 7,
@@ -154,6 +184,11 @@ export default function Portfolio() {
       year: "2021",
       link: "#",
       technologies: ["Adobe Lightroom", "RAW Processing", "Color Grading", "Photo Retouching"],
+      show: false,
+      firstbutton: "View Portfolio",
+      secbutton: "",
+      thirdbutton: "",
+      fourthbutton: "",
     },
     {
       id: 8,
@@ -173,6 +208,11 @@ export default function Portfolio() {
       year: "2021",
       link: "#",
       technologies: ["Sony", "Image Hunting", "Portrait", "Landscape"],
+      show: false,
+      firstbutton: "View Gallery",
+      secbutton: "",
+      thirdbutton: "",
+      fourthbutton: "",
     },
     {
       id: 9,
@@ -192,11 +232,19 @@ export default function Portfolio() {
       year: "2025",
       link: "#",
       technologies: ["Virtual Assitant", "Social Media Marketing", "Training", "Live"],
+      show: false,
+      firstbutton: "View Certificate",
+      secbutton: "",
+      thirdbutton: "",
+      fourthbutton: "",
     },
   ]
 
   const [activeCategory, setActiveCategory] = useState<string | null>(null)
-  const filteredProjects = activeCategory ? projects.filter((project) => project.category === activeCategory) : projects
+  // Modified filtering logic to only show projects where show is true
+  const filteredProjects = activeCategory
+    ? projects.filter((project) => project.category === activeCategory && project.show)
+    : projects.filter((project) => project.show)
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-12">
