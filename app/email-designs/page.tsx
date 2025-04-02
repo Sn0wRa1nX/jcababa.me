@@ -244,6 +244,20 @@ export default function EmailDesigns() {
                     }}
                     className="relative"
                   >
+                    {selectedImage && (
+                       <Image
+                         src={emailDesigns.find((d) => d.id === selectedImage)?.src || ""}
+                         alt={`${emailDesigns.find((d) => d.id === selectedImage)?.title}`}
+                         width={1200}
+                         layout="intrinsic"
+                         className="object-contain select-none"
+                         draggable="false"
+                         unoptimized={true}
+                         onContextMenu={(e) => e.preventDefault()}
+                         style={{ WebkitUserDrag: "none" }}
+                         priority
+                       />
+                     )}
                   </div>
                 </div>
               </div>
