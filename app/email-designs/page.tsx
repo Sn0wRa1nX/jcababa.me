@@ -130,7 +130,6 @@ export default function EmailDesigns() {
       <h1 className="text-3xl font-bold text-center mb-4 text-purple-600 heading-special">
         Email Designs
       </h1>
-      <div className="w-100 h-0.5 bg-gradient-to-r from-pink-400 to-pink-500 mx-auto mb-12"></div>
 
       {/* Security notice */}
       <div className="mb-8 p-4 bg-pink-500/10 border border-pink-500/20 rounded-lg">
@@ -149,10 +148,6 @@ export default function EmailDesigns() {
             onClick={() => setSelectedImage(design.id)}
           >
             <div className="relative aspect-[3/4] overflow-hidden select-none">
-              {/* Watermark overlay */}
-              <div className="absolute inset-0 z-10 pointer-events-none">
-                <WatermarkOverlay name="Johncarlo Ababa" />
-              </div>
 
               <div className="relative w-full h-full">
                 <Image
@@ -249,25 +244,6 @@ export default function EmailDesigns() {
                     }}
                     className="relative"
                   >
-                    {/* Watermark overlay */}
-                    <div className="absolute inset-0 z-10 pointer-events-none">
-                      <WatermarkOverlay name="Johncarlo Ababa" density={2} />
-                    </div>
-
-                    {selectedImage && (
-                      <Image
-                        src={emailDesigns.find((d) => d.id === selectedImage)?.src || ""}
-                        alt={`${emailDesigns.find((d) => d.id === selectedImage)?.title}`}
-                        //width={1200}
-                        layout="intrinsic"
-                        className="object-contain select-none w-full h-10000"
-                        draggable="false"
-                        unoptimized={true}
-                        onContextMenu={(e) => e.preventDefault()}
-                        style={{ WebkitUserDrag: "none" }}
-                        priority
-                      />
-                    )}
                   </div>
                 </div>
               </div>
@@ -292,31 +268,5 @@ export default function EmailDesigns() {
       </AnimatePresence>
     </div>
   )
-}
-
-// Watermark component that creates a crisscross pattern with the name
-function WatermarkOverlay({ name, density = 1 }: { name: string; density?: number }) {
-  // Create a grid of watermarks
-  const watermarks = []
-  const spacing = 150 / density // Adjust spacing based on density
-
-  for (let i = -2; i < 20; i++) {
-    for (let j = -2; j < 20; j++) {
-      watermarks.push(
-        <div
-          key={`${i}-${j}`}
-          className="absolute text-black dark:text-white text-sm font-light opacity-[0.2] whitespace-nowrap transform -rotate-45"
-          style={{
-            left: `${i * spacing}px`,
-            top: `${j * spacing}px`,
-          }}
-        >
-          {name}
-        </div>,
-      )
-    }
-  }
-
-  return <div className="w-full h-10000 overflow-hidden">{watermarks}</div>
 }
 
