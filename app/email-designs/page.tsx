@@ -259,7 +259,7 @@ export default function EmailDesigns() {
                         src={emailDesigns.find((d) => d.id === selectedImage)?.src || ""}
                         alt={`${emailDesigns.find((d) => d.id === selectedImage)?.title}`}
                         width={1200}
-                        height={1600}
+                        height={7000}
                         className="object-contain select-none"
                         draggable="false"
                         unoptimized={true}
@@ -305,7 +305,7 @@ function WatermarkOverlay({ name, density = 1 }: { name: string; density?: numbe
       watermarks.push(
         <div
           key={`${i}-${j}`}
-          className="absolute text-black dark:text-white text-sm font-light opacity-[0.1] whitespace-nowrap transform -rotate-45"
+          className="absolute text-black dark:text-white text-sm font-light opacity-[0.2] whitespace-nowrap transform -rotate-45"
           style={{
             left: `${i * spacing}px`,
             top: `${j * spacing}px`,
