@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
-import { X, ZoomIn, ZoomOut, ShieldAlert, Info, AlertTriangle } from "lucide-react"
+import { X, ZoomIn, ZoomOut, ShieldAlert, Info, AlertTriangle, Palette, Calendar, Wrench } from "lucide-react"
 
 export default function EmailDesigns() {
   // State for tracking which image is being viewed in the modal
@@ -19,6 +19,9 @@ export default function EmailDesigns() {
   // State to track if we're on mobile
   const [isMobile, setIsMobile] = useState(false)
 
+  // Add this new state near the other state declarations
+  const [mobileCardIndex, setMobileCardIndex] = useState(0)
+
   // Check if we're on mobile
   useEffect(() => {
     const checkMobile = () => {
@@ -33,6 +36,17 @@ export default function EmailDesigns() {
     }
   }, [])
 
+  // Add this useEffect to cycle through the card content on mobile
+  useEffect(() => {
+    if (isMobile && selectedImage !== null) {
+      const interval = setInterval(() => {
+        setMobileCardIndex((prev) => (prev + 1) % 3)
+      }, 5000)
+
+      return () => clearInterval(interval)
+    }
+  }, [isMobile, selectedImage])
+
   // Replace the emailDesigns array with this updated version that includes 9 items with show property
   const emailDesigns = [
     {
@@ -44,6 +58,9 @@ export default function EmailDesigns() {
       brand: "BMW",
       context:
         "This email campaign concept focuses on luxury automotive promotion with a sleek, modern layout that highlights the performance features of the BMW M4 CSL.",
+      year: "2024",
+      tools: ["Figma", "Photoshop"],
+      type: "Product Launch Email",
     },
     {
       id: 2,
@@ -54,6 +71,9 @@ export default function EmailDesigns() {
       brand: "BMW",
       context:
         "This abandoned cart email design uses dramatic imagery and minimalist typography to create urgency and reconnect potential customers with the BMW M4 they were considering.",
+      year: "2024",
+      tools: ["Figma", "Photoshop"],
+      type: "Abandoned Cart Recovery Email",
     },
     {
       id: 3,
@@ -64,6 +84,9 @@ export default function EmailDesigns() {
       brand: "Lollipop Brushes",
       context:
         "This vibrant promotional email for Lollipop Brushes uses playful colors and clean product photography to showcase the makeup brush collection in an engaging, visually appealing way.",
+      year: "2024",
+      tools: ["Canva", "Photoshop"],
+      type: "Promotional Email",
     },
     {
       id: 4,
@@ -74,6 +97,9 @@ export default function EmailDesigns() {
       brand: "Shea Terra",
       context:
         "This Shea Terra promotional email emphasizes natural ingredients and sustainability through earthy tones and organic imagery, connecting customers with the brand's eco-friendly values.",
+      year: "2024",
+      tools: ["Canva", "Photoshop"],
+      type: "Welcome Email",
     },
     {
       id: 5,
@@ -84,6 +110,9 @@ export default function EmailDesigns() {
       brand: "Generic Brand",
       context:
         "This promotional campaign template uses a balanced layout with strong visual hierarchy to guide readers through product offerings and special deals.",
+      year: "2024",
+      tools: ["Figma"],
+      type: "Promotional Email",
     },
     {
       id: 6,
@@ -94,6 +123,9 @@ export default function EmailDesigns() {
       brand: "Generic Brand",
       context:
         "This follow-up email template creates a sense of urgency while maintaining brand consistency, perfect for re-engaging customers who haven't completed a purchase.",
+      year: "2024",
+      tools: ["Figma"],
+      type: "Follow-up Email",
     },
     {
       id: 7,
@@ -104,6 +136,9 @@ export default function EmailDesigns() {
       brand: "Generic Brand",
       context:
         "This newsletter template balances content blocks with imagery to create an engaging reading experience that keeps subscribers informed about brand updates.",
+      year: "2024",
+      tools: ["Figma", "Photoshop"],
+      type: "Newsletter Email",
     },
     {
       id: 8,
@@ -114,6 +149,9 @@ export default function EmailDesigns() {
       brand: "Generic Brand",
       context:
         "This transactional email template provides clear order information while maintaining brand identity, ensuring customers feel confident about their purchase.",
+      year: "2024",
+      tools: ["Figma"],
+      type: "Transactional Email",
     },
     {
       id: 9,
@@ -124,6 +162,9 @@ export default function EmailDesigns() {
       brand: "Generic Brand",
       context:
         "This welcome series email introduces new subscribers to the brand with a clean, approachable design that encourages further engagement.",
+      year: "2024",
+      tools: ["Figma", "Photoshop"],
+      type: "Welcome Series Email",
     },
   ]
 
@@ -295,27 +336,102 @@ export default function EmailDesigns() {
                 <X className="w-5 h-5" />
               </button>
 
-              {/* Mobile view: Info cards at the top */}
+              {/* Mobile view: Cycling info card at the top */}
               {isMobile && currentDesign && (
-                <div className="w-full mb-4 space-y-3 px-4">
-                  {/* Disclaimer Card */}
-                  <div className="bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/10 text-white text-sm">
-                    <div className="flex items-start gap-2">
-                      <AlertTriangle className="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" />
-                      <p>
-                        All brand names, trademarks, and images belong to their respective owners. These designs are
-                        created for demonstration and portfolio purposes only and are not affiliated with or endorsed by{" "}
-                        {currentDesign.brand}.
-                      </p>
-                    </div>
-                  </div>
+                <div className="w-full mb-4 px-4">
+                  <AnimatePresence mode="wait">
+                    {mobileCardIndex === 0 && (
+                      <motion.div
+                        key="disclaimer"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.3 }}
+                        className="bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/10 text-white text-sm"
+                      >
+                        <div className="flex items-start gap-2">
+                          <AlertTriangle className="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" />
+                          <div>
+                            <p className="font-medium mb-1">Disclaimer</p>
+                            <p>
+                              All brand names, trademarks, and images belong to their respective owners. These designs
+                              are created for demonstration and portfolio purposes only and are not affiliated with or
+                              endorsed by {currentDesign.brand}.
+                            </p>
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
 
-                  {/* Context Card */}
-                  <div className="bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/10 text-white text-sm">
-                    <div className="flex items-start gap-2">
-                      <Info className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                      <p>{currentDesign.context}</p>
-                    </div>
+                    {mobileCardIndex === 1 && (
+                      <motion.div
+                        key="context"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.3 }}
+                        className="bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/10 text-white text-sm"
+                      >
+                        <div className="flex items-start gap-2">
+                          <Info className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                          <div>
+                            <p className="font-medium mb-1">Design Context</p>
+                            <p>{currentDesign.context}</p>
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+
+                    {mobileCardIndex === 2 && (
+                      <motion.div
+                        key="details"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.3 }}
+                        className="bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/10 text-white text-sm"
+                      >
+                        <div className="space-y-3">
+                          <div className="flex items-center gap-2">
+                            <Calendar className="w-5 h-5 text-pink-400 flex-shrink-0" />
+                            <div>
+                              <p className="text-xs text-white/70">YEAR</p>
+                              <p>{currentDesign.year}</p>
+                            </div>
+                          </div>
+
+                          <div className="flex items-center gap-2">
+                            <Wrench className="w-5 h-5 text-pink-400 flex-shrink-0" />
+                            <div>
+                              <p className="text-xs text-white/70">TOOLS</p>
+                              <p>{currentDesign.tools.join(", ")}</p>
+                            </div>
+                          </div>
+
+                          <div className="flex items-center gap-2">
+                            <Palette className="w-5 h-5 text-pink-400 flex-shrink-0" />
+                            <div>
+                              <p className="text-xs text-white/70">TYPE</p>
+                              <p>{currentDesign.type}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+
+                  {/* Indicator dots */}
+                  <div className="flex justify-center mt-2 space-x-2">
+                    {[0, 1, 2].map((index) => (
+                      <button
+                        key={index}
+                        onClick={() => setMobileCardIndex(index)}
+                        className={`w-2 h-2 rounded-full transition-all ${
+                          mobileCardIndex === index ? "bg-white scale-110" : "bg-white/40 hover:bg-white/60"
+                        }`}
+                        aria-label={`View card ${index + 1}`}
+                      />
+                    ))}
                   </div>
                 </div>
               )}
@@ -392,6 +508,35 @@ export default function EmailDesigns() {
                       <div className="flex items-start gap-2">
                         <Info className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
                         <p>{currentDesign.context}</p>
+                      </div>
+                    </div>
+
+                    {/* Design Details Card */}
+                    <div className="bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/10 text-white text-sm sticky top-[300px]">
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-2">
+                          <Calendar className="w-5 h-5 text-pink-400 flex-shrink-0" />
+                          <div>
+                            <p className="text-xs text-white/70">YEAR</p>
+                            <p>{currentDesign.year}</p>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-2">
+                          <Wrench className="w-5 h-5 text-pink-400 flex-shrink-0" />
+                          <div>
+                            <p className="text-xs text-white/70">TOOLS</p>
+                            <p>{currentDesign.tools.join(", ")}</p>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-2">
+                          <Palette className="w-5 h-5 text-pink-400 flex-shrink-0" />
+                          <div>
+                            <p className="text-xs text-white/70">TYPE</p>
+                            <p>{currentDesign.type}</p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
