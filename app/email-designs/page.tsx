@@ -53,7 +53,7 @@ export default function EmailDesigns() {
   useEffect(() => {
     // Set different default zoom levels for mobile and desktop
     if (isMobile) {
-      setZoomLevel(0.6) // Adjusted zoom level for mobile
+      setZoomLevel(0.5) // Adjusted zoom level for mobile
     } else {
       setZoomLevel(0.7) // Adjusted zoom level for desktop
     }
@@ -67,8 +67,8 @@ export default function EmailDesigns() {
     if (selectedImage !== null && imageContainerRef.current && imageLoaded) {
       // Add a small delay to ensure the image is fully rendered
       const timer = setTimeout(() => {
-        // Skip the top blank space (approximately 15% of viewport height)
-        const skipAmount = Math.min(imageContainerRef.current.scrollHeight * 0.15, 300)
+        // Skip the top blank space (approximately 30% of viewport height)
+        const skipAmount = Math.min(imageContainerRef.current.scrollHeight * 0.30, 800)
         imageContainerRef.current.scrollTop = skipAmount
       }, 100)
 
