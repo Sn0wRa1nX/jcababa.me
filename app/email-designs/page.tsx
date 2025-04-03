@@ -9,7 +9,7 @@ export default function EmailDesigns() {
   // State for tracking which image is being viewed in the modal
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
   // State for zoom level - changed default to 0.8 for zoomed out view
-  const [zoomLevel, setZoomLevel] = useState(0.8)
+  const [zoomLevel, setZoomLevel] = useState(0.5)
   // State for security warning
   const [showSecurityWarning, setShowSecurityWarning] = useState(false)
   // Ref for the container
@@ -46,6 +46,16 @@ export default function EmailDesigns() {
       return () => clearInterval(interval)
     }
   }, [isMobile, selectedImage])
+
+  // Add a useEffect to set different zoom levels for mobile and desktop
+  useEffect(() => {
+    // Set different default zoom levels for mobile and desktop
+    if (isMobile) {
+      setZoomLevel(0.4) // More zoomed out for mobile
+    } else {
+      setZoomLevel(0.6) // Slightly more zoomed in for desktop
+    }
+  }, [isMobile, selectedImage]) // Reset zoom when image changes or screen size changes
 
   // Replace the emailDesigns array with this updated version that includes 9 items with show property
   const emailDesigns = [
@@ -339,86 +349,89 @@ export default function EmailDesigns() {
               {/* Mobile view: Cycling info card at the top */}
               {isMobile && currentDesign && (
                 <div className="w-full mb-4 px-4">
-                  <AnimatePresence mode="wait">
-                    {mobileCardIndex === 0 && (
-                      <motion.div
-                        key="disclaimer"
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 0.3 }}
-                        className="bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/10 text-white text-sm"
-                      >
-                        <div className="flex items-start gap-2">
-                          <AlertTriangle className="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" />
-                          <div>
-                            <p className="font-medium mb-1">Disclaimer</p>
-                            <p>
-                              All brand names, trademarks, and images belong to their respective owners. These designs
-                              are created for demonstration and portfolio purposes only and are not affiliated with or
-                              endorsed by {currentDesign.brand}.
-                            </p>
-                          </div>
-                        </div>
-                      </motion.div>
-                    )}
-
-                    {mobileCardIndex === 1 && (
-                      <motion.div
-                        key="context"
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 0.3 }}
-                        className="bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/10 text-white text-sm"
-                      >
-                        <div className="flex items-start gap-2">
-                          <Info className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                          <div>
-                            <p className="font-medium mb-1">Design Context</p>
-                            <p>{currentDesign.context}</p>
-                          </div>
-                        </div>
-                      </motion.div>
-                    )}
-
-                    {mobileCardIndex === 2 && (
-                      <motion.div
-                        key="details"
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 0.3 }}
-                        className="bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/10 text-white text-sm"
-                      >
-                        <div className="space-y-3">
-                          <div className="flex items-center gap-2">
-                            <Calendar className="w-5 h-5 text-pink-400 flex-shrink-0" />
+                  {/* Fixed height container to prevent layout shifts */}
+                  <div className="relative h-[180px]">
+                    <AnimatePresence mode="wait">
+                      {mobileCardIndex === 0 && (
+                        <motion.div
+                          key="disclaimer"
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          transition={{ duration: 0.3 }}
+                          className="absolute inset-0 bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/10 text-white text-sm overflow-y-auto"
+                        >
+                          <div className="flex items-start gap-2">
+                            <AlertTriangle className="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" />
                             <div>
-                              <p className="text-xs text-white/70">YEAR</p>
-                              <p>{currentDesign.year}</p>
+                              <p className="font-medium mb-1">Disclaimer</p>
+                              <p>
+                                All brand names, trademarks, and images belong to their respective owners. These designs
+                                are created for demonstration and portfolio purposes only and are not affiliated with or
+                                endorsed by {currentDesign.brand}.
+                              </p>
                             </div>
                           </div>
+                        </motion.div>
+                      )}
 
-                          <div className="flex items-center gap-2">
-                            <Wrench className="w-5 h-5 text-pink-400 flex-shrink-0" />
+                      {mobileCardIndex === 1 && (
+                        <motion.div
+                          key="context"
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          transition={{ duration: 0.3 }}
+                          className="absolute inset-0 bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/10 text-white text-sm overflow-y-auto"
+                        >
+                          <div className="flex items-start gap-2">
+                            <Info className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
                             <div>
-                              <p className="text-xs text-white/70">TOOLS</p>
-                              <p>{currentDesign.tools.join(", ")}</p>
+                              <p className="font-medium mb-1">Design Context</p>
+                              <p>{currentDesign.context}</p>
                             </div>
                           </div>
+                        </motion.div>
+                      )}
 
-                          <div className="flex items-center gap-2">
-                            <Palette className="w-5 h-5 text-pink-400 flex-shrink-0" />
-                            <div>
-                              <p className="text-xs text-white/70">TYPE</p>
-                              <p>{currentDesign.type}</p>
+                      {mobileCardIndex === 2 && (
+                        <motion.div
+                          key="details"
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          transition={{ duration: 0.3 }}
+                          className="absolute inset-0 bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/10 text-white text-sm overflow-y-auto"
+                        >
+                          <div className="space-y-3">
+                            <div className="flex items-center gap-2">
+                              <Calendar className="w-5 h-5 text-pink-400 flex-shrink-0" />
+                              <div>
+                                <p className="text-xs text-white/70">YEAR</p>
+                                <p>{currentDesign.year}</p>
+                              </div>
+                            </div>
+
+                            <div className="flex items-center gap-2">
+                              <Wrench className="w-5 h-5 text-pink-400 flex-shrink-0" />
+                              <div>
+                                <p className="text-xs text-white/70">TOOLS</p>
+                                <p>{currentDesign.tools.join(", ")}</p>
+                              </div>
+                            </div>
+
+                            <div className="flex items-center gap-2">
+                              <Palette className="w-5 h-5 text-pink-400 flex-shrink-0" />
+                              <div>
+                                <p className="text-xs text-white/70">TYPE</p>
+                                <p>{currentDesign.type}</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
 
                   {/* Indicator dots */}
                   <div className="flex justify-center mt-2 space-x-2">
@@ -459,7 +472,7 @@ export default function EmailDesigns() {
               {/* Image container with scroll */}
               <div
                 ref={imageContainerRef}
-                className={`${isMobile ? "w-full" : "w-[calc(100%-300px)]"} h-full overflow-auto custom-scrollbar select-none`}
+                className={`${isMobile ? "w-full" : "w-[calc(100%-350px)]"} h-full overflow-auto custom-scrollbar select-none`}
               >
                 <div className="min-h-full flex items-center justify-center">
                   <div
@@ -489,52 +502,60 @@ export default function EmailDesigns() {
 
               {/* Desktop view: Sticky info cards on the right */}
               {!isMobile && currentDesign && (
-                <div className="hidden md:block w-[300px] h-full relative">
-                  <div className="absolute top-0 right-0 w-[280px] space-y-4 p-4">
+                <div className="hidden md:block w-[350px] h-full relative">
+                  <div className="absolute top-0 right-0 w-[330px] space-y-4 p-4">
                     {/* Disclaimer Card */}
-                    <div className="bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/10 text-white text-sm sticky top-4">
-                      <div className="flex items-start gap-2">
-                        <AlertTriangle className="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" />
-                        <p>
-                          All brand names, trademarks, and images belong to their respective owners. These designs are
-                          created for demonstration and portfolio purposes only and are not affiliated with or endorsed
-                          by {currentDesign.brand}.
-                        </p>
+                    <div className="bg-black/30 backdrop-blur-md rounded-lg p-5 border border-white/10 text-white text-base sticky top-4">
+                      <div className="flex items-start gap-3">
+                        <AlertTriangle className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-0.5" />
+                        <div>
+                          <p className="font-medium mb-2 text-lg">Disclaimer</p>
+                          <p>
+                            All brand names, trademarks, and images belong to their respective owners. These designs are
+                            created for demonstration and portfolio purposes only and are not affiliated with or
+                            endorsed by {currentDesign.brand}.
+                          </p>
+                        </div>
                       </div>
                     </div>
 
                     {/* Context Card */}
-                    <div className="bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/10 text-white text-sm sticky top-[180px]">
-                      <div className="flex items-start gap-2">
-                        <Info className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                        <p>{currentDesign.context}</p>
+                    <div className="bg-black/30 backdrop-blur-md rounded-lg p-5 border border-white/10 text-white text-base sticky top-[220px]">
+                      <div className="flex items-start gap-3">
+                        <Info className="w-6 h-6 text-blue-400 flex-shrink-0 mt-0.5" />
+                        <div>
+                          <p className="font-medium mb-2 text-lg">Design Context</p>
+                          <p>{currentDesign.context}</p>
+                        </div>
                       </div>
                     </div>
 
                     {/* Design Details Card */}
-                    <div className="bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/10 text-white text-sm sticky top-[300px]">
-                      <div className="space-y-3">
-                        <div className="flex items-center gap-2">
-                          <Calendar className="w-5 h-5 text-pink-400 flex-shrink-0" />
+                    <div className="bg-black/30 backdrop-blur-md rounded-lg p-5 border border-white/10 text-white text-base sticky top-[400px]">
+                      <div className="space-y-4">
+                        <p className="font-medium text-lg">Design Details</p>
+
+                        <div className="flex items-center gap-3">
+                          <Calendar className="w-6 h-6 text-pink-400 flex-shrink-0" />
                           <div>
-                            <p className="text-xs text-white/70">YEAR</p>
-                            <p>{currentDesign.year}</p>
+                            <p className="text-sm text-white/70">YEAR</p>
+                            <p className="text-base">{currentDesign.year}</p>
                           </div>
                         </div>
 
-                        <div className="flex items-center gap-2">
-                          <Wrench className="w-5 h-5 text-pink-400 flex-shrink-0" />
+                        <div className="flex items-center gap-3">
+                          <Wrench className="w-6 h-6 text-pink-400 flex-shrink-0" />
                           <div>
-                            <p className="text-xs text-white/70">TOOLS</p>
-                            <p>{currentDesign.tools.join(", ")}</p>
+                            <p className="text-sm text-white/70">TOOLS</p>
+                            <p className="text-base">{currentDesign.tools.join(", ")}</p>
                           </div>
                         </div>
 
-                        <div className="flex items-center gap-2">
-                          <Palette className="w-5 h-5 text-pink-400 flex-shrink-0" />
+                        <div className="flex items-center gap-3">
+                          <Palette className="w-6 h-6 text-pink-400 flex-shrink-0" />
                           <div>
-                            <p className="text-xs text-white/70">TYPE</p>
-                            <p>{currentDesign.type}</p>
+                            <p className="text-sm text-white/70">TYPE</p>
+                            <p className="text-base">{currentDesign.type}</p>
                           </div>
                         </div>
                       </div>
