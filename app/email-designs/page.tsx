@@ -336,7 +336,7 @@ export default function EmailDesigns() {
 
             {/* Modal with fade and slight scale */}
             <motion.div
-              className="relative w-[95vw] h-[90vh] flex flex-col md:flex-row"
+              className="relative w-[95vw] h-[90vh] flex flex-col md:flex-row pt-4"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
@@ -354,7 +354,7 @@ export default function EmailDesigns() {
 
               {/* Mobile view: Cycling info card at the top */}
               {isMobile && currentDesign && (
-                <div className="w-full mb-4 px-4">
+                <div className="w-full mb-4 px-4 pt-10">
                   {/* Fixed height container to prevent layout shifts */}
                   <div className="relative h-[180px]">
                     <AnimatePresence mode="wait">
@@ -481,7 +481,7 @@ export default function EmailDesigns() {
               {/* Image container with scroll - COMPLETELY REDESIGNED */}
               <div
                 ref={imageContainerRef}
-                className={`${isMobile ? "w-full" : "w-[calc(100%-320px)]"} h-full overflow-auto custom-scrollbar select-none`}
+                className={`${isMobile ? "w-full pt-4" : "w-[calc(100%-320px)] pt-4"} h-full overflow-auto custom-scrollbar select-none`}
                 style={{
                   display: "flex",
                   flexDirection: "column",
