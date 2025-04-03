@@ -62,14 +62,6 @@ export default function EmailDesigns() {
     setImageLoaded(false)
   }, [isMobile, selectedImage]) // Reset zoom when image changes or when screen size changes
 
-  // Add useEffect to scroll to the top of the content when image is loaded
-  useEffect(() => {
-    if (selectedImage !== null && imageContainerRef.current && imageLoaded) {
-      // Just a small offset to show the beginning of the actual content
-      imageContainerRef.current.scrollTop = 100
-    }
-  }, [selectedImage, imageLoaded])
-
   // Replace the emailDesigns array with this updated version that includes 9 items with show property
   const emailDesigns = [
     {
@@ -331,7 +323,7 @@ export default function EmailDesigns() {
       {/* Modal for viewing enlarged images */}
       <AnimatePresence>
         {selectedImage !== null && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center">
+          <div className="fixed inset-0 z-50 flex items-start justify-center">
             {/* Backdrop with fade */}
             <motion.div
               className="absolute inset-0 bg-black/90 backdrop-blur-sm"
@@ -344,7 +336,7 @@ export default function EmailDesigns() {
 
             {/* Modal with fade and slight scale */}
             <motion.div
-              className="relative w-[95vw] h-[90vh] flex flex-col md:flex-row items-center justify-center"
+              className="relative w-[95vw] h-[90vh] flex flex-col md:flex-row"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
@@ -362,9 +354,9 @@ export default function EmailDesigns() {
 
               {/* Mobile view: Cycling info card at the top */}
               {isMobile && currentDesign && (
-                <div className="w-full mb-4 px-4">
+                <div className="w-full absolute top-0 left-0 px-4 z-10">
                   {/* Fixed height container to prevent layout shifts */}
-                  <div className="relative h-[180px]">
+                  <div className="relative h-[120px]">
                     <AnimatePresence mode="wait">
                       {mobileCardIndex === 0 && (
                         <motion.div
@@ -373,10 +365,10 @@ export default function EmailDesigns() {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -10 }}
                           transition={{ duration: 0.3 }}
-                          className="absolute inset-0 bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/10 text-white text-sm overflow-y-auto"
+                          className="absolute inset-0 bg-black/30 backdrop-blur-md rounded-lg p-3 border border-white/10 text-white text-xs overflow-y-auto"
                         >
                           <div className="flex items-start gap-2">
-                            <AlertTriangle className="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" />
+                            <AlertTriangle className="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" />
                             <div>
                               <p className="font-medium mb-1">Disclaimer</p>
                               <p>
@@ -396,10 +388,10 @@ export default function EmailDesigns() {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -10 }}
                           transition={{ duration: 0.3 }}
-                          className="absolute inset-0 bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/10 text-white text-sm overflow-y-auto"
+                          className="absolute inset-0 bg-black/30 backdrop-blur-md rounded-lg p-3 border border-white/10 text-white text-xs overflow-y-auto"
                         >
                           <div className="flex items-start gap-2">
-                            <Info className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                            <Info className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
                             <div>
                               <p className="font-medium mb-1">Design Context</p>
                               <p>{currentDesign.context}</p>
@@ -415,11 +407,11 @@ export default function EmailDesigns() {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -10 }}
                           transition={{ duration: 0.3 }}
-                          className="absolute inset-0 bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/10 text-white text-sm overflow-y-auto"
+                          className="absolute inset-0 bg-black/30 backdrop-blur-md rounded-lg p-3 border border-white/10 text-white text-xs overflow-y-auto"
                         >
-                          <div className="space-y-3">
+                          <div className="space-y-2">
                             <div className="flex items-center gap-2">
-                              <Calendar className="w-5 h-5 text-pink-400 flex-shrink-0" />
+                              <Calendar className="w-4 h-4 text-pink-400 flex-shrink-0" />
                               <div>
                                 <p className="text-xs text-white/70">YEAR</p>
                                 <p>{currentDesign.year}</p>
@@ -427,7 +419,7 @@ export default function EmailDesigns() {
                             </div>
 
                             <div className="flex items-center gap-2">
-                              <Wrench className="w-5 h-5 text-pink-400 flex-shrink-0" />
+                              <Wrench className="w-4 h-4 text-pink-400 flex-shrink-0" />
                               <div>
                                 <p className="text-xs text-white/70">TOOLS</p>
                                 <p>{currentDesign.tools.join(", ")}</p>
@@ -435,7 +427,7 @@ export default function EmailDesigns() {
                             </div>
 
                             <div className="flex items-center gap-2">
-                              <Palette className="w-5 h-5 text-pink-400 flex-shrink-0" />
+                              <Palette className="w-4 h-4 text-pink-400 flex-shrink-0" />
                               <div>
                                 <p className="text-xs text-white/70">TYPE</p>
                                 <p>{currentDesign.type}</p>
@@ -448,11 +440,14 @@ export default function EmailDesigns() {
                   </div>
 
                   {/* Indicator dots */}
-                  <div className="flex justify-center mt-2 space-x-2">
+                  <div className="flex justify-center mt-1 space-x-2">
                     {[0, 1, 2].map((index) => (
                       <button
                         key={index}
-                        onClick={() => setMobileCardIndex(index)}
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          setMobileCardIndex(index)
+                        }}
                         className={`w-2 h-2 rounded-full transition-all ${
                           mobileCardIndex === index ? "bg-white scale-110" : "bg-white/40 hover:bg-white/60"
                         }`}
@@ -483,38 +478,48 @@ export default function EmailDesigns() {
                 </button>
               </div>
 
-              {/* Image container with scroll */}
+              {/* Image container with scroll - COMPLETELY REDESIGNED */}
               <div
                 ref={imageContainerRef}
-                className={`${isMobile ? "w-full" : "w-[calc(100%-320px)]"} h-full overflow-auto custom-scrollbar select-none`}
+                className={`${isMobile ? "w-full pt-[140px]" : "w-[calc(100%-320px)]"} h-full overflow-auto custom-scrollbar select-none`}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
               >
-                <div className="flex justify-center">
+                {selectedImage && (
                   <div
                     style={{
                       transform: `scale(${zoomLevel})`,
                       transition: "transform 0.3s ease",
+                      transformOrigin: "top center",
+                      maxWidth: "100%",
+                      margin: 0,
+                      padding: 0,
+                      display: "block",
                     }}
-                    className="relative"
                   >
-                    {selectedImage && (
-                      <Image
-                        src={emailDesigns.find((d) => d.id === selectedImage)?.src || ""}
-                        alt={`${emailDesigns.find((d) => d.id === selectedImage)?.title}`}
-                        width={1200}
-                        height={7000}
-                        className="object-contain select-none"
-                        draggable="false"
-                        unoptimized={true}
-                        onContextMenu={(e) => e.preventDefault()}
-                        style={{ WebkitUserDrag: "none", margin: 0, padding: 0 }}
-                        priority
-                        onLoad={() => {
-                          setImageLoaded(true)
-                        }}
-                      />
-                    )}
+                    <img
+                      src={emailDesigns.find((d) => d.id === selectedImage)?.src || ""}
+                      alt={`${emailDesigns.find((d) => d.id === selectedImage)?.title}`}
+                      className="select-none"
+                      draggable="false"
+                      onContextMenu={(e) => e.preventDefault()}
+                      style={{
+                        WebkitUserDrag: "none",
+                        display: "block",
+                        maxWidth: "100%",
+                        height: "auto",
+                        margin: 0,
+                        padding: 0,
+                      }}
+                      onLoad={() => {
+                        setImageLoaded(true)
+                      }}
+                    />
                   </div>
-                </div>
+                )}
               </div>
 
               {/* Desktop view: Sticky info cards on the right - adjusted size */}
