@@ -65,14 +65,8 @@ export default function EmailDesigns() {
   // Add useEffect to scroll to the top of the content when image is loaded
   useEffect(() => {
     if (selectedImage !== null && imageContainerRef.current && imageLoaded) {
-      // Add a small delay to ensure the image is fully rendered
-      const timer = setTimeout(() => {
-        // Skip the top blank space (approximately 30% of viewport height)
-        const skipAmount = Math.min(imageContainerRef.current.scrollHeight * 0.30, 800)
-        imageContainerRef.current.scrollTop = skipAmount
-      }, 100)
-
-      return () => clearTimeout(timer)
+      // Just a small offset to show the beginning of the actual content
+      imageContainerRef.current.scrollTop = 100
     }
   }, [selectedImage, imageLoaded])
 
@@ -494,7 +488,7 @@ export default function EmailDesigns() {
                 ref={imageContainerRef}
                 className={`${isMobile ? "w-full" : "w-[calc(100%-320px)]"} h-full overflow-auto custom-scrollbar select-none`}
               >
-                <div className="min-h-full flex items-center justify-center">
+                <div className="flex justify-center">
                   <div
                     style={{
                       transform: `scale(${zoomLevel})`,
@@ -507,16 +501,15 @@ export default function EmailDesigns() {
                         src={emailDesigns.find((d) => d.id === selectedImage)?.src || ""}
                         alt={`${emailDesigns.find((d) => d.id === selectedImage)?.title}`}
                         width={1200}
-                        layout="intrinsic"
+                        height={7000}
                         className="object-contain select-none"
                         draggable="false"
                         unoptimized={true}
                         onContextMenu={(e) => e.preventDefault()}
-                        style={{ WebkitUserDrag: "none" }}
+                        style={{ WebkitUserDrag: "none", margin: 0, padding: 0 }}
                         priority
                         onLoad={() => {
                           setImageLoaded(true)
-                          // We'll handle scrolling in the useEffect
                         }}
                       />
                     )}
