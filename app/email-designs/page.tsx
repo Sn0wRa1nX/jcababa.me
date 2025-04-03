@@ -66,6 +66,20 @@ export default function EmailDesigns() {
   const emailDesigns = [
     {
       id: 1,
+      title: "JCABABA.ME Website",
+      description: "Website launch showcase",
+      src: "/jcababame.png?height=7185&width=1200&text=BMW+M4CSL",
+      thumbnail: "/jcababamethumbnail.png", // New thumbnail property
+      show: true,
+      brand: "JCABABA.ME",
+      context:
+        "This website showcases my work with a sleek, ultra-lightweight design, built for speed, performance, and interactivity.",
+      year: "2025",
+      tools: ["Figma", "Canva", "Photoshop"],
+      type: "Website Launch Email",
+    },
+    {
+      id: 2,
       title: "BMW M4 CSL",
       description: "Product showcase",
       src: "/m4highlight.png?height=7185&width=1200&text=BMW+M4CSL",
@@ -79,7 +93,7 @@ export default function EmailDesigns() {
       type: "Product Launch Email",
     },
     {
-      id: 2,
+      id: 3,
       title: "Abandoned BMW M4",
       description: "Follow-up email",
       src: "/m4abandoned.png?height=5982&width=1200&text=Product+Announcement",
@@ -93,7 +107,7 @@ export default function EmailDesigns() {
       type: "Abandoned Cart Recovery Email",
     },
     {
-      id: 3,
+      id: 4,
       title: "Lollipop Brushes",
       description: "Promotional campaign",
       src: "/lollipopbrushes.png?height=6250&width=1200&text=Event+Invitation",
@@ -107,13 +121,13 @@ export default function EmailDesigns() {
       type: "Promotional Email",
     },
     {
-      id: 4,
-      title: "Shea Terra",
+      id: 5,
+      title: "Shea Terra Organics",
       description: "Promotional campaign",
       src: "/SheaTerra.png?height=6250&width=1200&text=Welcome+Email",
       thumbnail: "/SheaTerrathumbnail.png", // New thumbnail property
       show: true,
-      brand: "Shea Terra",
+      brand: "Shea Terra Organics",
       context:
         "This Shea Terra promotional email emphasizes natural ingredients and sustainability through earthy tones and organic imagery, connecting customers with the brand's eco-friendly values.",
       year: "2024",
@@ -121,7 +135,7 @@ export default function EmailDesigns() {
       type: "Welcome Email",
     },
     {
-      id: 5,
+      id: 6,
       title: "Email Design 5",
       description: "Promotional campaign template",
       src: "/placeholder.svg?height=1600&width=1200&text=Promotional+Campaign",
@@ -135,7 +149,7 @@ export default function EmailDesigns() {
       type: "Promotional Email",
     },
     {
-      id: 6,
+      id: 7,
       title: "Email Design 6",
       description: "Follow-up email template",
       src: "/placeholder.svg?height=1600&width=1200&text=Follow+Up+Email",
@@ -149,7 +163,7 @@ export default function EmailDesigns() {
       type: "Follow-up Email",
     },
     {
-      id: 7,
+      id: 8,
       title: "Email Design 7",
       description: "Newsletter template",
       src: "/placeholder.svg?height=1600&width=1200&text=Newsletter",
@@ -163,7 +177,7 @@ export default function EmailDesigns() {
       type: "Newsletter Email",
     },
     {
-      id: 8,
+      id: 9,
       title: "Email Design 8",
       description: "Transactional email template",
       src: "/placeholder.svg?height=1600&width=1200&text=Transactional+Email",
@@ -177,7 +191,7 @@ export default function EmailDesigns() {
       type: "Transactional Email",
     },
     {
-      id: 9,
+      id: 10,
       title: "Email Design 9",
       description: "Welcome series template",
       src: "/placeholder.svg?height=1600&width=1200&text=Welcome+Series",
