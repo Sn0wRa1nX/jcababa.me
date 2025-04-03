@@ -69,6 +69,7 @@ export default function EmailDesigns() {
       title: "BMW M4 CSL",
       description: "Product showcase",
       src: "/m4highlight.png?height=7185&width=1200&text=BMW+M4CSL",
+      thumbnail: "/m4thumbnail.png", // New thumbnail property
       show: true,
       brand: "BMW",
       context:
@@ -82,6 +83,7 @@ export default function EmailDesigns() {
       title: "Abandoned BMW M4",
       description: "Follow-up email",
       src: "/m4abandoned.png?height=5982&width=1200&text=Product+Announcement",
+      thumbnail: "/m4abandonedthumbnail.png", // New thumbnail property
       show: true,
       brand: "BMW",
       context:
@@ -95,6 +97,7 @@ export default function EmailDesigns() {
       title: "Lollipop Brushes",
       description: "Promotional campaign",
       src: "/lollipopbrushes.png?height=6250&width=1200&text=Event+Invitation",
+      thumbnail: "/lollipopbrushesthumbnail.png", // New thumbnail property
       show: true,
       brand: "Lollipop Brushes",
       context:
@@ -108,6 +111,7 @@ export default function EmailDesigns() {
       title: "Shea Terra",
       description: "Promotional campaign",
       src: "/SheaTerra.png?height=6250&width=1200&text=Welcome+Email",
+      thumbnail: "/SheaTerrathumbnail.png", // New thumbnail property
       show: true,
       brand: "Shea Terra",
       context:
@@ -121,6 +125,7 @@ export default function EmailDesigns() {
       title: "Email Design 5",
       description: "Promotional campaign template",
       src: "/placeholder.svg?height=1600&width=1200&text=Promotional+Campaign",
+      thumbnail: "/placeholder.svg?height=400&width=300&text=Promotional+Campaign", // New thumbnail property
       show: true,
       brand: "Generic Brand",
       context:
@@ -134,6 +139,7 @@ export default function EmailDesigns() {
       title: "Email Design 6",
       description: "Follow-up email template",
       src: "/placeholder.svg?height=1600&width=1200&text=Follow+Up+Email",
+      thumbnail: "/placeholder.svg?height=400&width=300&text=Follow+Up+Email", // New thumbnail property
       show: false,
       brand: "Generic Brand",
       context:
@@ -147,6 +153,7 @@ export default function EmailDesigns() {
       title: "Email Design 7",
       description: "Newsletter template",
       src: "/placeholder.svg?height=1600&width=1200&text=Newsletter",
+      thumbnail: "/placeholder.svg?height=400&width=300&text=Newsletter", // New thumbnail property
       show: false,
       brand: "Generic Brand",
       context:
@@ -160,6 +167,7 @@ export default function EmailDesigns() {
       title: "Email Design 8",
       description: "Transactional email template",
       src: "/placeholder.svg?height=1600&width=1200&text=Transactional+Email",
+      thumbnail: "/placeholder.svg?height=400&width=300&text=Transactional+Email", // New thumbnail property
       show: false,
       brand: "Generic Brand",
       context:
@@ -173,6 +181,7 @@ export default function EmailDesigns() {
       title: "Email Design 9",
       description: "Welcome series template",
       src: "/placeholder.svg?height=1600&width=1200&text=Welcome+Series",
+      thumbnail: "/placeholder.svg?height=400&width=300&text=Welcome+Series", // New thumbnail property
       show: false,
       brand: "Generic Brand",
       context:
@@ -284,13 +293,13 @@ export default function EmailDesigns() {
             className="bg-white dark:bg-zinc-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-zinc-800 cursor-pointer transform hover:scale-[1.02] group"
             onClick={() => setSelectedImage(design.id)}
           >
-            <div className="relative aspect-[3/4] overflow-hidden select-none">
+            <div className="relative aspect-[3:2] overflow-hidden select-none">
               <div className="relative w-full h-full">
                 <Image
-                  src={design.src || "/placeholder.svg"}
+                  src={design.thumbnail || design.src || "/placeholder.svg"} // Use thumbnail if available, fall back to src
                   alt={design.title}
                   fill
-                  className="object-cover select-none"
+                  className="object-contain select-none"
                   draggable="false"
                   unoptimized={true} // Prevents Next.js from optimizing and creating additional URLs
                   onContextMenu={(e) => e.preventDefault()}
