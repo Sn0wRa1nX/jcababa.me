@@ -8,8 +8,8 @@ import { X, ZoomIn, ZoomOut, ShieldAlert, Info, AlertTriangle, Palette, Calendar
 export default function EmailDesigns() {
   // State for tracking which image is being viewed in the modal
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
-  // State for zoom level - changed default to 0.8 for zoomed out view
-  const [zoomLevel, setZoomLevel] = useState(0.5)
+  // State for zoom level - adjusted for better visibility
+  const [zoomLevel, setZoomLevel] = useState(0.7)
   // State for security warning
   const [showSecurityWarning, setShowSecurityWarning] = useState(false)
   // Ref for the container
@@ -18,6 +18,8 @@ export default function EmailDesigns() {
   const imageContainerRef = useRef<HTMLDivElement>(null)
   // State to track if we're on mobile
   const [isMobile, setIsMobile] = useState(false)
+  // State to track if image is loaded
+  const [imageLoaded, setImageLoaded] = useState(false)
 
   // Add this new state near the other state declarations
   const [mobileCardIndex, setMobileCardIndex] = useState(0)
@@ -51,11 +53,22 @@ export default function EmailDesigns() {
   useEffect(() => {
     // Set different default zoom levels for mobile and desktop
     if (isMobile) {
-      setZoomLevel(0.4) // More zoomed out for mobile
+      setZoomLevel(0.6) // Adjusted zoom level for mobile
     } else {
-      setZoomLevel(0.6) // Slightly more zoomed in for desktop
+      setZoomLevel(0.7) // Adjusted zoom level for desktop
     }
-  }, [isMobile, selectedImage]) // Reset zoom when image changes or screen size changes
+
+    // Reset image loaded state when image changes
+    setImageLoaded(false)
+  }, [isMobile, selectedImage]) // Reset zoom when image changes or when screen size changes
+
+  // Add useEffect to scroll to the top of the content when image is loaded
+  useEffect(() => {
+    if (selectedImage !== null && imageContainerRef.current) {
+      // Scroll to top when a new image is selected
+      imageContainerRef.current.scrollTop = 0
+    }
+  }, [selectedImage, imageLoaded])
 
   // Replace the emailDesigns array with this updated version that includes 9 items with show property
   const emailDesigns = [
@@ -188,13 +201,14 @@ export default function EmailDesigns() {
 
   // Function to handle zoom out
   const handleZoomOut = () => {
-    setZoomLevel((prev) => Math.max(prev - 0.1, 0.5))
+    setZoomLevel((prev) => Math.max(prev - 0.1, 0.3))
   }
 
   // Function to reset zoom when closing modal
   const handleCloseModal = () => {
     setSelectedImage(null)
-    setZoomLevel(0.8) // Reset to default zoomed out view
+    setZoomLevel(isMobile ? 0.6 : 0.7) // Reset to default zoom level
+    setImageLoaded(false)
   }
 
   // Get the current design
@@ -455,7 +469,7 @@ export default function EmailDesigns() {
                   onClick={handleZoomOut}
                   className="p-2 rounded-full bg-black/70 text-white hover:bg-black/90 transition-colors"
                   aria-label="Zoom out"
-                  disabled={zoomLevel <= 0.5}
+                  disabled={zoomLevel <= 0.3}
                 >
                   <ZoomOut className="w-5 h-5" />
                 </button>
@@ -472,7 +486,7 @@ export default function EmailDesigns() {
               {/* Image container with scroll */}
               <div
                 ref={imageContainerRef}
-                className={`${isMobile ? "w-full" : "w-[calc(100%-350px)]"} h-full overflow-auto custom-scrollbar select-none`}
+                className={`${isMobile ? "w-full" : "w-[calc(100%-320px)]"} h-full overflow-auto custom-scrollbar select-none`}
               >
                 <div className="min-h-full flex items-center justify-center">
                   <div
@@ -494,22 +508,29 @@ export default function EmailDesigns() {
                         onContextMenu={(e) => e.preventDefault()}
                         style={{ WebkitUserDrag: "none" }}
                         priority
+                        onLoad={() => {
+                          setImageLoaded(true)
+                          // Force scroll to top when image loads
+                          if (imageContainerRef.current) {
+                            imageContainerRef.current.scrollTop = 0
+                          }
+                        }}
                       />
                     )}
                   </div>
                 </div>
               </div>
 
-              {/* Desktop view: Sticky info cards on the right */}
+              {/* Desktop view: Sticky info cards on the right - adjusted size */}
               {!isMobile && currentDesign && (
-                <div className="hidden md:block w-[350px] h-full relative">
-                  <div className="absolute top-0 right-0 w-[330px] space-y-4 p-4">
+                <div className="hidden md:block w-[320px] h-full relative">
+                  <div className="absolute top-0 right-0 w-[300px] space-y-4 p-4 max-h-full overflow-y-auto custom-scrollbar">
                     {/* Disclaimer Card */}
-                    <div className="bg-black/30 backdrop-blur-md rounded-lg p-5 border border-white/10 text-white text-base sticky top-4">
-                      <div className="flex items-start gap-3">
-                        <AlertTriangle className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-0.5" />
+                    <div className="bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/10 text-white text-sm sticky top-4">
+                      <div className="flex items-start gap-2">
+                        <AlertTriangle className="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" />
                         <div>
-                          <p className="font-medium mb-2 text-lg">Disclaimer</p>
+                          <p className="font-medium mb-1">Disclaimer</p>
                           <p>
                             All brand names, trademarks, and images belong to their respective owners. These designs are
                             created for demonstration and portfolio purposes only and are not affiliated with or
@@ -520,42 +541,42 @@ export default function EmailDesigns() {
                     </div>
 
                     {/* Context Card */}
-                    <div className="bg-black/30 backdrop-blur-md rounded-lg p-5 border border-white/10 text-white text-base sticky top-[220px]">
-                      <div className="flex items-start gap-3">
-                        <Info className="w-6 h-6 text-blue-400 flex-shrink-0 mt-0.5" />
+                    <div className="bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/10 text-white text-sm sticky top-[180px]">
+                      <div className="flex items-start gap-2">
+                        <Info className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
                         <div>
-                          <p className="font-medium mb-2 text-lg">Design Context</p>
+                          <p className="font-medium mb-1">Design Context</p>
                           <p>{currentDesign.context}</p>
                         </div>
                       </div>
                     </div>
 
                     {/* Design Details Card */}
-                    <div className="bg-black/30 backdrop-blur-md rounded-lg p-5 border border-white/10 text-white text-base sticky top-[400px]">
-                      <div className="space-y-4">
-                        <p className="font-medium text-lg">Design Details</p>
+                    <div className="bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/10 text-white text-sm sticky top-[320px]">
+                      <div className="space-y-3">
+                        <p className="font-medium mb-1">Design Details</p>
 
-                        <div className="flex items-center gap-3">
-                          <Calendar className="w-6 h-6 text-pink-400 flex-shrink-0" />
+                        <div className="flex items-center gap-2">
+                          <Calendar className="w-5 h-5 text-pink-400 flex-shrink-0" />
                           <div>
-                            <p className="text-sm text-white/70">YEAR</p>
-                            <p className="text-base">{currentDesign.year}</p>
+                            <p className="text-xs text-white/70">YEAR</p>
+                            <p>{currentDesign.year}</p>
                           </div>
                         </div>
 
-                        <div className="flex items-center gap-3">
-                          <Wrench className="w-6 h-6 text-pink-400 flex-shrink-0" />
+                        <div className="flex items-center gap-2">
+                          <Wrench className="w-5 h-5 text-pink-400 flex-shrink-0" />
                           <div>
-                            <p className="text-sm text-white/70">TOOLS</p>
-                            <p className="text-base">{currentDesign.tools.join(", ")}</p>
+                            <p className="text-xs text-white/70">TOOLS</p>
+                            <p>{currentDesign.tools.join(", ")}</p>
                           </div>
                         </div>
 
-                        <div className="flex items-center gap-3">
-                          <Palette className="w-6 h-6 text-pink-400 flex-shrink-0" />
+                        <div className="flex items-center gap-2">
+                          <Palette className="w-5 h-5 text-pink-400 flex-shrink-0" />
                           <div>
-                            <p className="text-sm text-white/70">TYPE</p>
-                            <p className="text-base">{currentDesign.type}</p>
+                            <p className="text-xs text-white/70">TYPE</p>
+                            <p>{currentDesign.type}</p>
                           </div>
                         </div>
                       </div>
