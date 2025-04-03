@@ -64,9 +64,15 @@ export default function EmailDesigns() {
 
   // Add useEffect to scroll to the top of the content when image is loaded
   useEffect(() => {
-    if (selectedImage !== null && imageContainerRef.current) {
-      // Scroll to top when a new image is selected
-      imageContainerRef.current.scrollTop = 0
+    if (selectedImage !== null && imageContainerRef.current && imageLoaded) {
+      // Add a small delay to ensure the image is fully rendered
+      const timer = setTimeout(() => {
+        // Skip the top blank space (approximately 15% of viewport height)
+        const skipAmount = Math.min(imageContainerRef.current.scrollHeight * 0.15, 300)
+        imageContainerRef.current.scrollTop = skipAmount
+      }, 100)
+
+      return () => clearTimeout(timer)
     }
   }, [selectedImage, imageLoaded])
 
@@ -510,10 +516,7 @@ export default function EmailDesigns() {
                         priority
                         onLoad={() => {
                           setImageLoaded(true)
-                          // Force scroll to top when image loads
-                          if (imageContainerRef.current) {
-                            imageContainerRef.current.scrollTop = 0
-                          }
+                          // We'll handle scrolling in the useEffect
                         }}
                       />
                     )}
