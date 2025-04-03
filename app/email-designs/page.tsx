@@ -53,9 +53,9 @@ export default function EmailDesigns() {
   useEffect(() => {
     // Set different default zoom levels for mobile and desktop
     if (isMobile) {
-      setZoomLevel(0.5) // Adjusted zoom level for mobile
+      setZoomLevel(0.7) // Adjusted zoom level for mobile
     } else {
-      setZoomLevel(0.7) // Adjusted zoom level for desktop
+      setZoomLevel(0.4) // Adjusted zoom level for desktop
     }
 
     // Reset image loaded state when image changes
