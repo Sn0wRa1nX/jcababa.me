@@ -354,9 +354,9 @@ export default function EmailDesigns() {
 
               {/* Mobile view: Cycling info card at the top */}
               {isMobile && currentDesign && (
-                <div className="w-full absolute top-0 left-0 px-4 z-10">
+                <div className="w-full mb-4 px-4">
                   {/* Fixed height container to prevent layout shifts */}
-                  <div className="relative h-[120px]">
+                  <div className="relative h-[180px]">
                     <AnimatePresence mode="wait">
                       {mobileCardIndex === 0 && (
                         <motion.div
@@ -365,7 +365,7 @@ export default function EmailDesigns() {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -10 }}
                           transition={{ duration: 0.3 }}
-                          className="absolute inset-0 bg-black/30 backdrop-blur-md rounded-lg p-3 border border-white/10 text-white text-xs overflow-y-auto"
+                          className="absolute inset-0 bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/10 text-white text-sm overflow-y-auto"
                         >
                           <div className="flex items-start gap-2">
                             <AlertTriangle className="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" />
@@ -388,7 +388,7 @@ export default function EmailDesigns() {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -10 }}
                           transition={{ duration: 0.3 }}
-                          className="absolute inset-0 bg-black/30 backdrop-blur-md rounded-lg p-3 border border-white/10 text-white text-xs overflow-y-auto"
+                          className="absolute inset-0 bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/10 text-white text-sm overflow-y-auto"
                         >
                           <div className="flex items-start gap-2">
                             <Info className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
@@ -407,7 +407,7 @@ export default function EmailDesigns() {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -10 }}
                           transition={{ duration: 0.3 }}
-                          className="absolute inset-0 bg-black/30 backdrop-blur-md rounded-lg p-3 border border-white/10 text-white text-xs overflow-y-auto"
+                          className="absolute inset-0 bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/10 text-white text-sm overflow-y-auto"
                         >
                           <div className="space-y-2">
                             <div className="flex items-center gap-2">
@@ -481,7 +481,7 @@ export default function EmailDesigns() {
               {/* Image container with scroll - COMPLETELY REDESIGNED */}
               <div
                 ref={imageContainerRef}
-                className={`${isMobile ? "w-full pt-[140px]" : "w-[calc(100%-320px)]"} h-full overflow-auto custom-scrollbar select-none`}
+                className={`${isMobile ? "w-full" : "w-[calc(100%-320px)]"} h-full overflow-auto custom-scrollbar select-none`}
                 style={{
                   display: "flex",
                   flexDirection: "column",
@@ -513,6 +513,8 @@ export default function EmailDesigns() {
                         height: "auto",
                         margin: 0,
                         padding: 0,
+                        marginBottom: 0,
+                        paddingBottom: 0,
                       }}
                       onLoad={() => {
                         setImageLoaded(true)
