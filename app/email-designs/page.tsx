@@ -293,18 +293,18 @@ export default function EmailDesigns() {
             className="bg-white dark:bg-zinc-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-zinc-800 cursor-pointer transform hover:scale-[1.02] group"
             onClick={() => setSelectedImage(design.id)}
           >
-            <div className="relative aspect-[3:2] overflow-hidden select-none">
+            <div className="relative aspect-[3/4] overflow-hidden select-none">
               <div className="relative w-full h-full">
                 <Image
-                  src={design.thumbnail || design.src || "/placeholder.svg"} // Use thumbnail if available, fall back to src
+                  src={design.thumbnail || design.src || "/placeholder.svg"}
                   alt={design.title}
                   fill
-                  className="object-contain select-none"
+                  className="object-cover object-top select-none"
                   draggable="false"
-                  unoptimized={true} // Prevents Next.js from optimizing and creating additional URLs
+                  unoptimized={true}
                   onContextMenu={(e) => e.preventDefault()}
                   style={{ WebkitUserDrag: "none" }}
-                  priority={design.id <= 3} // Load the first 3 images with priority
+                  priority={design.id <= 3}
                 />
               </div>
 
