@@ -5,7 +5,7 @@ import Image from "next/image"
 import { useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
-// Update the ProjectModal interface to include the new button properties
+// Update the ProjectModalProps interface to include the new button properties
 interface ProjectModalProps {
   isOpen: boolean
   onClose: () => void
@@ -34,6 +34,10 @@ interface ProjectModalProps {
     secbutton?: string
     thirdbutton?: string
     fourthbutton?: string
+    firstbuttonlink?: string
+    secbuttonlink?: string
+    thirdbuttonlink?: string
+    fourthbuttonlink?: string
   }
 }
 
@@ -151,7 +155,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
                           <span className="px-3 py-1 bg-black/20 backdrop-blur-sm rounded-full text-sm flex items-center gap-1 text-white">
                             {project.year}
                           </span>
-                          <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm flex items-center gap-1 text-white">
+                          <span className="px-3 py-1 bg-black/20 backdrop-blur-sm rounded-full text-sm flex items-center gap-1 text-white">
                             {project.category}
                           </span>
                         </div>
@@ -370,7 +374,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
                     <div className="mt-6 space-y-3 flex flex-col items-center">
                       {project.firstbutton && (
                         <a
-                          href={project.link}
+                          href={project.firstbuttonlink || project.link}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="w-full max-w-[250px] inline-flex items-center justify-center px-4 py-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-pink-500/50 group"
@@ -396,7 +400,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
                       )}
                       {project.secbutton && (
                         <a
-                          href={project.code}
+                          href={project.secbuttonlink || project.code || project.github}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="w-full max-w-[250px] inline-flex items-center justify-center px-4 py-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-pink-500/50 group"
@@ -422,7 +426,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
                       )}
                       {project.thirdbutton && (
                         <a
-                          href="#"
+                          href={project.thirdbuttonlink || "#"}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="w-full max-w-[250px] inline-flex items-center justify-center px-4 py-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-pink-500/50 group"
@@ -448,7 +452,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
                       )}
                       {project.fourthbutton && (
                         <a
-                          href="#"
+                          href={project.fourthbuttonlink || "#"}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="w-full max-w-[250px] inline-flex items-center justify-center px-4 py-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-pink-500/50 group"

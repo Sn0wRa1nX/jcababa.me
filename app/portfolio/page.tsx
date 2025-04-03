@@ -17,6 +17,7 @@ export default function Portfolio() {
     { id: "va training", name: "VA Training", icon: PencilRuler },
   ]
 
+  // Add the new button link properties to each project
   const projects = [
     {
       id: 1,
@@ -42,6 +43,11 @@ export default function Portfolio() {
       secbutton: "View Source Code",
       thirdbutton: "",
       fourthbutton: "",
+      firstbuttonlink:
+        "https://xdaforums.com/t/kernel-fire_kernel-official-custom-extreme-kernel-for-galaxy-a70.4174819/",
+      secbuttonlink: "https://github.com/sm7150/a70qkernel",
+      thirdbuttonlink: "",
+      fourthbuttonlink: "",
     },
     {
       id: 2,
@@ -67,6 +73,10 @@ export default function Portfolio() {
       secbutton: "View Source Code",
       thirdbutton: "",
       fourthbutton: "",
+      firstbuttonlink: "https://xdaforums.com/t/rom-stable-crdroidandroid-unofficial-6-13-10-0-2021-01-01.4209323/",
+      secbuttonlink: "https://github.com/sm7150",
+      thirdbuttonlink: "",
+      fourthbuttonlink: "",
     },
     {
       id: 3,
@@ -92,13 +102,17 @@ export default function Portfolio() {
       secbutton: "View Documentation",
       thirdbutton: "",
       fourthbutton: "",
+      firstbuttonlink: "https://github.com/sm7150",
+      secbuttonlink: "https://github.com/sm7150",
+      thirdbuttonlink: "",
+      fourthbuttonlink: "",
     },
     {
       id: 4,
       title: "Email Designing",
       category: "graphic design",
       description: "Various email design projects",
-      image: "/EMAILPROJ.png?height=600&width=1200",
+      image: "/EMAILPROJ.png?height=300&width=400",
       secimage: "/EMAILPROJ2.png?height=600&width=1200",
       thirdimage: "",
       fourthimage: "",
@@ -116,6 +130,10 @@ export default function Portfolio() {
       secbutton: "",
       thirdbutton: "",
       fourthbutton: "",
+      firstbuttonlink: "/email-designs",
+      secbuttonlink: "",
+      thirdbuttonlink: "",
+      fourthbuttonlink: "",
     },
     {
       id: 5,
@@ -141,6 +159,10 @@ export default function Portfolio() {
       secbutton: "",
       thirdbutton: "",
       fourthbutton: "",
+      firstbuttonlink: "#",
+      secbuttonlink: "https://github.com",
+      thirdbuttonlink: "",
+      fourthbuttonlink: "",
     },
     {
       id: 6,
@@ -165,6 +187,10 @@ export default function Portfolio() {
       secbutton: "",
       thirdbutton: "",
       fourthbutton: "",
+      firstbuttonlink: "#",
+      secbuttonlink: "",
+      thirdbuttonlink: "",
+      fourthbuttonlink: "",
     },
     {
       id: 7,
@@ -189,6 +215,10 @@ export default function Portfolio() {
       secbutton: "",
       thirdbutton: "",
       fourthbutton: "",
+      firstbuttonlink: "#",
+      secbuttonlink: "",
+      thirdbuttonlink: "",
+      fourthbuttonlink: "",
     },
     {
       id: 8,
@@ -213,6 +243,10 @@ export default function Portfolio() {
       secbutton: "",
       thirdbutton: "",
       fourthbutton: "",
+      firstbuttonlink: "#",
+      secbuttonlink: "",
+      thirdbuttonlink: "",
+      fourthbuttonlink: "",
     },
     {
       id: 9,
@@ -237,6 +271,10 @@ export default function Portfolio() {
       secbutton: "",
       thirdbutton: "",
       fourthbutton: "",
+      firstbuttonlink: "#",
+      secbuttonlink: "",
+      thirdbuttonlink: "",
+      fourthbuttonlink: "",
     },
   ]
 

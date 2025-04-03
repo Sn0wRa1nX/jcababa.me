@@ -3,73 +3,151 @@
 import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
-import { X, ZoomIn, ZoomOut, ShieldAlert } from 'lucide-react'
+import { X, ZoomIn, ZoomOut, ShieldAlert, Info, AlertTriangle } from "lucide-react"
 
 export default function EmailDesigns() {
   // State for tracking which image is being viewed in the modal
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
-  // State for zoom level
-  const [zoomLevel, setZoomLevel] = useState(1)
+  // State for zoom level - changed default to 0.8 for zoomed out view
+  const [zoomLevel, setZoomLevel] = useState(0.8)
   // State for security warning
   const [showSecurityWarning, setShowSecurityWarning] = useState(false)
   // Ref for the container
   const containerRef = useRef<HTMLDivElement>(null)
+  // Ref for the image container
+  const imageContainerRef = useRef<HTMLDivElement>(null)
+  // State to track if we're on mobile
+  const [isMobile, setIsMobile] = useState(false)
 
-  // Array of 6 email designs with different images and descriptions
+  // Check if we're on mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
+
+    return () => {
+      window.removeEventListener("resize", checkMobile)
+    }
+  }, [])
+
+  // Replace the emailDesigns array with this updated version that includes 9 items with show property
   const emailDesigns = [
     {
       id: 1,
       title: "BMW M4 CSL",
       description: "Product showcase",
-      src: "/m4highlight.png?height=7185&width=1200&text=BMW+M4CSL"
+      src: "/m4highlight.png?height=7185&width=1200&text=BMW+M4CSL",
+      show: true,
+      brand: "BMW",
+      context:
+        "This email campaign concept focuses on luxury automotive promotion with a sleek, modern layout that highlights the performance features of the BMW M4 CSL.",
     },
     {
       id: 2,
       title: "Abandoned BMW M4",
       description: "Follow-up email",
-      src: "/m4abandoned.png?height=5982&width=1200&text=Product+Announcement"
+      src: "/m4abandoned.png?height=5982&width=1200&text=Product+Announcement",
+      show: true,
+      brand: "BMW",
+      context:
+        "This abandoned cart email design uses dramatic imagery and minimalist typography to create urgency and reconnect potential customers with the BMW M4 they were considering.",
     },
     {
       id: 3,
       title: "Lollipop Brushes",
       description: "Promotional campaign",
-      src: "/lollipopbrushes.png?height=6250&width=1200&text=Event+Invitation"
+      src: "/lollipopbrushes.png?height=6250&width=1200&text=Event+Invitation",
+      show: true,
+      brand: "Lollipop Brushes",
+      context:
+        "This vibrant promotional email for Lollipop Brushes uses playful colors and clean product photography to showcase the makeup brush collection in an engaging, visually appealing way.",
     },
     {
       id: 4,
       title: "Shea Terra",
       description: "Promotional campaign",
-      src: "/SheaTerra.png?height=6250&width=1200&text=Welcome+Email"
+      src: "/SheaTerra.png?height=6250&width=1200&text=Welcome+Email",
+      show: true,
+      brand: "Shea Terra",
+      context:
+        "This Shea Terra promotional email emphasizes natural ingredients and sustainability through earthy tones and organic imagery, connecting customers with the brand's eco-friendly values.",
     },
     {
       id: 5,
       title: "Email Design 5",
       description: "Promotional campaign template",
-      src: "/placeholder.svg?height=1600&width=1200&text=Promotional+Campaign"
+      src: "/placeholder.svg?height=1600&width=1200&text=Promotional+Campaign",
+      show: true,
+      brand: "Generic Brand",
+      context:
+        "This promotional campaign template uses a balanced layout with strong visual hierarchy to guide readers through product offerings and special deals.",
     },
     {
       id: 6,
       title: "Email Design 6",
       description: "Follow-up email template",
-      src: "/placeholder.svg?height=1600&width=1200&text=Follow+Up+Email"
-    }
+      src: "/placeholder.svg?height=1600&width=1200&text=Follow+Up+Email",
+      show: false,
+      brand: "Generic Brand",
+      context:
+        "This follow-up email template creates a sense of urgency while maintaining brand consistency, perfect for re-engaging customers who haven't completed a purchase.",
+    },
+    {
+      id: 7,
+      title: "Email Design 7",
+      description: "Newsletter template",
+      src: "/placeholder.svg?height=1600&width=1200&text=Newsletter",
+      show: false,
+      brand: "Generic Brand",
+      context:
+        "This newsletter template balances content blocks with imagery to create an engaging reading experience that keeps subscribers informed about brand updates.",
+    },
+    {
+      id: 8,
+      title: "Email Design 8",
+      description: "Transactional email template",
+      src: "/placeholder.svg?height=1600&width=1200&text=Transactional+Email",
+      show: false,
+      brand: "Generic Brand",
+      context:
+        "This transactional email template provides clear order information while maintaining brand identity, ensuring customers feel confident about their purchase.",
+    },
+    {
+      id: 9,
+      title: "Email Design 9",
+      description: "Welcome series template",
+      src: "/placeholder.svg?height=1600&width=1200&text=Welcome+Series",
+      show: false,
+      brand: "Generic Brand",
+      context:
+        "This welcome series email introduces new subscribers to the brand with a clean, approachable design that encourages further engagement.",
+    },
   ]
 
-  // Function to handle zoom in
+  // Function to handle zoom in with limits
   const handleZoomIn = () => {
-    setZoomLevel((prev) => Math.min(prev + 0.25, 3))
+    setZoomLevel((prev) => {
+      // Limit zoom to 2.0 to ensure cards remain visible
+      return Math.min(prev + 0.1, 2.0)
+    })
   }
 
   // Function to handle zoom out
   const handleZoomOut = () => {
-    setZoomLevel((prev) => Math.max(prev - 0.25, 0.1))
+    setZoomLevel((prev) => Math.max(prev - 0.1, 0.5))
   }
 
   // Function to reset zoom when closing modal
   const handleCloseModal = () => {
     setSelectedImage(null)
-    setZoomLevel(1)
+    setZoomLevel(0.8) // Reset to default zoomed out view
   }
+
+  // Get the current design
+  const currentDesign = selectedImage ? emailDesigns.find((d) => d.id === selectedImage) : null
 
   // Enhanced security measures
   useEffect(() => {
@@ -125,11 +203,12 @@ export default function EmailDesigns() {
     }
   }, [])
 
+  // Add this line right before the return statement to filter the displayed cards
+  const filteredEmailDesigns = emailDesigns.filter((design) => design.show)
+
   return (
     <div className="max-w-6xl mx-auto px-4 py-12" ref={containerRef}>
-      <h1 className="text-3xl font-bold text-center mb-4 text-purple-600 heading-special">
-        Email Designs
-      </h1>
+      <h1 className="text-3xl font-bold text-center mb-4 text-purple-600 heading-special">Email Designs</h1>
 
       {/* Security notice */}
       <div className="mb-8 p-4 bg-pink-500/10 border border-pink-500/20 rounded-lg">
@@ -140,15 +219,15 @@ export default function EmailDesigns() {
         </p>
       </div>
 
+      {/* Then replace the mapping in the grid with this: */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {emailDesigns.map((design) => (
+        {filteredEmailDesigns.map((design) => (
           <div
             key={design.id}
             className="bg-white dark:bg-zinc-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-zinc-800 cursor-pointer transform hover:scale-[1.02] group"
             onClick={() => setSelectedImage(design.id)}
           >
             <div className="relative aspect-[3/4] overflow-hidden select-none">
-
               <div className="relative w-full h-full">
                 <Image
                   src={design.src || "/placeholder.svg"}
@@ -174,7 +253,9 @@ export default function EmailDesigns() {
             </div>
             <div className="p-4">
               <div className="space-y-1">
-                <h3 className="text-xl font-bold text-foreground group-hover:text-pink-500 group-hover:scale-105 transition-all duration-300">{design.title}</h3>
+                <h3 className="text-xl font-bold text-foreground group-hover:text-pink-500 group-hover:scale-105 transition-all duration-300">
+                  {design.title}
+                </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">{design.description}</p>
               </div>
             </div>
@@ -198,7 +279,7 @@ export default function EmailDesigns() {
 
             {/* Modal with fade and slight scale */}
             <motion.div
-              className="relative w-[95vw] h-[90vh] flex items-center justify-center"
+              className="relative w-[95vw] h-[90vh] flex flex-col md:flex-row items-center justify-center"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
@@ -214,13 +295,38 @@ export default function EmailDesigns() {
                 <X className="w-5 h-5" />
               </button>
 
+              {/* Mobile view: Info cards at the top */}
+              {isMobile && currentDesign && (
+                <div className="w-full mb-4 space-y-3 px-4">
+                  {/* Disclaimer Card */}
+                  <div className="bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/10 text-white text-sm">
+                    <div className="flex items-start gap-2">
+                      <AlertTriangle className="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" />
+                      <p>
+                        All brand names, trademarks, and images belong to their respective owners. These designs are
+                        created for demonstration and portfolio purposes only and are not affiliated with or endorsed by{" "}
+                        {currentDesign.brand}.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Context Card */}
+                  <div className="bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/10 text-white text-sm">
+                    <div className="flex items-start gap-2">
+                      <Info className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                      <p>{currentDesign.context}</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               {/* Zoom controls */}
               <div className="absolute bottom-4 right-4 z-10 flex gap-2">
                 <button
                   onClick={handleZoomOut}
                   className="p-2 rounded-full bg-black/70 text-white hover:bg-black/90 transition-colors"
                   aria-label="Zoom out"
-                  disabled={zoomLevel <= 0.1}
+                  disabled={zoomLevel <= 0.5}
                 >
                   <ZoomOut className="w-5 h-5" />
                 </button>
@@ -228,14 +334,17 @@ export default function EmailDesigns() {
                   onClick={handleZoomIn}
                   className="p-2 rounded-full bg-black/70 text-white hover:bg-black/90 transition-colors"
                   aria-label="Zoom in"
-                  disabled={zoomLevel >= 3}
+                  disabled={zoomLevel >= 2.0}
                 >
                   <ZoomIn className="w-5 h-5" />
                 </button>
               </div>
 
               {/* Image container with scroll */}
-              <div className="w-full h-full overflow-auto custom-scrollbar select-none">
+              <div
+                ref={imageContainerRef}
+                className={`${isMobile ? "w-full" : "w-[calc(100%-300px)]"} h-full overflow-auto custom-scrollbar select-none`}
+              >
                 <div className="min-h-full flex items-center justify-center">
                   <div
                     style={{
@@ -245,22 +354,49 @@ export default function EmailDesigns() {
                     className="relative"
                   >
                     {selectedImage && (
-                       <Image
-                         src={emailDesigns.find((d) => d.id === selectedImage)?.src || ""}
-                         alt={`${emailDesigns.find((d) => d.id === selectedImage)?.title}`}
-                         width={1200}
-                         layout="intrinsic"
-                         className="object-contain select-none"
-                         draggable="false"
-                         unoptimized={true}
-                         onContextMenu={(e) => e.preventDefault()}
-                         style={{ WebkitUserDrag: "none" }}
-                         priority
-                       />
-                     )}
+                      <Image
+                        src={emailDesigns.find((d) => d.id === selectedImage)?.src || ""}
+                        alt={`${emailDesigns.find((d) => d.id === selectedImage)?.title}`}
+                        width={1200}
+                        layout="intrinsic"
+                        className="object-contain select-none"
+                        draggable="false"
+                        unoptimized={true}
+                        onContextMenu={(e) => e.preventDefault()}
+                        style={{ WebkitUserDrag: "none" }}
+                        priority
+                      />
+                    )}
                   </div>
                 </div>
               </div>
+
+              {/* Desktop view: Sticky info cards on the right */}
+              {!isMobile && currentDesign && (
+                <div className="hidden md:block w-[300px] h-full relative">
+                  <div className="absolute top-0 right-0 w-[280px] space-y-4 p-4">
+                    {/* Disclaimer Card */}
+                    <div className="bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/10 text-white text-sm sticky top-4">
+                      <div className="flex items-start gap-2">
+                        <AlertTriangle className="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" />
+                        <p>
+                          All brand names, trademarks, and images belong to their respective owners. These designs are
+                          created for demonstration and portfolio purposes only and are not affiliated with or endorsed
+                          by {currentDesign.brand}.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Context Card */}
+                    <div className="bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/10 text-white text-sm sticky top-[180px]">
+                      <div className="flex items-start gap-2">
+                        <Info className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                        <p>{currentDesign.context}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </motion.div>
           </div>
         )}
