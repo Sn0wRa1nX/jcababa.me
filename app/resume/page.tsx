@@ -11,7 +11,7 @@ export default function Resume() {
         <div className="md:col-span-1">
           <div className="bg-white dark:bg-zinc-800/50 p-6 rounded-lg shadow-md border border-gray-200 dark:border-zinc-700 transition-transform duration-300 hover:scale-105 sticky top-24">
             <Image
-              src="/jca.png?height=300&width=300"
+              src="/jca.avif?height=300&width=300"
               alt="Johncarlo Ababa"
               width={300}
               height={300}

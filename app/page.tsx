@@ -12,7 +12,7 @@ export default function Home() {
           <div className="flex flex-col bg-white dark:bg-zinc-900 rounded-xl p-8 shadow-xl border border-gray-200 dark:border-zinc-800 transition-transform duration-300 hover:scale-105 sticky top-24">
             {/* Profile Image */}
             <div className="relative w-40 h-40 rounded-full overflow-hidden mx-auto mb-8 border-4 border-purple-500/20">
-              <Image src="/jc.png" alt="Profile" width={160} height={160} className="object-cover" priority />
+              <Image src="/jc.avif" alt="Profile" width={160} height={160} className="object-cover" priority />
             </div>
 
             {/* Name and Title with more spacing */}
