@@ -73,7 +73,7 @@ export default function ClientLayout({
                 className="transition-transform duration-200 hover:scale-110 hover:drop-shadow-[0_4px_8px_rgba(236,72,153,0.5)]"
               >
                 <Image
-                  src="/ZLogo60.png"
+                  src="/ZLogo.svg"
                   alt="Logo"
                   width={40}
                   height={40}
