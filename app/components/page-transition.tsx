@@ -15,8 +15,8 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
         animate={{ opacity: 1 }}
         //exit={{ opacity: 0 }}
         transition={{
-          duration: 0.65, // Reduced duration for snappier transitions
-          ease: "linear", // Changed to linear for smoother fade
+          duration: 0.4, // Reduced from 0.65 for faster transitions
+          ease: "linear",
         }}
       >
         {children}

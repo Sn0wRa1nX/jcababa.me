@@ -12,7 +12,7 @@ export default function Home() {
           <div className="flex flex-col bg-white dark:bg-zinc-900 rounded-xl p-8 shadow-xl border border-gray-200 dark:border-zinc-800 transition-transform duration-300 hover:scale-105 sticky top-24">
             {/* Profile Image */}
             <div className="relative w-40 h-40 rounded-full overflow-hidden mx-auto mb-8 border-4 border-purple-500/20">
-              <Image src="/jc.png?height=200&width=200" alt="Profile" fill className="object-cover" />
+              <Image src="/jc.png" alt="Profile" width={160} height={160} className="object-cover" priority />
             </div>
 
             {/* Name and Title with more spacing */}
@@ -122,10 +122,15 @@ export default function Home() {
             <h2 className="text-3xl font-bold mb-4 text-purple-400 heading-special">About Me</h2>
             <div className="bg-white dark:bg-zinc-900/50 rounded-lg shadow-md p-6 border border-gray-200 dark:border-zinc-800 transition-transform duration-300 hover:scale-105">
               <p className="mb-4 text-gray-600 dark:text-gray-300">
-                I'm a multi-disciplinary tech and creative professional based in the Philippines, seamlessly blending IT expertise with a passion for visual storytelling. With over 3 years of experience in custom kernel and ROM development for Samsung devices, I transform complex technical challenges into streamlined, automated solutions.
+                I'm a multi-disciplinary tech and creative professional based in the Philippines, seamlessly blending IT
+                expertise with a passion for visual storytelling. With over 3 years of experience in custom kernel and
+                ROM development for Samsung devices, I transform complex technical challenges into streamlined,
+                automated solutions.
               </p>
               <p className="mb-4 text-gray-600 dark:text-gray-300">
-                Beyond technology, I excel in graphic design and photography, crafting compelling visuals that tell unique stories. As a certified virtual assistant, I also provide comprehensive support that enhances productivity and creativity.
+                Beyond technology, I excel in graphic design and photography, crafting compelling visuals that tell
+                unique stories. As a certified virtual assistant, I also provide comprehensive support that enhances
+                productivity and creativity.
               </p>
               <p className="mb-4 text-gray-600 dark:text-gray-300">
                 Let's connect to bring your ideas to life through innovative tech solutions and captivating design.
