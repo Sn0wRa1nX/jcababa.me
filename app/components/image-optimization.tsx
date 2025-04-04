@@ -30,7 +30,7 @@ export default function ImageOptimization() {
 
     // Preload critical images
     const preloadImages = () => {
-      const criticalImages = ["/ZLogo60.png", "/jc.png"]
+      const criticalImages = ["/ZLogo60.png", "/jc.avif"]
 
       criticalImages.forEach((src) => {
         const link = document.createElement("link")
